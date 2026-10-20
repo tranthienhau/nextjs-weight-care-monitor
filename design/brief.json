@@ -1,0 +1,97 @@
+{
+  "title": "Steadfast",
+  "slug": "steadfast-weight-care",
+  "domain": "health",
+  "style": "bright",
+  "allow3D": false,
+  "features": [
+    "Role-based secure sign-in (Physician, Medical Assistant, Patient, Practice Admin) with MFA",
+    "Patient registration, enrollment, program + membership status, care team, consent",
+    "MA manual entry of weight + body composition (Hume Body Pod or other approved device), source + entered-by on every value",
+    "Weight + body-composition trend graphs, estimates labelled, missing distinct from zero, audit trail on corrections",
+    "Blood pressure + pulse entry, history chart, clinician-configured review flags (no diagnosis)",
+    "Laboratory results with units, reference range, lab abnormal flag, attached report, physician review",
+    "Medication + treatment record separating entered list, authorized plan, patient-reported adherence, clinical review",
+    "Configurable monthly patient check-in with not-emergency disclaimer, responses create staff tasks",
+    "MA dashboard: due check-ins, missing measurements, ready-for-physician-review",
+    "Physician dashboard: review queue, trends, document assessment, mark reviewed, assign follow-up",
+    "Patient portal: own trends, check-in, permitted meds, education, non-emergency messages",
+    "Notifications + tasks with minimal PHI, automated vs clinician-sent distinction",
+    "Operational reporting + role-checked, logged CSV export",
+    "Admin: users, roles, permission matrix, access removal",
+    "HIPAA-first: audit log, encryption, least privilege, future device-integration ready data model"
+  ],
+  "screenCount": 20,
+  "sharedComponents": {
+    "bottomTabBar": {
+      "tabs": ["Today", "Patients", "Review", "Tasks", "More"],
+      "icons": ["calendar-check", "users", "clipboard-check", "list-checks", "menu"],
+      "note": "STAFF bar (Physician / MA / Admin). Flat white bar, hairline top border, rounded outline 24px icons, label 12px. Active tab = accent #4165FE icon + label with small accent pill indicator; inactive = #8A90A8. Reused verbatim on every staff screen that shows nav."
+    },
+    "patientTabBar": {
+      "tabs": ["Home", "Trends", "Check-in", "Messages"],
+      "icons": ["home", "trending-down", "clipboard-list", "message-circle"],
+      "note": "PATIENT portal bar, same styling as staff bar. Used only on patient-portal screens (nav values prefixed 'patient:')."
+    },
+    "statusBar": "Top app header: 59px safe area, then screen title in Bodoni Moda 26/600 left, right side a round 36px avatar of signed-in user with a small role chip (e.g. 'MA', 'MD'). Patient screens show practice name 'Northside Metabolic Health' small caption above the title.",
+    "reviewBadge": "Review status chip used everywhere: 'Unreviewed' (warning #D97706 on #FEF3C7), 'Ready for MD review' (accent #4165FE on #E9EDFF), 'Reviewed by Dr. Marsh - Oct 20' (success #16A34A on #DCFCE7). Never show a flagged value as reviewed without the green chip.",
+    "sourceTag": "Small mono-style tag on every measurement: device + who entered, e.g. 'Hume Body Pod - J. Lee, MA' or 'Patient-reported'. Patient-entered values use a dashed outline tag; staff-entered solid.",
+    "controls": "Primary button: pill 52px tall, #4165FE fill, white Questrial 16/600 label, pressed #2E52E6, disabled #C9D2F7. Secondary button: pill, white fill, 1.5px #4165FE border, accent label. Text input: 12px radius, 1px #E2E6F2 border, white fill, focus = 2px #6784FE ring, error = #DC2626 border + helper text, unit suffix chip inside right edge. Card: 20px radius white, soft shadow. Chip: pill 32px, #E9EDFF fill + #4165FE label when selected, white + border when not."
+  },
+  "screens": [
+    { "name": "sign-in", "group": "onboarding", "nav": "none", "states": ["default"], "purpose": "Secure role-based sign-in with MFA for staff and patients.", "content": "Hero real photo of a calm clinic consultation room with soft daylight on top 40%, practice name 'Northside Metabolic Health', app mark, headline 'Steadfast', subline 'Physician-led weight care'. Email + password inputs, 'Sign in' primary, 'Use passkey' secondary, 6-digit MFA hint row 'A verification code will be sent to your authenticator app'. Footer caption 'Not for emergencies. If this is an emergency, call 911.' and 'HIPAA-secured, encrypted session'." },
+    { "name": "ma-today", "group": "core", "nav": "Today", "states": ["default"], "purpose": "MA dashboard: what needs doing today.", "content": "Greeting 'Good morning, Jordan' with role chip MA. Focal hero card with soft accent->support gradient: '7 patients due today' big numeral, sub 'Thu Oct 22 - 3 check-ins, 4 office visits'. Three stat tiles: 'Missing measurements 5', 'Ready for MD review 3', 'Overdue check-ins 2'. List 'Up next' of patient rows with real photo avatars: Maria Alvarez 9:30 Office visit 'Weight + BP due', Kevin Brooks 10:15 Remote check-in, Aisha Patel 11:00 'Labs to enter (A1c)'. Each row has review chip." },
+    { "name": "patients", "group": "core", "nav": "Patients", "states": ["default"], "purpose": "Search and filter enrolled patients.", "content": "Search input 'Search name or ID'. Filter chips: Active (selected), Inactive, Discharged, Due check-in. Patient rows with real photo avatars, name, internal ID 'NMH-00412', program week 'Week 18', last weight '203.4 lb - Oct 15', status chip (Active / Check-in overdue / Ready for MD review). 8 rows: Maria Alvarez, Kevin Brooks, Aisha Patel, Robert Chen, Linda Okafor, James Whitaker, Sofia Romano, Daniel Kim. Floating secondary 'New patient' pill." },
+    { "name": "patient-record", "group": "detail", "nav": "Patients", "states": ["default"], "purpose": "Longitudinal monitoring overview for one patient.", "content": "Header: real photo avatar Maria Alvarez, 'NMH-00412 - DOB 03/14/1979 - Week 18', status chip Active, care team 'Dr. Elena Marsh, MD - Jordan Lee, MA'. Segmented tabs: Overview (active), Body, BP, Labs, Meds, Check-ins. Focal card: '-18.6 lb since enrollment' big numeral with mini sparkline, 'Start 222.0 lb (Jun 18) - Now 203.4 lb (Oct 15)'. Latest cards grid: Body fat 38.2% (estimate tag), BP 128/82 (Unreviewed chip), A1c 5.9% (Reviewed chip), Medication 'Semaglutide 1.0 mg weekly'. Row 'Last clinician review: Oct 1 by Dr. Marsh'. Sticky bottom primary 'Mark ready for MD review'." },
+    { "name": "enter-body-composition", "group": "detail", "nav": "none", "states": ["default"], "purpose": "MA enters weight and body-composition from an approved device.", "content": "Top bar back arrow, title 'New measurement - Maria Alvarez'. Date/time input 'Oct 22, 2026 - 9:34 AM'. Source selector card: 'Hume Body Pod (Clinic Room 2)' selected, other options 'Clinic scale', 'Patient home device'. Weight input '202.8' with unit toggle lb/kg. Body fat % '38.0' with tag 'Estimate', Muscle mass '71.4 lb' estimate, Fat-free mass '125.7 lb' estimate. One field 'Visceral fat - Not measured' showing explicit 'Not measured' toggle (missing is not zero). Notes 'Shoes off, after void'. Caption 'Entered by Jordan Lee, MA'. Validation hint: 'Change from last: -0.6 lb'. Primary 'Save measurement'." },
+    { "name": "enter-blood-pressure", "group": "detail", "nav": "none", "states": ["default"], "purpose": "MA records BP and pulse with clinician-configured flag rules.", "content": "Title 'Blood pressure - Maria Alvarez'. Large paired inputs Systolic '146' / Diastolic '94' mmHg, Pulse '78' bpm. Method chips: Automated cuff (selected), Manual, Patient home cuff. Arm: Left. Position: Seated after 5 min rest. Warning card (warning color, not red alarm): 'This reading meets the practice review rule (Systolic >= 140). It will be flagged for clinician review. Flag does not mean a diagnosis.' Option 'Repeat reading in 5 min'. Entered by Jordan Lee, MA. Primary 'Save and flag for review'." },
+    { "name": "weight-trends", "group": "detail", "nav": "Patients", "states": ["default"], "purpose": "Weight and body-composition trend graphs with sources and audit.", "content": "Title 'Body - Maria Alvarez'. Range chips 3M / 6M (selected) / 1Y / All. Focal large line chart weight lb Jun to Oct in accent, dots per visit, one gap labelled 'No reading'. Second smaller chart 'Body fat % (estimate)' in support coral. Table of entries: Oct 15 203.4 lb Hume Body Pod - J. Lee; Oct 1 205.0 lb; Sep 17 207.2 lb with 'Edited' tag. Expanded audit row: 'Corrected 207.9 -> 207.2 lb by J. Lee, MA on Sep 17 4:12 PM - reason: transcription error'. Button 'Export CSV'." },
+    { "name": "bp-history", "group": "detail", "nav": "Patients", "states": ["default"], "purpose": "Blood pressure history and flagged readings.", "content": "Title 'Blood pressure - Maria Alvarez'. Chart with systolic (accent) and diastolic (support) lines plus a dashed review threshold line at 140. Latest flagged reading card: '146/94 mmHg - pulse 78 - Oct 22 9:38 AM' with chip 'Flagged - awaiting clinician review' (warning). Table of prior readings with method + source + entered by: Oct 15 128/82 Clinic cuff - Reviewed; Oct 1 132/84 Patient home cuff (patient-reported dashed tag); Sep 17 124/80 Reviewed. Info banner 'Not continuously monitored. Not an emergency channel.'" },
+    { "name": "lab-results", "group": "detail", "nav": "Patients", "states": ["default"], "purpose": "Chronological lab results with reference ranges and review.", "content": "Title 'Labs - Maria Alvarez'. Grouped by collection date. Card 'Oct 8, 2026 - Quest Diagnostics': HbA1c 5.9 % (ref 4.0-5.6) lab flag H, Fasting glucose 104 mg/dL (ref 70-99) H, LDL 118 mg/dL (ref <100) H, ALT 24 U/L normal, TSH 2.1 mIU/L normal. Attached 'Quest report PDF - 2 pages' row with lock icon. Small sparkline for A1c 6.3 -> 6.1 -> 5.9. Chip 'Reviewed by Dr. Marsh - Oct 10' and physician note excerpt 'A1c improving, recheck in 3 months'. Secondary 'Add lab result'." },
+    { "name": "medications", "group": "detail", "nav": "Patients", "states": ["default"], "purpose": "Medication record separating plan, list, adherence and review.", "content": "Title 'Medications - Maria Alvarez'. Section 'Authorized treatment plan' card: Semaglutide 1.0 mg subcutaneous weekly, start Jul 16 2026, prescriber Dr. Elena Marsh, MD, status Current, solid tag 'Clinician authorized'. Section 'Patient-reported adherence' card with dashed tag 'Patient-reported': 4 of 4 doses last month, side effects 'Mild nausea after dose day 1'. Section 'Medication list': Metformin 500 mg PO BID current; Phentermine 37.5 mg discontinued Jun 30. Section 'Clinical review': 'Reviewed Oct 1 by Dr. Marsh - continue current dose'. Footer note 'Steadfast never changes or recommends doses.'" },
+    { "name": "review-queue", "group": "core", "nav": "Review", "states": ["default", "empty"], "purpose": "Physician dashboard: records awaiting clinician review.", "content": "Greeting 'Dr. Marsh' role chip MD. Focal hero number '6 records awaiting your review' on soft gradient card, sub 'Oldest waiting 2 days'. Filter chips: All, Flagged BP (2), Labs (1), Check-ins (3). Queue cards with real photo avatars: Maria Alvarez - 'BP 146/94 flagged - ready from J. Lee, MA'; Kevin Brooks - 'Check-in: asks for contact, nausea'; Aisha Patel - 'New labs: A1c 6.4%'; Robert Chen - 'Weight -0.2 lb in 6 weeks'. Each card: latest weight, last review date, chip, chevron." },
+    { "name": "review-queue-empty", "group": "core", "nav": "Review", "states": ["empty"], "purpose": "Physician review queue with nothing waiting.", "content": "Same header 'Dr. Marsh' MD. Center real photo of a tidy physician desk with stethoscope and closed laptop in soft morning light, headline 'All records reviewed', sub 'New entries from your care team will appear here.', secondary button 'View recent reviews'." },
+    { "name": "document-review", "group": "detail", "nav": "none", "states": ["default"], "purpose": "Physician documents assessment, marks reviewed, assigns follow-up.", "content": "Title 'Review - Maria Alvarez'. Summary items under review: BP 146/94 flagged, weight 202.8 lb, check-in Oct 20. Text area 'Assessment / follow-up note' prefilled 'Single elevated reading, asymptomatic. Repeat BP at home x 7 days. Continue semaglutide 1.0 mg.' Toggle 'Create follow-up task' on: assignee 'Jordan Lee, MA', due 'Oct 29', task 'Collect home BP log'. Toggle 'Send clinician-reviewed message to patient' with preview. Attestation caption 'Signing as Elena Marsh, MD'. Primary 'Sign and mark reviewed'." },
+    { "name": "tasks", "group": "core", "nav": "Tasks", "states": ["default"], "purpose": "Assigned follow-up and operational tasks.", "content": "Title 'Tasks'. Segmented: Mine (active), Team, Done. Focal count '5 open - 1 due today'. Task rows with checkbox, patient avatar, title, due, assigned by: 'Collect home BP log - Maria Alvarez - due Oct 29 - from Dr. Marsh'; 'Call patient re: nausea - Kevin Brooks - today'; 'Enter A1c from Quest - Aisha Patel'; 'Membership renewal - Linda Okafor - Admin'; 'Schedule monthly check-in - Sofia Romano'. Priority dot uses warning color only for due today." },
+    { "name": "reports", "group": "settings", "nav": "More", "states": ["default"], "purpose": "Operational reporting and logged export.", "content": "Title 'Reports - October 2026'. Focal big number '142 enrolled patients' with split bar 128 active / 14 inactive. Tiles: Check-ins completed 96 / overdue 11, Awaiting review 6, Due for follow-up 9, Measurement completion 92%. Bar chart check-ins per week in accent. Export card: dataset selector 'Measurements', format CSV, date range, caption 'Exports are permission-checked and logged in the audit trail.' Primary 'Export CSV'." },
+    { "name": "admin-users", "group": "settings", "nav": "More", "states": ["default"], "purpose": "Admin manages users, roles and permissions.", "content": "Title 'Users & roles'. Rows with real photo avatars: Dr. Elena Marsh - Physician - Active; Jordan Lee - Medical Assistant - Active; Priya Nair - Medical Assistant - Active; Tom Becker - Practice Admin - Active; Rachel Diaz - Medical Assistant - 'Access removed Oct 3'. Permission matrix card: columns MD / MA / Admin, rows 'View clinical data', 'Enter measurements', 'Sign clinical review', 'Billing & membership', 'Export data', with check / dash icons (Admin has dash on View clinical data). Caption 'Admin access does not include clinical records by default.' Primary 'Invite user'." },
+    { "name": "patient-home", "group": "core", "nav": "patient:Home", "states": ["default", "empty"], "purpose": "Patient portal home with progress and next steps.", "content": "Caption 'Northside Metabolic Health', title 'Hi Maria'. Focal gradient card '-18.6 lb since June' with small trend line and 'Last measured Oct 15 at clinic'. Card 'Monthly check-in due Nov 1' with primary 'Start check-in'. Card 'Your plan: Semaglutide 1.0 mg weekly - next dose Sunday' (view only). Education card with real photo of a colorful balanced meal: 'Protein first: eating well on GLP-1'. Footer banner 'Not monitored 24/7. For emergencies call 911.'" },
+    { "name": "patient-home-empty", "group": "core", "nav": "patient:Home", "states": ["empty"], "purpose": "Patient portal first run before any measurements.", "content": "Title 'Welcome, Daniel'. Real photo of a friendly clinic reception desk with plants. Text 'Your first measurements will appear after your intake visit on Oct 28.' Checklist card: Complete intake questionnaire (primary 'Start intake'), Review and sign consent, Turn on check-in reminders. Footer not-emergency banner." },
+    { "name": "monthly-check-in", "group": "core", "nav": "patient:Check-in", "states": ["default"], "purpose": "Patient completes configurable monthly check-in.", "content": "Title 'October check-in', progress 'Question 3 of 8' bar. Info banner 'Submitting a check-in does not mean immediate review and is not emergency care. Call 911 for emergencies.' Question 'How has your energy level been?' with 5 large selectable option cards (Much lower, Lower, About the same (selected), Higher, Much higher). Next question preview 'Any medication-related concerns or side effects?' Yes/No. Optional comment field. Toggle 'I would like the care team to contact me'. Buttons Back secondary, Next primary." },
+    { "name": "patient-messages", "group": "core", "nav": "patient:Messages", "states": ["default"], "purpose": "Non-emergency questions and care-team replies.", "content": "Title 'Messages'. Top banner 'For non-urgent questions. Replies within 2 business days. Emergencies: call 911.' Thread: automated reminder bubble labelled 'Automated reminder' (grey tint) 'Your monthly check-in opens Nov 1.'; patient bubble 'Is mild nausea after my dose normal?'; care team bubble with real photo avatar Dr. Elena Marsh and tag 'Reviewed and sent by Dr. Marsh' 'Mild nausea is common the first days. Eat smaller meals; message us if it lasts past 3 days.' Composer 'Write a non-urgent message' with send button." }
+  ],
+  "designSystem": {
+    "variant": "P82",
+    "variantName": "withings cornflower",
+    "theme": "light",
+    "frame": "393x852 mobile (iPhone 16/17), top safe area ~59px, bottom ~34px",
+    "color": {
+      "background": "#F4F6FC",
+      "surface": "#FFFFFF",
+      "surfaceAlt": "#F4F6FC",
+      "accent": "#6784FE",
+      "accentFill": "#4165FE",
+      "accentTint": "#E9EDFF",
+      "accentPressed": "#2E52E6",
+      "support": "#F7979A",
+      "text": { "primary": "#0C101F", "secondary": "#4A5068", "tertiary": "#8A90A8" },
+      "border": "#E2E6F2",
+      "success": "#16A34A", "warning": "#D97706", "danger": "#DC2626"
+    },
+    "type": {
+      "fontFamily": "Questrial",
+      "displayFamily": "Bodoni Moda",
+      "numeralFamily": "Questrial",
+      "display": "32 / 700 / -0.02em",
+      "title": "20 / 600",
+      "body": "16 / 400",
+      "label": "14 / 500",
+      "caption": "13 / 500"
+    },
+    "radius": { "card": 20, "control": 14, "input": 12, "pill": 999 },
+    "spacing": "8pt scale (4, 8, 12, 16, 24, 32), screen edge padding 20px",
+    "elevation": "card = 0 1px 2px rgba(12,16,31,.04) + 0 8px 24px rgba(12,16,31,.06)",
+    "icons": "Lucide-style rounded outline, 24px, 1.75 stroke, single set",
+    "a11y": "white labels only on #4165FE; #6784FE for large fills/icons/numerals; tap targets >=44pt"
+  }
+}

@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Blood Pressure History - Steadfast</title>
+<!-- Google Fonts: Questrial & Bodoni Moda -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&amp;family=Questrial&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with Container Queries & Forms -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "inverse-surface": "#2f3039",
+            "tertiary": "#9e3e00",
+            "surface-variant": "#e2e1ee",
+            "accent-tint": "#E9EDFF",
+            "primary-fixed-dim": "#b9c3ff",
+            "primary-fixed": "#dde1ff",
+            "surface-alt": "#F4F6FC",
+            "on-tertiary": "#ffffff",
+            "accent-fill": "#4165FE",
+            "on-primary-fixed-variant": "#0033c1",
+            "on-primary": "#ffffff",
+            "outline-variant": "#c4c5d8",
+            "on-secondary-container": "#fffbff",
+            "success-tint": "#DCFCE7",
+            "secondary-container": "#4d6be3",
+            "surface-container-lowest": "#ffffff",
+            "border": "#E2E6F2",
+            "tertiary-container": "#c64f00",
+            "surface": "#FFFFFF",
+            "secondary": "#3050c9",
+            "error-container": "#ffdad6",
+            "on-tertiary-fixed": "#351000",
+            "surface-container-low": "#f3f2ff",
+            "on-error": "#ffffff",
+            "surface-container": "#eeedf9",
+            "on-surface": "#1a1b24",
+            "error": "#ba1a1a",
+            "support": "#F7979A",
+            "on-secondary-fixed-variant": "#1038b3",
+            "tertiary-fixed": "#ffdbcc",
+            "primary": "#1e49e4",
+            "on-primary-container": "#fffbff",
+            "danger": "#DC2626",
+            "on-tertiary-container": "#fffbff",
+            "surface-container-highest": "#e2e1ee",
+            "secondary-fixed": "#dde1ff",
+            "secondary-fixed-dim": "#b8c4ff",
+            "warning": "#D97706",
+            "on-background": "#1a1b24",
+            "surface-container-high": "#e8e7f4",
+            "primary-container": "#4165fe",
+            "on-secondary": "#ffffff",
+            "inverse-on-surface": "#f0effc",
+            "text-tertiary": "#8A90A8",
+            "surface-bright": "#fbf8ff",
+            "inverse-primary": "#b9c3ff",
+            "on-tertiary-fixed-variant": "#7b2e00",
+            "text-secondary": "#4A5068",
+            "surface-tint": "#224ce7",
+            "accent-pressed": "#2E52E6",
+            "on-error-container": "#93000a",
+            "tertiary-fixed-dim": "#ffb695",
+            "outline": "#747687",
+            "surface-dim": "#d9d9e5",
+            "success": "#16A34A",
+            "warning-tint": "#FEF3C7",
+            "on-secondary-fixed": "#001355",
+            "background": "#F4F6FC",
+            "on-primary-fixed": "#001257",
+            "text-primary": "#0C101F",
+            "on-surface-variant": "#444655",
+            "danger-tint": "#FEE2E2"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "20": "20px",
+            "full": "9999px"
+          },
+          spacing: {
+            "margin": "20px",
+            "space-sm": "8px",
+            "gutter": "16px",
+            "space-md": "12px",
+            "space-xs": "4px",
+            "space-xl": "24px",
+            "space-2xl": "32px",
+            "space-lg": "16px"
+          },
+          fontFamily: {
+            "title-md": ["Questrial", "sans-serif"],
+            "caption-sm": ["Questrial", "sans-serif"],
+            "body-md": ["Questrial", "sans-serif"],
+            "headline-lg": ["Bodoni Moda", "serif"],
+            "label-md": ["Questrial", "sans-serif"]
+          },
+          fontSize: {
+            "title-md": ["20px", { lineHeight: "28px", fontWeight: "600" }],
+            "caption-sm": ["13px", { lineHeight: "18px", fontWeight: "500" }],
+            "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "label-md": ["14px", { lineHeight: "20px", fontWeight: "500" }]
+          },
+          boxShadow: {
+            "soft-ambient": "0 1px 2px rgba(12,16,31,.04), 0 8px 24px rgba(12,16,31,.06)"
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      font-size: 22px;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    body {
+      background-color: #F4F6FC;
+      color: #0C101F;
+      font-family: 'Questrial', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      display: none;
+    }
+    .custom-scroll {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-background text-text-primary min-h-screen flex justify-center selection:bg-accent-tint selection:text-primary">
+<!-- Mobile Viewport Device Frame (393px width standard) -->
+<div class="w-full max-w-[393px] min-h-screen bg-background relative flex flex-col pb-28">
+<!-- Top App Header / Patient Context Header -->
+<header class="sticky top-0 z-40 bg-surface/95 backdrop-blur-md px-margin pt-4 pb-3 shadow-sm border-none">
+<div class="flex items-center justify-between">
+<!-- Back Navigation & Title -->
+<div class="flex items-center gap-3">
+<button aria-label="Go back to Patients list" class="w-9 h-9 rounded-full bg-surface-alt flex items-center justify-center text-text-primary hover:bg-surface-variant transition-colors active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<div>
+<h1 class="font-headline-lg text-title-md text-text-primary tracking-tight leading-snug">
+              Blood pressure
+            </h1>
+<p class="font-caption-sm text-caption-sm text-text-secondary flex items-center gap-1.5 mt-0.5">
+<span>Maria Alvarez</span>
+<span class="text-text-tertiary">•</span>
+<span class="font-medium text-text-primary">NMH-00412</span>
+<span class="text-text-tertiary">•</span>
+<span class="text-secondary font-medium">Wk 18</span>
+</p>
+</div>
+</div>
+<!-- Clinician / Staff Context Pill Badge -->
+<div class="flex items-center gap-1.5 bg-surface-alt pl-1 pr-2.5 py-1 rounded-full border border-border">
+<img alt="Jordan Lee, Medical Assistant" class="w-7 h-7 rounded-full object-cover border border-surface shadow-xs" src="https://lh3.googleusercontent.com/aida/AEtjO1VHHU4OkHxad0IiZ9yNuJznSS0iPf3GweqGCqtI1ruz5QOt2cLuX22lnzeL9g02hkOpZGYSh1z3sqwwQ5c-HPvHfkzFPThDI_SzAROfBN9I_F0g2xt-TJoCV9BWROYdp2CQES3iNaW-uQLrFv1X40C_0kqwy7bxJNLhICT4nMXC5WJsn1eCu-AQqFEcmn960IMQtMaPnQ4_ssJXNHaJg76rGcOgzSNVE7VZPb3C6XBp0A-60vxxp4st5o4"/>
+<span class="text-[11px] font-bold text-accent-fill bg-accent-tint px-1.5 py-0.5 rounded-full uppercase tracking-wider">MA</span>
+</div>
+</div>
+<!-- Timeframe Filter Pills & Baseline Indicator -->
+<div class="flex items-center justify-between mt-3.5 pt-1">
+<div class="flex items-center space-x-1.5">
+<button class="px-3 py-1 rounded-full text-caption-sm font-caption-sm bg-surface border border-border text-text-secondary hover:text-text-primary transition-colors">
+            3M
+          </button>
+<button class="px-3 py-1 rounded-full text-caption-sm font-caption-sm bg-accent-tint text-accent-fill font-medium border border-primary/20 transition-all">
+            6M
+          </button>
+<button class="px-3 py-1 rounded-full text-caption-sm font-caption-sm bg-surface border border-border text-text-secondary hover:text-text-primary transition-colors">
+            1Y
+          </button>
+<button class="px-3 py-1 rounded-full text-caption-sm font-caption-sm bg-surface border border-border text-text-secondary hover:text-text-primary transition-colors">
+            All
+          </button>
+</div>
+<div class="text-[12px] font-caption-sm text-text-secondary bg-surface-container-low px-2 py-0.5 rounded-md border border-border/80">
+<span class="text-text-tertiary">Baseline:</span> <span class="font-medium text-text-primary">138/88</span>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="px-margin pt-4 space-y-4">
+<!-- FOCAL CARD: Dual Line Trend Chart -->
+<div class="bg-surface rounded-20 p-space-lg shadow-soft-ambient relative">
+<!-- Header & Legend -->
+<div class="flex items-start justify-between mb-3">
+<div>
+<h2 class="font-title-md text-title-md text-text-primary">Blood pressure trend</h2>
+<p class="font-caption-sm text-caption-sm text-text-secondary">Historical ambulatory &amp; in-clinic readings</p>
+</div>
+<span class="material-symbols-outlined text-text-tertiary" data-icon="tune">tune</span>
+</div>
+<!-- Custom Legend Row -->
+<div class="flex flex-wrap items-center gap-x-3.5 gap-y-1.5 text-[12px] font-caption-sm text-text-secondary mb-3">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-[#6784FE]"></span>
+<span class="font-medium text-text-primary">Systolic</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-support"></span>
+<span class="font-medium text-text-primary">Diastolic</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3.5 border-t-2 border-dashed border-warning inline-block"></span>
+<span class="text-warning font-medium">Practice Rule (140)</span>
+</div>
+</div>
+<!-- Clean SVG Chart Area -->
+<div class="relative w-full h-[190px] bg-surface-alt/40 rounded-xl p-2 select-none overflow-visible">
+<!-- 140 Review Rule Badge overlay -->
+<div class="absolute right-2 top-[34px] z-10 bg-warning-tint border border-warning/30 text-warning text-[10px] font-semibold px-1.5 py-0.5 rounded shadow-xs">
+            Practice review rule 140
+          </div>
+<!-- Highlighted interactive tooltip on Oct 22 point -->
+<div class="absolute right-4 top-[8px] z-20 bg-text-primary text-surface px-2.5 py-1.5 rounded-lg shadow-md pointer-events-none transform -translate-x-3 text-center">
+<div class="text-[11px] font-bold tracking-tight text-white flex items-center justify-center gap-1">
+<span>146/94</span>
+<span class="w-1.5 h-1.5 rounded-full bg-warning"></span>
+</div>
+<div class="text-[9px] text-danger-tint uppercase tracking-wider font-semibold">Flagged</div>
+<!-- Tooltip pointer arrow -->
+<div class="w-2 h-2 bg-text-primary rotate-45 absolute -bottom-1 right-5"></div>
+</div>
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 320 160">
+<defs>
+<lineargradient id="sysGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#4165FE" stop-opacity="0.18"></stop>
+<stop offset="100%" stop-color="#4165FE" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<!-- Grid Lines (Horizontal) -->
+<!-- 160 mmHg -->
+<line stroke="#E2E6F2" stroke-dasharray="2 3" stroke-width="1" x1="24" x2="310" y1="18" y2="18"></line>
+<!-- 140 mmHg Practice Review Line (amber dashed) -->
+<line stroke="#D97706" stroke-dasharray="4 3" stroke-width="1.75" x1="24" x2="310" y1="46" y2="46"></line>
+<!-- 120 mmHg Normal Line -->
+<line stroke="#E2E6F2" stroke-dasharray="2 3" stroke-width="1" x1="24" x2="310" y1="78" y2="78"></line>
+<!-- 80 mmHg Diastolic normal -->
+<line stroke="#E2E6F2" stroke-dasharray="2 3" stroke-width="1" x1="24" x2="310" y1="126" y2="126"></line>
+<!-- Left Y-Axis Values -->
+<text fill="#8A90A8" font-family="Questrial" font-size="9" x="2" y="22">160</text>
+<text fill="#D97706" font-family="Questrial" font-size="9" font-weight="600" x="2" y="49">140</text>
+<text fill="#8A90A8" font-family="Questrial" font-size="9" x="2" y="81">120</text>
+<text fill="#8A90A8" font-family="Questrial" font-size="9" x="5" y="129">80</text>
+<!-- Systolic Path Gradient Area -->
+<!-- Points: Jul (40, 72), Aug (90, 68), Sep 17 (150, 72), Oct 1 (205, 58), Oct 15 (255, 64), Oct 22 (295, 36) -->
+<path d="M 40,72 L 90,68 L 150,72 L 205,58 L 255,64 L 295,36 L 295,145 L 40,145 Z" fill="url(#sysGradient)"></path>
+<!-- Systolic Line (#6784FE) -->
+<path d="M 40,72 L 90,68 L 150,72 L 205,58 L 255,64 L 295,36" fill="none" stroke="#4165FE" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+<!-- Diastolic Line (#F7979A) -->
+<!-- Points: Jul (40, 126), Aug (90, 122), Sep 17 (150, 126), Oct 1 (205, 118), Oct 15 (255, 122), Oct 22 (295, 104) -->
+<path d="M 40,126 L 90,122 L 150,126 L 205,118 L 255,122 L 295,104" fill="none" stroke="#F7979A" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"></path>
+<!-- Systolic Data Points -->
+<circle cx="40" cy="72" fill="#FFFFFF" r="3.5" stroke="#4165FE" stroke-width="2"></circle>
+<circle cx="90" cy="68" fill="#FFFFFF" r="3.5" stroke="#4165FE" stroke-width="2"></circle>
+<circle cx="150" cy="72" fill="#FFFFFF" r="3.5" stroke="#4165FE" stroke-width="2"></circle>
+<circle cx="205" cy="58" fill="#FFFFFF" r="3.5" stroke="#4165FE" stroke-width="2"></circle>
+<circle cx="255" cy="64" fill="#FFFFFF" r="3.5" stroke="#4165FE" stroke-width="2"></circle>
+<!-- Latest Systolic Flagged Point -->
+<circle cx="295" cy="36" fill="#D97706" r="5" stroke="#FFFFFF" stroke-width="2"></circle>
+<!-- Diastolic Data Points -->
+<circle cx="40" cy="126" fill="#FFFFFF" r="3" stroke="#F7979A" stroke-width="1.8"></circle>
+<circle cx="90" cy="122" fill="#FFFFFF" r="3" stroke="#F7979A" stroke-width="1.8"></circle>
+<circle cx="150" cy="126" fill="#FFFFFF" r="3" stroke="#F7979A" stroke-width="1.8"></circle>
+<circle cx="205" cy="118" fill="#FFFFFF" r="3" stroke="#F7979A" stroke-width="1.8"></circle>
+<circle cx="255" cy="122" fill="#FFFFFF" r="3" stroke="#F7979A" stroke-width="1.8"></circle>
+<!-- Latest Diastolic Point -->
+<circle cx="295" cy="104" fill="#F7979A" r="4.5" stroke="#FFFFFF" stroke-width="2"></circle>
+<!-- X-Axis Labels -->
+<text fill="#8A90A8" font-family="Questrial" font-size="9" x="32" y="156">Jul</text>
+<text fill="#8A90A8" font-family="Questrial" font-size="9" x="82" y="156">Aug</text>
+<text fill="#8A90A8" font-family="Questrial" font-size="9" x="136" y="156">Sep 17</text>
+<text fill="#8A90A8" font-family="Questrial" font-size="9" x="194" y="156">Oct 1</text>
+<text fill="#8A90A8" font-family="Questrial" font-size="9" x="242" y="156">Oct 15</text>
+<text fill="#0C101F" font-family="Questrial" font-size="9" font-weight="600" x="282" y="156">Today</text>
+</svg>
+</div>
+<div class="mt-2.5 flex items-center justify-between text-[11px] text-text-tertiary">
+<span>Target range: &lt;130 / &lt;80 mmHg</span>
+<span class="text-secondary font-medium">Standard protocol 2x seat rest</span>
+</div>
+</div>
+<!-- FOCAL ALERT: Latest Reading Card -->
+<div class="bg-surface rounded-20 p-space-lg shadow-soft-ambient border-l-4 border-warning relative">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-text-primary font-medium tracking-tight">Latest reading</span>
+<!-- Review Status Chip (Amber) -->
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-warning-tint text-warning border border-warning/20">
+<span class="material-symbols-outlined text-[14px]" data-icon="report">report</span>
+            Flagged - awaiting clinician review
+          </span>
+</div>
+<!-- Big Bold Metric Typography -->
+<div class="mt-2 flex items-baseline gap-2">
+<div class="text-[34px] leading-none font-bold text-text-primary font-body-md tracking-tight">
+            146/94
+          </div>
+<span class="text-body-md font-body-md text-text-secondary">mmHg</span>
+<span class="ml-auto inline-flex items-center text-xs font-medium text-danger bg-danger-tint px-2 py-0.5 rounded-full">
+            +18 sys spike
+          </span>
+</div>
+<!-- Sub-Metrics row -->
+<div class="mt-2.5 flex flex-wrap items-center gap-y-1 gap-x-3 text-caption-sm font-caption-sm text-text-secondary">
+<div class="flex items-center gap-1 text-text-primary font-medium">
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="favorite" data-weight="fill" style="font-variation-settings: 'FILL' 1;">favorite</span>
+            Pulse 78 bpm
+            <span class="text-text-tertiary font-normal">• Normal</span>
+</div>
+<div class="text-text-tertiary">•</div>
+<div class="text-text-secondary">
+            Oct 22, 9:38 AM <span class="text-text-tertiary">• Pod B Station 2</span>
+</div>
+</div>
+<!-- Source Tag (Solid border for staff-entered) -->
+<div class="mt-3 flex items-center justify-between pt-2.5 border-t border-border">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-caption-sm text-text-secondary border border-border bg-surface-alt">
+<span class="material-symbols-outlined text-[13px] text-text-tertiary" data-icon="verified_user">verified_user</span>
+            Automated cuff • J. Lee, MA
+          </span>
+<span class="text-[11px] text-text-tertiary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-warning" data-icon="timer">timer</span>
+            Repeat in 5 min
+          </span>
+</div>
+<!-- Action Helper: Repeat Reading Button -->
+<div class="mt-3.5">
+<button class="w-full h-10 rounded-full border border-primary bg-surface hover:bg-surface-alt text-primary font-label-md text-label-md flex items-center justify-center gap-1.5 transition-transform active:scale-95 duration-150 shadow-xs" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="refresh">refresh</span>
+            Log repeat reading
+          </button>
+</div>
+</div>
+<!-- READINGS HISTORY SECTION -->
+<section class="space-y-2.5">
+<div class="flex items-center justify-between px-1">
+<div class="flex items-baseline gap-2">
+<h3 class="font-title-md text-title-md text-text-primary">Readings history</h3>
+<span class="text-caption-sm text-text-tertiary font-caption-sm">(6)</span>
+</div>
+<!-- Export CSV Pill Action -->
+<button class="px-3 py-1 rounded-full border border-border text-caption-sm font-caption-sm text-text-secondary hover:text-text-primary bg-surface flex items-center gap-1 shadow-xs active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[15px]" data-icon="download">download</span>
+            Export CSV
+          </button>
+</div>
+<!-- Structured Reading Cards List -->
+<div class="space-y-2.5">
+<!-- Entry 1: Oct 22 (Flagged) -->
+<div class="bg-surface rounded-20 p-3.5 shadow-soft-ambient border border-warning/30 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="text-body-md font-bold text-text-primary">146/94</span>
+<span class="text-caption-sm text-text-tertiary">mmHg</span>
+<span class="text-caption-sm text-text-secondary bg-surface-alt px-1.5 py-0.5 rounded">78 bpm</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-warning-tint text-warning">
+                Flagged - awaiting MD
+              </span>
+</div>
+<div class="flex items-center justify-between text-[11px] text-text-secondary">
+<span class="font-medium text-text-primary">Oct 22, 9:38 AM</span>
+<!-- Staff Tag: Solid Border -->
+<span class="px-2 py-0.5 rounded border border-border bg-surface-alt text-text-secondary">
+                Automated cuff • J. Lee, MA
+              </span>
+</div>
+</div>
+<!-- Entry 2: Oct 15 -->
+<div class="bg-surface rounded-20 p-3.5 shadow-soft-ambient border border-border/60 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="text-body-md font-bold text-text-primary">128/82</span>
+<span class="text-caption-sm text-text-tertiary">mmHg</span>
+<span class="text-caption-sm text-text-secondary bg-surface-alt px-1.5 py-0.5 rounded">72 bpm</span>
+</div>
+<!-- Status: Reviewed (Green) -->
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-medium bg-success-tint text-success">
+<span class="material-symbols-outlined text-[12px]" data-icon="check_circle">check_circle</span>
+                Reviewed by Dr. Marsh
+              </span>
+</div>
+<div class="flex items-center justify-between text-[11px] text-text-secondary">
+<span class="text-text-secondary">Oct 15, 10:14 AM</span>
+<!-- Staff Tag: Solid Border -->
+<span class="px-2 py-0.5 rounded border border-border bg-surface-alt text-text-secondary">
+                Clinic cuff • J. Lee, MA
+              </span>
+</div>
+</div>
+<!-- Entry 3: Oct 1 (Patient Home Cuff) -->
+<div class="bg-surface rounded-20 p-3.5 shadow-soft-ambient border border-border/60 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="text-body-md font-bold text-text-primary">132/84</span>
+<span class="text-caption-sm text-text-tertiary">mmHg</span>
+<span class="text-caption-sm text-text-secondary bg-surface-alt px-1.5 py-0.5 rounded">75 bpm</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-medium bg-success-tint text-success">
+<span class="material-symbols-outlined text-[12px]" data-icon="check_circle">check_circle</span>
+                Reviewed by Dr. Marsh
+              </span>
+</div>
+<div class="flex items-center justify-between text-[11px] text-text-secondary">
+<span class="text-text-secondary">Oct 1, 8:20 AM</span>
+<!-- Source Tag: Dashed border for Patient-reported -->
+<span class="px-2 py-0.5 rounded border border-dashed border-outline-variant bg-surface text-text-secondary inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-text-tertiary" data-icon="home">home</span>
+                Patient home cuff • patient-reported
+              </span>
+</div>
+</div>
+<!-- Entry 4: Sep 17 -->
+<div class="bg-surface rounded-20 p-3.5 shadow-soft-ambient border border-border/60 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="text-body-md font-bold text-text-primary">124/80</span>
+<span class="text-caption-sm text-text-tertiary">mmHg</span>
+<span class="text-caption-sm text-text-secondary bg-surface-alt px-1.5 py-0.5 rounded">70 bpm</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-medium bg-success-tint text-success">
+<span class="material-symbols-outlined text-[12px]" data-icon="check_circle">check_circle</span>
+                Reviewed
+              </span>
+</div>
+<div class="flex items-center justify-between text-[11px] text-text-secondary">
+<span class="text-text-secondary">Sep 17, 9:45 AM</span>
+<!-- Staff Tag: Solid Border -->
+<span class="px-2 py-0.5 rounded border border-border bg-surface-alt text-text-secondary">
+                Clinic cuff • P. Nair, MA
+              </span>
+</div>
+</div>
+<!-- Entry 5: Aug 28 -->
+<div class="bg-surface rounded-20 p-3.5 shadow-soft-ambient border border-border/60 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="text-body-md font-bold text-text-primary">126/82</span>
+<span class="text-caption-sm text-text-tertiary">mmHg</span>
+<span class="text-caption-sm text-text-secondary bg-surface-alt px-1.5 py-0.5 rounded">74 bpm</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-medium bg-success-tint text-success">
+<span class="material-symbols-outlined text-[12px]" data-icon="check_circle">check_circle</span>
+                Reviewed
+              </span>
+</div>
+<div class="flex items-center justify-between text-[11px] text-text-secondary">
+<span class="text-text-secondary">Aug 28, 8:15 AM</span>
+<!-- Source Tag: Dashed border for Patient-reported -->
+<span class="px-2 py-0.5 rounded border border-dashed border-outline-variant bg-surface text-text-secondary inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-text-tertiary" data-icon="person">person</span>
+                Patient home cuff
+              </span>
+</div>
+</div>
+</div>
+</section>
+<!-- SAFETY & COMPLIANCE BANNER -->
+<section class="rounded-20 bg-accent-tint/60 border border-primary/25 p-3.5 flex items-start gap-3 text-text-primary">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5" data-icon="info">info</span>
+<div class="space-y-1">
+<p class="font-caption-sm text-caption-sm leading-snug font-medium text-text-primary">
+            Not continuously monitored. Not an emergency channel - call 911.
+          </p>
+<p class="text-[11px] text-text-secondary font-caption-sm flex items-center gap-1"><span class="material-symbols-outlined text-[13px] text-success" data-icon="lock">lock</span> HIPAA-secured • audit logged</p>
+</div>
+</section>
+</main>
+<!-- BOTTOM NAVIGATION BAR (Shared Component Exact Execution) -->
+<!-- Staff Bottom Tab Bar: Exactly 5 items (Today, Patients, Review, Tasks, More) -->
+<!-- Active Tab: "Patients" highlighted with style_active_navigation -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-margin py-2 pb-8 bg-surface shadow-sm border-none">
+<!-- Tab 1: Today -->
+<a class="flex flex-col items-center justify-center text-text-secondary px-3 py-1 hover:text-primary transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="text-caption-sm font-caption-sm mt-0.5">Today</span>
+</a>
+<!-- Tab 2: Patients (ACTIVE DESTINATION) -->
+<a class="flex flex-col items-center justify-center bg-accent-tint text-primary rounded-full px-3 py-1 hover:text-primary transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+<span class="text-caption-sm font-caption-sm font-medium mt-0.5">Patients</span>
+</a>
+<!-- Tab 3: Review -->
+<a class="flex flex-col items-center justify-center text-text-secondary px-3 py-1 hover:text-primary transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="rate_review">rate_review</span>
+<span class="text-caption-sm font-caption-sm mt-0.5">Review</span>
+</a>
+<!-- Tab 4: Tasks -->
+<a class="flex flex-col items-center justify-center text-text-secondary px-3 py-1 hover:text-primary transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="checklist">checklist</span>
+<span class="text-caption-sm font-caption-sm mt-0.5">Tasks</span>
+</a>
+<!-- Tab 5: More -->
+<a class="flex flex-col items-center justify-center text-text-secondary px-3 py-1 hover:text-primary transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="more_horiz">more_horiz</span>
+<span class="text-caption-sm font-caption-sm mt-0.5">More</span>
+</a>
+</nav>
+</div>
+</body></html>

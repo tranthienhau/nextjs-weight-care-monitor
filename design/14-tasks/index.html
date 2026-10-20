@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Tasks - Steadfast Clinical</title>
+<!-- Google Fonts: Bodoni Moda & Questrial -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&amp;family=Questrial&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "inverse-primary": "#b9c3ff",
+            "accent-tint": "#E9EDFF",
+            "surface-container-highest": "#e2e1ee",
+            "on-primary-fixed": "#001257",
+            "secondary": "#3050c9",
+            "primary": "#1e49e4",
+            "on-tertiary": "#ffffff",
+            "secondary-fixed": "#dde1ff",
+            "text-primary": "#0C101F",
+            "tertiary": "#9e3e00",
+            "secondary-container": "#4d6be3",
+            "outline-variant": "#c4c5d8",
+            "on-tertiary-container": "#fffbff",
+            "tertiary-fixed": "#ffdbcc",
+            "on-secondary-fixed": "#001355",
+            "surface": "#FFFFFF",
+            "text-secondary": "#4A5068",
+            "tertiary-container": "#c64f00",
+            "warning-tint": "#FEF3C7",
+            "on-tertiary-fixed-variant": "#7b2e00",
+            "success-tint": "#DCFCE7",
+            "on-error-container": "#93000a",
+            "border": "#E2E6F2",
+            "tertiary-fixed-dim": "#ffb695",
+            "primary-fixed-dim": "#b9c3ff",
+            "on-primary-container": "#fffbff",
+            "text-tertiary": "#8A90A8",
+            "surface-container-low": "#f3f2ff",
+            "surface-dim": "#d9d9e5",
+            "surface-tint": "#224ce7",
+            "on-surface": "#1a1b24",
+            "danger-tint": "#FEE2E2",
+            "on-error": "#ffffff",
+            "on-primary": "#ffffff",
+            "primary-container": "#4165fe",
+            "inverse-on-surface": "#f0effc",
+            "secondary-fixed-dim": "#b8c4ff",
+            "on-secondary-fixed-variant": "#1038b3",
+            "on-secondary": "#ffffff",
+            "on-secondary-container": "#fffbff",
+            "background": "#F4F6FC",
+            "surface-bright": "#fbf8ff",
+            "on-primary-fixed-variant": "#0033c1",
+            "accent-fill": "#4165FE",
+            "danger": "#DC2626",
+            "surface-container-high": "#e8e7f4",
+            "surface-alt": "#F4F6FC",
+            "inverse-surface": "#2f3039",
+            "error-container": "#ffdad6",
+            "on-tertiary-fixed": "#351000",
+            "on-background": "#1a1b24",
+            "surface-container": "#eeedf9",
+            "accent-pressed": "#2E52E6",
+            "primary-fixed": "#dde1ff",
+            "on-surface-variant": "#444655",
+            "success": "#16A34A",
+            "error": "#ba1a1a",
+            "support": "#F7979A",
+            "warning": "#D97706",
+            "outline": "#747687",
+            "surface-variant": "#e2e1ee",
+            "surface-container-lowest": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px",
+            "card": "20px"
+          },
+          "spacing": {
+            "space-lg": "16px",
+            "space-2xl": "32px",
+            "margin": "20px",
+            "space-sm": "8px",
+            "space-md": "12px",
+            "space-xs": "4px",
+            "space-xl": "24px",
+            "gutter": "16px"
+          },
+          "fontFamily": {
+            "title-md": ["Questrial"],
+            "body-md": ["Questrial"],
+            "label-md": ["Questrial"],
+            "caption-sm": ["Questrial"],
+            "headline-lg": ["Bodoni Moda"]
+          },
+          "fontSize": {
+            "title-md": [
+              "20px",
+              {
+                "lineHeight": "28px",
+                "fontWeight": "600"
+              }
+            ],
+            "body-md": [
+              "16px",
+              {
+                "lineHeight": "24px",
+                "fontWeight": "400"
+              }
+            ],
+            "label-md": [
+              "14px",
+              {
+                "lineHeight": "20px",
+                "fontWeight": "500"
+              }
+            ],
+            "caption-sm": [
+              "13px",
+              {
+                "lineHeight": "18px",
+                "fontWeight": "500"
+              }
+            ],
+            "headline-lg": [
+              "32px",
+              {
+                "lineHeight": "40px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "700"
+              }
+            ]
+          },
+          "boxShadow": {
+            "clinical": "0 1px 2px rgba(12,16,31,.04), 0 8px 24px rgba(12,16,31,.06)",
+            "subtle": "0 1px 3px rgba(12,16,31,.03)"
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 24px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+    }
+    body {
+      background-color: #F4F6FC;
+      color: #0C101F;
+      font-family: 'Questrial', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+  </style>
+</head>
+<body class="bg-background min-h-screen text-text-primary antialiased flex justify-center selection:bg-accent-tint selection:text-primary">
+<!-- Mobile Frame Container (393x852 proportion) -->
+<div class="w-full max-w-[420px] min-h-screen bg-background relative flex flex-col pb-28">
+<!-- Top Status Bar & Institution Anchor (TopAppBar logic) -->
+<header class="sticky top-0 z-40 bg-surface/90 backdrop-blur-md px-margin pt-3 pb-3 flex items-center justify-between shadow-subtle">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-primary text-[20px]">local_hospital</span>
+<span class="font-title-md text-caption-sm text-text-secondary tracking-tight font-medium">Northside Metabolic Health</span>
+</div>
+<div class="flex items-center space-x-2">
+<button class="relative p-1.5 rounded-full hover:bg-surface-container-low transition-colors text-text-secondary">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-accent-fill rounded-full ring-2 ring-surface"></span>
+</button>
+</div>
+</header>
+<!-- Main Screen Header Area -->
+<div class="px-margin pt-4 pb-2 flex items-center justify-between">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-text-primary font-bold tracking-tight">Tasks</h1>
+</div>
+<!-- Staff Profile Indicator -->
+<div class="flex items-center gap-2 pl-2 py-1 pr-1.5 bg-surface rounded-full shadow-subtle border border-border">
+<span class="font-caption-sm text-caption-sm font-semibold text-primary px-1.5 py-0.5 bg-accent-tint rounded-full">MA</span>
+<div class="relative w-[36px] h-[36px] rounded-full overflow-hidden ring-1 ring-border">
+<img alt="Jordan Lee, MA" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1VHHU4OkHxad0IiZ9yNuJznSS0iPf3GweqGCqtI1ruz5QOt2cLuX22lnzeL9g02hkOpZGYSh1z3sqwwQ5c-HPvHfkzFPThDI_SzAROfBN9I_F0g2xt-TJoCV9BWROYdp2CQES3iNaW-uQLrFv1X40C_0kqwy7bxJNLhICT4nMXC5WJsn1eCu-AQqFEcmn960IMQtMaPnQ4_ssJXNHaJg76rGcOgzSNVE7VZPb3C6XBp0A-60vxxp4st5o4"/>
+</div>
+</div>
+</div>
+<!-- Segmented Filter Bar -->
+<div class="px-margin pt-2 pb-4">
+<div class="flex items-center gap-2">
+<!-- Active Filter: Mine -->
+<button class="px-5 py-2 rounded-full font-label-md text-label-md font-semibold bg-accent-tint text-accent-fill shadow-sm transition-all active:scale-95 flex items-center gap-1.5">
+<span>Mine</span>
+<span class="w-5 h-5 rounded-full bg-accent-fill text-surface flex items-center justify-center text-[11px] font-bold">5</span>
+</button>
+<!-- Inactive Filter: Team -->
+<button class="px-5 py-2 rounded-full font-label-md text-label-md font-medium bg-surface text-text-secondary border border-border hover:bg-surface-container-low transition-all active:scale-95">
+          Team
+        </button>
+<!-- Inactive Filter: Done -->
+<button class="px-5 py-2 rounded-full font-label-md text-label-md font-medium bg-surface text-text-secondary border border-border hover:bg-surface-container-low transition-all active:scale-95">
+          Done
+        </button>
+</div>
+</div>
+<!-- Main Content Stream -->
+<main class="px-margin flex-1 flex flex-col space-y-4">
+<!-- Hero Focal Metric Card -->
+<section class="bg-surface rounded-card p-5 shadow-clinical border border-white relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-baseline space-x-2">
+<span class="font-headline-lg text-[44px] leading-tight font-bold text-text-primary tracking-tight">5</span>
+<span class="font-title-md text-title-md font-semibold text-text-primary">open tasks</span>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-warning-tint text-warning font-caption-sm text-caption-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-warning animate-pulse"></span>
+                1 due today
+              </span>
+<span class="text-caption-sm text-text-tertiary font-normal">Updated 4m ago</span>
+</div>
+</div>
+<div class="w-12 h-12 rounded-2xl bg-surface-alt border border-border flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[26px]">checklist</span>
+</div>
+</div>
+<!-- Mini Progress / Clinician Context Rhythm -->
+<div class="mt-4 pt-3.5 border-t border-surface-alt flex items-center justify-between text-caption-sm">
+<span class="text-text-secondary font-medium">Dr. Elena Marsh's metabolic panel</span>
+<span class="text-primary font-semibold hover:underline cursor-pointer">Quick review</span>
+</div>
+</section>
+<!-- Task Action List -->
+<section class="space-y-3">
+<div class="flex items-center justify-between px-1">
+<span class="font-label-md text-label-md font-semibold text-text-secondary">Assigned Priorities</span>
+<span class="text-caption-sm text-text-tertiary">Tap circle to resolve</span>
+</div>
+<!-- Task 1: Maria Alvarez -->
+<article class="bg-surface rounded-card p-4 shadow-clinical border border-border transition-transform active:scale-[0.99] duration-150">
+<div class="flex items-start gap-3.5">
+<!-- Round Checkbox -->
+<button aria-label="Mark task complete" class="mt-1 w-6 h-6 rounded-full border-2 border-outline-variant hover:border-accent-fill flex items-center justify-center transition-colors group focus:outline-none flex-shrink-0">
+<span class="material-symbols-outlined text-[16px] text-transparent group-hover:text-primary transition-colors">check</span>
+</button>
+<!-- Card Core Content -->
+<div class="flex-1 min-w-0">
+<!-- Patient Row -->
+<div class="flex items-center justify-between gap-2 mb-1.5">
+<div class="flex items-center gap-2 truncate">
+<img alt="Maria Alvarez" class="w-7 h-7 rounded-full object-cover ring-1 ring-border flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1XRofZ9kCSJsXmF5FUTxN-TKEihItxDJ80jUOapDSjhbCKgexDS-CIQepM6uRJeRduKeMAH5edFcKFN9bwybB7WVDQT8X8xP6AF1WB0FBYYf0gkT67nXDM2PfbsaEJuufPcTfsaRyqbITTkt_f5H-0AzmDK4BKUDw7Wo2wXCAIkL1vK5HLGniyGmVEunVQ4s2hJs1mkmxPLndU6zPwSn1MSGv2qkAvcfi8d2yFFKE0Jo2UilnvDveiUdw"/>
+<span class="font-title-md text-label-md font-semibold text-text-primary truncate">Maria Alvarez</span>
+</div>
+<span class="font-caption-sm text-[11px] px-2 py-0.5 rounded-full bg-surface-alt text-text-secondary border border-border flex-shrink-0">
+                  GLP-1 Care
+                </span>
+</div>
+<!-- Task Title -->
+<h2 class="font-title-md text-body-md font-medium text-text-primary leading-snug">
+                Collect home BP log
+              </h2>
+<!-- Meta Row -->
+<div class="mt-2 flex items-center text-caption-sm text-text-secondary gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-text-tertiary">event</span>
+<span>Due Oct 29</span>
+<span class="text-text-tertiary">•</span>
+<span class="truncate">from Dr. Elena Marsh</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Task 2: Kevin Brooks (Due Today Hero Priority) -->
+<article class="bg-surface rounded-card p-4 shadow-clinical border-l-4 border-l-warning border-y border-r border-border transition-transform active:scale-[0.99] duration-150 relative">
+<div class="flex items-start gap-3.5">
+<!-- Round Checkbox -->
+<button aria-label="Mark task complete" class="mt-1 w-6 h-6 rounded-full border-2 border-warning hover:bg-warning-tint flex items-center justify-center transition-colors group focus:outline-none flex-shrink-0">
+<span class="material-symbols-outlined text-[16px] text-transparent group-hover:text-warning transition-colors">check</span>
+</button>
+<!-- Card Core Content -->
+<div class="flex-1 min-w-0">
+<!-- Patient Row -->
+<div class="flex items-center justify-between gap-2 mb-1.5">
+<div class="flex items-center gap-2 truncate">
+<img alt="Kevin Brooks" class="w-7 h-7 rounded-full object-cover ring-1 ring-border flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1ULXgnWfR1FtPWGEmJuT8brvd7qjRMiIsnDPT6ylzsWT8-5NHAPkT9iHqMzmcyuAwwWUU-N4_x5kprSx-3TcDaOtYaGLefie_rprJlzgHaRVABuFPhnJLqQWffR3SqP4EYe4w2m8LXvJiaScDQParMELyjsWAu9SWk8QhrltSMG37Asglin920G-VJ5ZaQSOjMNw8V14TYxHcCS_08dySetThuJDRMdZj_mBkayj-tAFyOcfSGD6OPkbQ"/>
+<span class="font-title-md text-label-md font-semibold text-text-primary truncate">Kevin Brooks</span>
+</div>
+<!-- Priority Due Tag -->
+<span class="inline-flex items-center gap-1 font-caption-sm text-[11px] font-semibold px-2 py-0.5 rounded-full bg-warning-tint text-warning flex-shrink-0">
+<span class="w-1.5 h-1.5 rounded-full bg-warning"></span>
+                  Due today
+                </span>
+</div>
+<!-- Task Title -->
+<h2 class="font-title-md text-body-md font-medium text-text-primary leading-snug">
+                Call patient about nausea
+              </h2>
+<!-- Meta Row -->
+<div class="mt-2 flex items-center text-caption-sm text-text-secondary gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-warning">schedule</span>
+<span class="font-medium text-text-primary">Due today</span>
+<span class="text-text-tertiary">•</span>
+<span class="truncate">from Dr. Elena Marsh</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Task 3: Aisha Patel -->
+<article class="bg-surface rounded-card p-4 shadow-clinical border border-border transition-transform active:scale-[0.99] duration-150">
+<div class="flex items-start gap-3.5">
+<!-- Round Checkbox -->
+<button aria-label="Mark task complete" class="mt-1 w-6 h-6 rounded-full border-2 border-outline-variant hover:border-accent-fill flex items-center justify-center transition-colors group focus:outline-none flex-shrink-0">
+<span class="material-symbols-outlined text-[16px] text-transparent group-hover:text-primary transition-colors">check</span>
+</button>
+<!-- Card Core Content -->
+<div class="flex-1 min-w-0">
+<!-- Patient Row -->
+<div class="flex items-center justify-between gap-2 mb-1.5">
+<div class="flex items-center gap-2 truncate">
+<img alt="Aisha Patel" class="w-7 h-7 rounded-full object-cover ring-1 ring-border flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1UJbtUZSVtscwu6WzxRQ0gKrWoXnbemjdC3StyaiyUS81Ar2FLXBepQH-rSntVn4lGDaJsxfRmgAXXMcWHTKiZbDs5oIAOCaDks4PtBBataN3b6E0sKNbLLSpcDZvu2c2f574IL1awmIavl_b0IDiHyGXqREsshqAg_MyFzJGYCCs-yXYYl_xoto_Neiwf8eTsAgGSW8bKVFvvA7uAnsnF_wp23vH65zZgyBM2OWYb1GX9YdTTHaOnp0A"/>
+<span class="font-title-md text-label-md font-semibold text-text-primary truncate">Aisha Patel</span>
+</div>
+<span class="font-caption-sm text-[11px] px-2 py-0.5 rounded-full bg-accent-tint text-accent-fill border border-border flex-shrink-0">
+                  Lab entry
+                </span>
+</div>
+<!-- Task Title -->
+<h2 class="font-title-md text-body-md font-medium text-text-primary leading-snug">
+                Enter HbA1c from Quest
+              </h2>
+<!-- Meta Row -->
+<div class="mt-2 flex items-center text-caption-sm text-text-secondary gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-text-tertiary">biotech</span>
+<span>Due Oct 23</span>
+<span class="text-text-tertiary">•</span>
+<span class="text-text-secondary">auto-created</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Task 4: Linda Okafor -->
+<article class="bg-surface rounded-card p-4 shadow-clinical border border-border transition-transform active:scale-[0.99] duration-150">
+<div class="flex items-start gap-3.5">
+<!-- Round Checkbox -->
+<button aria-label="Mark task complete" class="mt-1 w-6 h-6 rounded-full border-2 border-outline-variant hover:border-accent-fill flex items-center justify-center transition-colors group focus:outline-none flex-shrink-0">
+<span class="material-symbols-outlined text-[16px] text-transparent group-hover:text-primary transition-colors">check</span>
+</button>
+<!-- Card Core Content -->
+<div class="flex-1 min-w-0">
+<!-- Patient Row -->
+<div class="flex items-center justify-between gap-2 mb-1.5">
+<div class="flex items-center gap-2 truncate">
+<img alt="Linda Okafor" class="w-7 h-7 rounded-full object-cover ring-1 ring-border flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1WuEnr_qA4BBBDi1RYctbfhEJlXgVZJH3ZFA3VElIqg5p6jO7YLmmDjtSsUsrS2o4JS0KsRw3vSpdWKT-UjykYwBbT6GRhTWx_SE37Hk7R5LERrG_JqeYQoGlz9clv6FFEj43oaFZHZIUYjOcqLF0xoxdLuwZEMntEissQDv-8RYL32cLqhZCJjfu11U-BM1lhia0OFvRkoLO27HBoNfrINICkKz-cr40cfmQilKrKBrtjfnYVyl3lqrj0"/>
+<span class="font-title-md text-label-md font-semibold text-text-primary truncate">Linda Okafor</span>
+</div>
+<span class="font-caption-sm text-[11px] px-2 py-0.5 rounded-full bg-surface-alt text-text-secondary border border-border flex-shrink-0">
+                  Admin
+                </span>
+</div>
+<!-- Task Title -->
+<h2 class="font-title-md text-body-md font-medium text-text-primary leading-snug">
+                Membership renewal follow-up
+              </h2>
+<!-- Meta Row -->
+<div class="mt-2 flex items-center text-caption-sm text-text-secondary gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-text-tertiary">card_membership</span>
+<span>Due Oct 30</span>
+<span class="text-text-tertiary">•</span>
+<span class="truncate">from Tom Becker, Admin</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Task 5: Sofia Romano -->
+<article class="bg-surface rounded-card p-4 shadow-clinical border border-border transition-transform active:scale-[0.99] duration-150">
+<div class="flex items-start gap-3.5">
+<!-- Round Checkbox -->
+<button aria-label="Mark task complete" class="mt-1 w-6 h-6 rounded-full border-2 border-outline-variant hover:border-accent-fill flex items-center justify-center transition-colors group focus:outline-none flex-shrink-0">
+<span class="material-symbols-outlined text-[16px] text-transparent group-hover:text-primary transition-colors">check</span>
+</button>
+<!-- Card Core Content -->
+<div class="flex-1 min-w-0">
+<!-- Patient Row -->
+<div class="flex items-center justify-between gap-2 mb-1.5">
+<div class="flex items-center gap-2 truncate">
+<img alt="Sofia Romano" class="w-7 h-7 rounded-full object-cover ring-1 ring-border flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1XrVDs6OeIE0LT-GIYoZyGNhGe6h4BJ-ug8UZDu9RUkvadky8bvcANQZXaE5xKBydsMIPTI5v3Wl2cLO5kXuo4xAnQZFMbvFF3SIAAITLbTs5KdnbHUeAttC5zDelXuwudm28m6hJXOwoJiBU11bb6lZG2IUahFxC2x5M3OfSUwpiT1n_cmD9q_CvNK4a1Fnw5SrQmURjeUke7OPqlBU3AsJ7WVVcxNlLITS5wur0QAJkn7yLwyzQeTQsk"/>
+<span class="font-title-md text-label-md font-semibold text-text-primary truncate">Sofia Romano</span>
+</div>
+<span class="font-caption-sm text-[11px] px-2 py-0.5 rounded-full bg-surface-alt text-text-secondary border border-border flex-shrink-0">
+                  Automated
+                </span>
+</div>
+<!-- Task Title -->
+<h2 class="font-title-md text-body-md font-medium text-text-primary leading-snug">
+                Schedule monthly check-in
+              </h2>
+<!-- Meta Row -->
+<div class="mt-2 flex items-center text-caption-sm text-text-secondary gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-text-tertiary">calendar_clock</span>
+<span>Due Oct 31</span>
+<span class="text-text-tertiary">•</span>
+<span class="text-text-secondary">automated reminder</span>
+</div>
+</div>
+</div>
+</article>
+</section>
+<!-- Action Footer Button -->
+<div class="pt-2">
+<button class="w-full py-3.5 rounded-full bg-surface border border-primary text-primary font-label-md text-label-md font-semibold flex items-center justify-center gap-2 hover:bg-accent-tint/40 transition-colors shadow-subtle active:scale-[0.98]">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>New task</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar (Shared Component Strict Implementation) -->
+<!-- Destination count: 5 ["Today", "Patients", "Review", "Tasks", "More"] -->
+<!-- Active State Logic: 'Tasks' is active with style_active_navigation -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-margin py-2 pb-8 bg-surface shadow-clinical">
+<!-- 1. Today (Inactive) -->
+<a class="flex flex-col items-center justify-center text-text-secondary px-3 py-1 hover:text-primary transition-colors active:scale-95 duration-150" href="#today">
+<span class="material-symbols-outlined text-[24px]">calendar_today</span>
+<span class="text-caption-sm font-caption-sm mt-0.5">Today</span>
+</a>
+<!-- 2. Patients (Inactive) -->
+<a class="flex flex-col items-center justify-center text-text-secondary px-3 py-1 hover:text-primary transition-colors active:scale-95 duration-150" href="#patients">
+<span class="material-symbols-outlined text-[24px]">groups</span>
+<span class="text-caption-sm font-caption-sm mt-0.5">Patients</span>
+</a>
+<!-- 3. Review (Inactive) -->
+<a class="flex flex-col items-center justify-center text-text-secondary px-3 py-1 hover:text-primary transition-colors active:scale-95 duration-150" href="#review">
+<span class="material-symbols-outlined text-[24px]">rate_review</span>
+<span class="text-caption-sm font-caption-sm mt-0.5">Review</span>
+</a>
+<!-- 4. Tasks (ACTIVE ITEM: Maps to current screen) -->
+<a class="flex flex-col items-center justify-center bg-accent-tint text-primary rounded-full px-4 py-1 active:scale-95 duration-150" href="#tasks">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">checklist</span>
+<span class="text-caption-sm font-caption-sm font-semibold mt-0.5">Tasks</span>
+</a>
+<!-- 5. More (Inactive) -->
+<a class="flex flex-col items-center justify-center text-text-secondary px-3 py-1 hover:text-primary transition-colors active:scale-95 duration-150" href="#more">
+<span class="material-symbols-outlined text-[24px]">more_horiz</span>
+<span class="text-caption-sm font-caption-sm mt-0.5">More</span>
+</a>
+</nav>
+</div>
+</body></html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Northside Metabolic Health - Review Queue</title>
+<!-- Google Fonts: Questrial & Bodoni Moda -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..800;1,6..96,400..800&amp;family=Questrial&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration verbatim from Design System -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "warning": "#D97706",
+            "danger": "#DC2626",
+            "on-error": "#ffffff",
+            "on-background": "#1a1b24",
+            "outline": "#747687",
+            "surface-container-high": "#e8e7f4",
+            "on-tertiary": "#ffffff",
+            "on-secondary-container": "#fffbff",
+            "background": "#F4F6FC",
+            "tertiary": "#9e3e00",
+            "primary-container": "#4165fe",
+            "error-container": "#ffdad6",
+            "danger-tint": "#FEE2E2",
+            "text-primary": "#0C101F",
+            "on-primary-fixed-variant": "#0033c1",
+            "on-primary-fixed": "#001257",
+            "secondary-fixed-dim": "#b8c4ff",
+            "secondary-container": "#4d6be3",
+            "tertiary-fixed-dim": "#ffb695",
+            "on-error-container": "#93000a",
+            "warning-tint": "#FEF3C7",
+            "surface-alt": "#F4F6FC",
+            "surface-dim": "#d9d9e5",
+            "surface-container": "#eeedf9",
+            "on-primary": "#ffffff",
+            "on-tertiary-fixed": "#351000",
+            "primary-fixed-dim": "#b9c3ff",
+            "on-tertiary-fixed-variant": "#7b2e00",
+            "primary-fixed": "#dde1ff",
+            "surface-variant": "#e2e1ee",
+            "on-secondary": "#ffffff",
+            "on-primary-container": "#fffbff",
+            "on-surface": "#1a1b24",
+            "inverse-on-surface": "#f0effc",
+            "tertiary-fixed": "#ffdbcc",
+            "success-tint": "#DCFCE7",
+            "text-tertiary": "#8A90A8",
+            "on-surface-variant": "#444655",
+            "support": "#F7979A",
+            "accent-tint": "#E9EDFF",
+            "surface-container-highest": "#e2e1ee",
+            "inverse-primary": "#b9c3ff",
+            "primary": "#1e49e4",
+            "success": "#16A34A",
+            "on-secondary-fixed": "#001355",
+            "text-secondary": "#4A5068",
+            "on-tertiary-container": "#fffbff",
+            "inverse-surface": "#2f3039",
+            "border": "#E2E6F2",
+            "outline-variant": "#c4c5d8",
+            "accent-fill": "#4165FE",
+            "surface-container-low": "#f3f2ff",
+            "secondary": "#3050c9",
+            "surface": "#FFFFFF",
+            "surface-container-lowest": "#ffffff",
+            "surface-bright": "#fbf8ff",
+            "secondary-fixed": "#dde1ff",
+            "on-secondary-fixed-variant": "#1038b3",
+            "error": "#ba1a1a",
+            "tertiary-container": "#c64f00",
+            "surface-tint": "#224ce7",
+            "accent-pressed": "#2E52E6"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xl": "24px",
+            "gutter": "16px",
+            "space-sm": "8px",
+            "space-xs": "4px",
+            "space-md": "12px",
+            "space-lg": "16px",
+            "space-2xl": "32px",
+            "margin": "20px"
+          },
+          "fontFamily": {
+            "title-md": [
+              "Questrial"
+            ],
+            "headline-lg": [
+              "Bodoni Moda"
+            ],
+            "caption-sm": [
+              "Questrial"
+            ],
+            "label-md": [
+              "Questrial"
+            ],
+            "body-md": [
+              "Questrial"
+            ]
+          },
+          "fontSize": {
+            "title-md": [
+              "20px",
+              {
+                "lineHeight": "28px",
+                "fontWeight": "600"
+              }
+            ],
+            "headline-lg": [
+              "32px",
+              {
+                "lineHeight": "40px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "700"
+              }
+            ],
+            "caption-sm": [
+              "13px",
+              {
+                "lineHeight": "18px",
+                "fontWeight": "500"
+              }
+            ],
+            "label-md": [
+              "14px",
+              {
+                "lineHeight": "20px",
+                "fontWeight": "500"
+              }
+            ],
+            "body-md": [
+              "16px",
+              {
+                "lineHeight": "24px",
+                "fontWeight": "400"
+              }
+            ]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-card-shadow {
+      box-shadow: 0 1px 2px rgba(12, 16, 31, 0.04), 0 8px 24px rgba(12, 16, 31, 0.06);
+    }
+    /* Hide horizontal scrollbar for clean chip row */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-background text-text-primary antialiased selection:bg-accent-tint selection:text-accent-fill flex justify-center min-h-screen">
+<!-- Mobile Frame Container (393px width constraint) -->
+<div class="w-full max-w-[393px] bg-background min-h-screen flex flex-col relative pb-32">
+<!-- TopAppBar (from Shared Components JSON) -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin h-14 bg-surface shadow-sm max-w-[393px] left-1/2 -translate-x-1/2">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-primary text-[22px]" data-icon="local_hospital">local_hospital</span>
+<span class="font-headline-lg text-title-md text-text-primary tracking-tight">Northside Metabolic Health</span>
+</div>
+<button aria-label="Notifications" class="relative p-1.5 rounded-full hover:bg-surface-container-low transition-colors active:scale-95">
+<span class="material-symbols-outlined text-text-secondary text-[22px]" data-icon="notifications">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-accent-fill"></span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 px-margin pt-16 flex flex-col">
+<!-- Subheader with Title, Subtitle, and Doctor Profile Avatar -->
+<section class="mt-4 flex items-center justify-between">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-text-primary">Review</h1>
+<p class="font-body-md text-caption-sm text-text-secondary mt-0.5">Physician-led triage queue</p>
+</div>
+<!-- Profile cluster: Dr. Elena Marsh -->
+<div class="flex items-center space-x-2 bg-surface pl-1 pr-2.5 py-1 rounded-full custom-card-shadow">
+<img alt="Dr. Elena Marsh portrait" class="w-9 h-9 rounded-full object-cover border border-border" src="https://lh3.googleusercontent.com/aida/AEtjO1UlgXEZQBwc0Z55rji0mqG0ZxOQ7LNVNtj-sLfpg7bpD40-2Eh7yI9tSt6F7MrDyRmQMsncLm7RrPr9MZB51vS81xFXOO3nv5wHkS4aaAl1pHMAqBktIiCSn2ysHjq0F0byPDVCKePGFJc2BFVrVd3gigSKGh6NOSqt5swrXlesUilKICeRZiJR27rXt9Tm00wkuuRSlEbHL6dwVhb1oUYprnNPtfYUBCrz2CRIUT0tqyjrd_EycS9YJ-w"/>
+<div class="flex flex-col">
+<span class="bg-accent-tint text-accent-fill font-label-md text-[11px] font-bold px-1.5 py-0.5 rounded-full text-center leading-none">MD</span>
+</div>
+</div>
+</section>
+<!-- Filter Chips Row (Horizontal Scroll) -->
+<section class="mt-4 -mx-margin px-margin flex space-x-2 overflow-x-auto no-scrollbar py-1">
+<!-- 'All (0)' - Selected -->
+<button class="h-8 px-4 rounded-full bg-accent-tint text-accent-fill font-label-md text-label-md flex items-center justify-center shrink-0 transition-transform active:scale-95">
+          All (0)
+        </button>
+<!-- 'Flagged BP 0' - Unselected -->
+<button class="h-8 px-3.5 rounded-full bg-surface border border-border text-text-secondary font-label-md text-label-md flex items-center space-x-1 shrink-0 hover:bg-surface-container-low transition-colors active:scale-95">
+<span>Flagged BP</span>
+<span class="text-text-tertiary">0</span>
+</button>
+<!-- 'Labs 0' - Unselected -->
+<button class="h-8 px-3.5 rounded-full bg-surface border border-border text-text-secondary font-label-md text-label-md flex items-center space-x-1 shrink-0 hover:bg-surface-container-low transition-colors active:scale-95">
+<span>Labs</span>
+<span class="text-text-tertiary">0</span>
+</button>
+<!-- 'Check-ins 0' - Unselected -->
+<button class="h-8 px-3.5 rounded-full bg-surface border border-border text-text-secondary font-label-md text-label-md flex items-center space-x-1 shrink-0 hover:bg-surface-container-low transition-colors active:scale-95">
+<span>Check-ins</span>
+<span class="text-text-tertiary">0</span>
+</button>
+</section>
+<!-- Focal Empty State Card (Center) -->
+<section class="mt-4 bg-surface rounded-[20px] custom-card-shadow p-5 flex flex-col items-center">
+<!-- Focal Center Hero Image -->
+<div class="w-full aspect-[4/3] rounded-[20px] overflow-hidden bg-surface-alt relative">
+<img alt="Tidy physician desk with stethoscope and notebook" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUOABSZISzmN3qZtfw_vRwotGQRZnYx0HdhOhT4vp_4hHnDkFb9uBJjcIL2MkUqK3jYkPYaUHoxBREITJiDo4lDaNEVaH7xwGAqT7QEhscqR_nAiVO6ZSVXthgIUQjxBLldbLYqORY6AhiIxqjEaVDjcrKQHlT3HMNzIg-LlN-zfl0uzRd7OXNdaG0cs15wn3auSk7mtTTLwp3hRow6JVQd--UO3tVlizfO1UXoB7TONoaxwy6dnLdMLfXy9bmnqBW5bKOxglDfVU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-text-primary/10 via-transparent to-transparent pointer-events-none"></div>
+</div>
+<!-- Headline & Subtitle -->
+<h2 class="font-headline-lg text-[26px] leading-8 text-text-primary text-center mt-5 font-bold">
+          All records reviewed
+        </h2>
+<p class="font-body-md text-body-md text-text-secondary text-center mt-2 px-2">
+          New entries from your care team will appear here.
+        </p>
+<!-- Metadata Caption -->
+<div class="flex items-center justify-center space-x-1.5 mt-2 text-text-tertiary font-caption-sm text-caption-sm">
+<span class="material-symbols-outlined text-[16px] text-success" data-icon="check_circle">check_circle</span>
+<span>Last review signed 4:52 PM today</span>
+</div>
+<!-- Action Button (Secondary Pill) -->
+<div class="w-full mt-6">
+<button class="w-full h-[52px] rounded-full bg-surface border-[1.5px] border-accent-fill text-accent-fill font-title-md text-[16px] font-semibold flex items-center justify-center space-x-2 transition-all hover:bg-accent-tint/30 active:scale-[0.98]">
+<span class="material-symbols-outlined text-[20px]" data-icon="history">history</span>
+<span>View recent reviews</span>
+</button>
+</div>
+</section>
+<!-- HIPAA Footer Badge / Info Card -->
+<section class="mt-4 bg-accent-tint/60 rounded-[16px] p-3.5 flex items-start space-x-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5 shrink-0" data-icon="lock">lock</span>
+<p class="font-caption-sm text-[12px] leading-[17px] text-text-secondary">
+<strong class="text-text-primary font-medium">HIPAA-secured clinical queue:</strong> Clinical flags require MD review. Patient data protected by Northside Metabolic Health encrypted protocols.
+        </p>
+</section>
+</main>
+<!-- BottomNavBar (from Shared Components JSON: Active is 'Review') -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-margin py-2 pb-8 bg-surface shadow-sm max-w-[393px] left-1/2 -translate-x-1/2">
+<!-- Tab 1: Today -->
+<a class="flex flex-col items-center justify-center text-text-secondary hover:text-primary transition-colors px-3 py-1 active:scale-95 transition-transform duration-150" href="#today">
+<span class="material-symbols-outlined text-[24px]" data-icon="calendar_today">calendar_today</span>
+<span class="font-caption-sm text-caption-sm text-[11px] mt-0.5">Today</span>
+</a>
+<!-- Tab 2: Patients -->
+<a class="flex flex-col items-center justify-center text-text-secondary hover:text-primary transition-colors px-3 py-1 active:scale-95 transition-transform duration-150" href="#patients">
+<span class="material-symbols-outlined text-[24px]" data-icon="groups">groups</span>
+<span class="font-caption-sm text-caption-sm text-[11px] mt-0.5">Patients</span>
+</a>
+<!-- Tab 3: Review (ACTIVE) -->
+<a class="flex flex-col items-center justify-center bg-accent-tint text-primary rounded-full px-3 py-1 active:scale-95 transition-transform duration-150" href="#review">
+<span class="material-symbols-outlined text-[24px]" data-icon="rate_review" data-weight="fill" style="font-variation-settings: 'FILL' 1;">rate_review</span>
+<span class="font-caption-sm text-caption-sm text-[11px] font-semibold mt-0.5">Review</span>
+</a>
+<!-- Tab 4: Tasks -->
+<a class="flex flex-col items-center justify-center text-text-secondary hover:text-primary transition-colors px-3 py-1 active:scale-95 transition-transform duration-150" href="#tasks">
+<span class="material-symbols-outlined text-[24px]" data-icon="checklist">checklist</span>
+<span class="font-caption-sm text-caption-sm text-[11px] mt-0.5">Tasks</span>
+</a>
+<!-- Tab 5: More -->
+<a class="flex flex-col items-center justify-center text-text-secondary hover:text-primary transition-colors px-3 py-1 active:scale-95 transition-transform duration-150" href="#more">
+<span class="material-symbols-outlined text-[24px]" data-icon="more_horiz">more_horiz</span>
+<span class="font-caption-sm text-caption-sm text-[11px] mt-0.5">More</span>
+</a>
+</nav>
+</div>
+</body></html>

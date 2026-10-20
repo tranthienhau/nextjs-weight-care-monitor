@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Patient Record - Maria Alvarez</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&amp;family=Questrial&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary-container": "#4d6be3",
+            "primary-fixed-dim": "#b9c3ff",
+            "on-tertiary": "#ffffff",
+            "support": "#F7979A",
+            "danger-tint": "#FEE2E2",
+            "error": "#ba1a1a",
+            "on-surface-variant": "#444655",
+            "border": "#E2E6F2",
+            "surface-container": "#eeedf9",
+            "tertiary-fixed-dim": "#ffb695",
+            "tertiary-container": "#c64f00",
+            "on-primary": "#ffffff",
+            "secondary-fixed-dim": "#b8c4ff",
+            "surface-container-low": "#f3f2ff",
+            "secondary-fixed": "#dde1ff",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary-container": "#fffbff",
+            "surface-bright": "#fbf8ff",
+            "outline": "#747687",
+            "on-error": "#ffffff",
+            "warning-tint": "#FEF3C7",
+            "tertiary": "#9e3e00",
+            "surface-container-highest": "#e2e1ee",
+            "primary-fixed": "#dde1ff",
+            "error-container": "#ffdad6",
+            "on-error-container": "#93000a",
+            "on-primary-fixed": "#001257",
+            "accent-tint": "#E9EDFF",
+            "text-tertiary": "#8A90A8",
+            "background": "#F4F6FC",
+            "primary-container": "#4165fe",
+            "on-secondary-fixed": "#001355",
+            "surface-tint": "#224ce7",
+            "text-primary": "#0C101F",
+            "danger": "#DC2626",
+            "on-tertiary-container": "#fffbff",
+            "surface-alt": "#F4F6FC",
+            "on-tertiary-fixed-variant": "#7b2e00",
+            "surface-container-high": "#e8e7f4",
+            "on-primary-fixed-variant": "#0033c1",
+            "on-background": "#1a1b24",
+            "accent-pressed": "#2E52E6",
+            "on-primary-container": "#fffbff",
+            "text-secondary": "#4A5068",
+            "inverse-surface": "#2f3039",
+            "success-tint": "#DCFCE7",
+            "inverse-primary": "#b9c3ff",
+            "inverse-on-surface": "#f0effc",
+            "secondary": "#3050c9",
+            "surface-variant": "#e2e1ee",
+            "surface": "#FFFFFF",
+            "on-surface": "#1a1b24",
+            "on-secondary-fixed-variant": "#1038b3",
+            "outline-variant": "#c4c5d8",
+            "success": "#16A34A",
+            "on-tertiary-fixed": "#351000",
+            "warning": "#D97706",
+            "on-secondary": "#ffffff",
+            "primary": "#1e49e4",
+            "tertiary-fixed": "#ffdbcc",
+            "surface-dim": "#d9d9e5",
+            "accent-fill": "#4165FE"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "20": "20px",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "16px",
+            "space-xs": "4px",
+            "space-md": "12px",
+            "margin": "20px",
+            "space-xl": "24px",
+            "space-sm": "8px",
+            "gutter": "16px",
+            "space-2xl": "32px"
+          },
+          "fontFamily": {
+            "body-md": ["Questrial"],
+            "headline-lg": ["Bodoni Moda"],
+            "caption-sm": ["Questrial"],
+            "title-md": ["Questrial"],
+            "label-md": ["Questrial"]
+          },
+          "fontSize": {
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "caption-sm": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+            "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }]
+          },
+          "boxShadow": {
+            "soft-card": "0 1px 2px rgba(12, 16, 31, 0.04), 0 8px 24px rgba(12, 16, 31, 0.06)",
+            "subtle": "0 2px 10px rgba(12, 16, 31, 0.03)"
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-fill {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    /* Hide scrollbars cleanly for mobile horizontal navigation */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-background text-text-primary antialiased font-body-md selection:bg-accent-tint selection:text-primary min-h-screen pb-36">
+<!-- Mobile Screen Container (Constrained & Centered for clean mobile representation) -->
+<div class="max-w-[430px] mx-auto min-h-screen relative flex flex-col bg-background">
+<!-- Top App Bar (Sticky Navigation) -->
+<header class="sticky top-0 z-40 bg-surface/95 backdrop-blur-md px-margin py-3 flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-3">
+<button aria-label="Go to Patients list" class="w-10 h-10 rounded-full flex items-center justify-center text-text-primary hover:bg-surface-alt transition-colors active:scale-95 duration-150 -ml-2" type="button">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<div>
+<span class="text-caption-sm font-caption-sm text-text-tertiary block leading-none">Northside Metabolic Health</span>
+<h1 class="text-title-md font-title-md text-text-primary leading-tight">Patient Record</h1>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button aria-label="Patient Options" class="w-10 h-10 rounded-full flex items-center justify-center text-text-secondary hover:bg-surface-alt transition-colors active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined text-[22px]">more_vert</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 px-margin pt-4 space-y-4">
+<!-- Patient Header Card -->
+<section class="bg-surface rounded-20 p-5 shadow-soft-card border border-border/50 transition-all">
+<div class="flex items-start gap-4">
+<!-- Real Photo Avatar -->
+<div class="relative shrink-0">
+<img alt="Maria Alvarez" class="w-14 h-14 rounded-full object-cover ring-2 ring-surface shadow-subtle" src="https://lh3.googleusercontent.com/aida/AEtjO1XRofZ9kCSJsXmF5FUTxN-TKEihItxDJ80jUOapDSjhbCKgexDS-CIQepM6uRJeRduKeMAH5edFcKFN9bwybB7WVDQT8X8xP6AF1WB0FBYYf0gkT67nXDM2PfbsaEJuufPcTfsaRyqbITTkt_f5H-0AzmDK4BKUDw7Wo2wXCAIkL1vK5HLGniyGmVEunVQ4s2hJs1mkmxPLndU6zPwSn1MSGv2qkAvcfi8d2yFFKE0Jo2UilnvDveiUdw"/>
+<div class="absolute -bottom-0.5 -right-0.5 w-4 h-4 bg-success border-2 border-surface rounded-full" title="Active Monitoring"></div>
+</div>
+<!-- Patient Identity & Status -->
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-2">
+<h2 class="font-headline-lg text-title-md text-text-primary font-bold tracking-tight truncate">
+                Maria Alvarez
+              </h2>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-caption-sm font-caption-sm bg-success-tint text-success font-semibold shrink-0">
+                Active
+              </span>
+</div>
+<p class="text-caption-sm font-caption-sm text-text-secondary mt-1">
+              NMH-00412 • DOB 03/14/1979 • Week 18
+            </p>
+</div>
+</div>
+<!-- Care Team Metadata Sub-row -->
+<div class="mt-4 pt-3 border-t border-border/60 flex items-center gap-2 text-text-secondary text-caption-sm font-caption-sm">
+<span class="material-symbols-outlined text-[18px] text-primary shrink-0">medical_services</span>
+<span class="truncate">Care team: <strong class="font-medium text-text-primary">Dr. Elena Marsh, MD</strong> • Jordan Lee, MA</span>
+</div>
+</section>
+<!-- Horizontal Segmented Tabs -->
+<nav aria-label="Patient File Tabs" class="flex items-center gap-6 overflow-x-auto no-scrollbar border-b border-border/70 px-1 pt-1">
+<button class="relative py-2.5 text-label-md font-label-md font-medium text-primary shrink-0 transition-colors">
+          Overview
+          <span class="absolute bottom-0 left-0 right-0 h-0.5 bg-accent-fill rounded-full"></span>
+</button>
+<button class="py-2.5 text-label-md font-label-md font-medium text-text-tertiary hover:text-text-primary shrink-0 transition-colors">
+          Body
+        </button>
+<button class="py-2.5 text-label-md font-label-md font-medium text-text-tertiary hover:text-text-primary shrink-0 transition-colors">
+          BP
+        </button>
+<button class="py-2.5 text-label-md font-label-md font-medium text-text-tertiary hover:text-text-primary shrink-0 transition-colors">
+          Labs
+        </button>
+<button class="py-2.5 text-label-md font-label-md font-medium text-text-tertiary hover:text-text-primary shrink-0 transition-colors">
+          Meds
+        </button>
+<button class="py-2.5 text-label-md font-label-md font-medium text-text-tertiary hover:text-text-primary shrink-0 transition-colors">
+          Check-ins
+        </button>
+</nav>
+<!-- Hero Weight Progress Card -->
+<section class="rounded-20 p-5 shadow-soft-card text-on-primary relative overflow-hidden bg-gradient-to-br from-[#6784FE] to-support">
+<!-- Subtle background decorative mesh arc -->
+<div class="absolute -right-10 -bottom-10 w-44 h-44 rounded-full bg-white/10 blur-xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col justify-between">
+<div class="flex items-center justify-between text-white/80">
+<span class="text-caption-sm font-caption-sm font-semibold tracking-wider uppercase text-white/90">
+              Total Weight Loss
+            </span>
+<span class="inline-flex items-center gap-1 text-caption-sm font-caption-sm bg-white/20 backdrop-blur-sm px-2.5 py-0.5 rounded-full text-white">
+<span class="material-symbols-outlined text-[14px]">trending_down</span>
+              -8.4%
+            </span>
+</div>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="text-headline-lg font-headline-lg font-bold text-white tracking-tight">
+              -18.6 lb
+            </span>
+<span class="text-label-md font-label-md text-white/80">
+              since enrollment
+            </span>
+</div>
+<!-- Minimalist Weight Trend Sparkline SVG -->
+<div class="my-3 py-1">
+<svg class="w-full h-12 overflow-visible" fill="none" preserveaspectratio="none" viewbox="0 0 340 50">
+<!-- Grid line reference -->
+<line stroke="rgba(255,255,255,0.2)" stroke-dasharray="3 3" x1="0" x2="340" y1="46" y2="46"></line>
+<!-- Smooth downward trajectory line -->
+<path d="M 0,6 C 45,8 90,14 135,21 C 180,26 225,32 270,39 C 300,43 325,44 340,46" stroke="#ffffff" stroke-linecap="round" stroke-width="2.5"></path>
+<!-- Key Data point dots -->
+<circle cx="0" cy="6" fill="#ffffff" r="3.5"></circle>
+<circle cx="135" cy="21" fill="#ffffff" fill-opacity="0.8" r="3"></circle>
+<circle cx="270" cy="39" fill="#ffffff" fill-opacity="0.8" r="3"></circle>
+<circle class="animate-pulse" cx="340" cy="46" fill="#ffffff" r="4.5"></circle>
+</svg>
+</div>
+<div class="pt-2 border-t border-white/20 flex items-center justify-between text-caption-sm font-caption-sm text-white/90">
+<span>Start 222.0 lb (Jun 18)</span>
+<span>•</span>
+<span>Now 203.4 lb (Oct 15)</span>
+</div>
+</div>
+</section>
+<!-- 2x2 Grid of Vital / Clinical Metric Cards -->
+<section class="grid grid-cols-2 gap-3">
+<!-- Card 1: Body Fat -->
+<div class="bg-surface rounded-20 p-4 shadow-soft-card border border-border/50 flex flex-col justify-between min-h-[142px]">
+<div>
+<div class="flex items-center justify-between gap-1 mb-2">
+<span class="text-caption-sm font-caption-sm text-text-secondary">Body fat</span>
+<span class="px-2 py-0.5 rounded-full text-[11px] font-medium bg-accent-tint text-primary shrink-0">
+                Estimate
+              </span>
+</div>
+<div class="text-title-md font-title-md font-bold text-text-primary tracking-tight">
+              38.2%
+            </div>
+<div class="text-[12px] text-success flex items-center gap-0.5 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">arrow_downward</span>
+              -2.1% from baseline
+            </div>
+</div>
+<div class="mt-3 pt-2.5 border-t border-border/60">
+<span class="inline-block border border-border rounded px-1.5 py-0.5 text-[10px] text-text-tertiary leading-tight truncate max-w-full">
+              Hume Body Pod • J. Lee, MA
+            </span>
+</div>
+</div>
+<!-- Card 2: Blood Pressure -->
+<div class="bg-surface rounded-20 p-4 shadow-soft-card border border-border/50 flex flex-col justify-between min-h-[142px]">
+<div>
+<div class="flex items-center justify-between gap-1 mb-2">
+<span class="text-caption-sm font-caption-sm text-text-secondary">Blood pressure</span>
+<span class="px-2 py-0.5 rounded-full text-[11px] font-medium bg-warning-tint text-warning shrink-0">
+                Unreviewed
+              </span>
+</div>
+<div class="text-title-md font-title-md font-bold text-text-primary tracking-tight">
+              128/82 <span class="text-caption-sm font-normal text-text-secondary">mmHg</span>
+</div>
+<div class="text-caption-sm font-caption-sm text-text-secondary mt-0.5">Oct 15, 9:12 AM</div>
+</div>
+<div class="mt-3 pt-2.5 border-t border-border/60">
+<span class="inline-block border border-border rounded px-1.5 py-0.5 text-[10px] text-text-tertiary leading-tight truncate max-w-full">
+              Clinic cuff • J. Lee, MA
+            </span>
+</div>
+</div>
+<!-- Card 3: HbA1c -->
+<div class="bg-surface rounded-20 p-4 shadow-soft-card border border-border/50 flex flex-col justify-between min-h-[142px]">
+<div>
+<div class="flex items-center justify-between gap-1 mb-2">
+<span class="text-caption-sm font-caption-sm text-text-secondary">HbA1c</span>
+<span class="px-2 py-0.5 rounded-full text-[11px] font-medium bg-success-tint text-success shrink-0">
+                Reviewed • Oct 10
+              </span>
+</div>
+<div class="text-title-md font-title-md font-bold text-text-primary tracking-tight">
+              5.9%
+            </div>
+<div class="text-caption-sm font-caption-sm text-text-secondary mt-0.5">Lab ref 4.0 - 5.6 %</div>
+</div>
+<div class="mt-3 pt-2.5 border-t border-border/60">
+<span class="inline-block border border-border rounded px-1.5 py-0.5 text-[10px] text-text-tertiary leading-tight truncate max-w-full">
+              Quest Diagnostics • P. Nair, MA
+            </span>
+</div>
+</div>
+<!-- Card 4: Medication -->
+<div class="bg-surface rounded-20 p-4 shadow-soft-card border border-border/50 flex flex-col justify-between min-h-[142px]">
+<div>
+<div class="flex items-center justify-between gap-1 mb-1">
+<span class="text-caption-sm font-caption-sm text-text-secondary">Medication</span>
+<span class="px-2 py-0.5 rounded-full text-[11px] font-medium bg-surface-alt text-text-secondary border border-border shrink-0">
+                Active Rx
+              </span>
+</div>
+<div class="text-label-md font-title-md font-bold text-text-primary leading-tight mt-1">
+              Semaglutide
+            </div>
+<div class="text-caption-sm text-primary font-medium">
+              1.0 mg weekly
+            </div>
+<div class="text-[11px] text-text-secondary mt-0.5">
+              Subcutaneous
+            </div>
+</div>
+<div class="mt-3 pt-2.5 border-t border-border/60">
+<span class="inline-block border border-border rounded px-1.5 py-0.5 text-[10px] text-text-tertiary leading-tight truncate max-w-full">
+              Prescribed by Dr. Marsh
+            </span>
+</div>
+</div>
+</section>
+<!-- Review Status Banner Row -->
+<section class="bg-surface rounded-20 p-4 shadow-soft-card border border-border/50 flex items-center justify-between gap-3">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-full bg-accent-tint text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">assignment_turned_in</span>
+</div>
+<div class="min-w-0">
+<p class="text-caption-sm font-caption-sm text-text-secondary">
+              Last clinician review: <span class="font-medium text-text-primary">Oct 1 by Dr. Marsh</span>
+</p>
+<p class="text-[12px] text-text-tertiary truncate">
+              Stable trajectory, tolerance confirmed at 1.0 mg dose.
+            </p>
+</div>
+</div>
+<span class="material-symbols-outlined text-text-tertiary text-[20px] shrink-0">chevron_right</span>
+</section>
+<!-- Sticky CTA Button Section -->
+<section class="pt-2 pb-3">
+<button class="w-full h-[52px] rounded-full bg-accent-fill text-white font-label-md text-body-md font-semibold flex items-center justify-center gap-2 shadow-sm hover:bg-accent-pressed active:scale-[0.98] transition-all duration-150" type="button">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+<span>Mark ready for MD review</span>
+</button>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Docked full-width bottom, 5 items, exact JSON adherence) -->
+<nav aria-label="Staff Global Navigation" class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-margin py-2 pb-8 bg-surface shadow-sm">
+<!-- Tab 1: Today -->
+<button class="flex flex-col items-center justify-center text-text-secondary px-3 py-1 hover:text-primary transition-colors active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined text-[24px]">calendar_today</span>
+<span class="text-caption-sm font-caption-sm mt-0.5">Today</span>
+</button>
+<!-- Tab 2: Patients (ACTIVE) -->
+<button class="flex flex-col items-center justify-center bg-accent-tint text-primary rounded-full px-4 py-1 active:scale-95 transition-transform duration-150" type="button">
+<span class="material-symbols-outlined text-[24px] material-symbols-fill">groups</span>
+<span class="text-caption-sm font-caption-sm font-medium mt-0.5">Patients</span>
+</button>
+<!-- Tab 3: Review -->
+<button class="flex flex-col items-center justify-center text-text-secondary px-3 py-1 hover:text-primary transition-colors active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined text-[24px]">rate_review</span>
+<span class="text-caption-sm font-caption-sm mt-0.5">Review</span>
+</button>
+<!-- Tab 4: Tasks -->
+<button class="flex flex-col items-center justify-center text-text-secondary px-3 py-1 hover:text-primary transition-colors active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined text-[24px]">checklist</span>
+<span class="text-caption-sm font-caption-sm mt-0.5">Tasks</span>
+</button>
+<!-- Tab 5: More -->
+<button class="flex flex-col items-center justify-center text-text-secondary px-3 py-1 hover:text-primary transition-colors active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined text-[24px]">more_horiz</span>
+<span class="text-caption-sm font-caption-sm mt-0.5">More</span>
+</button>
+</nav>
+</div>
+</body></html>

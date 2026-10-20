@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>New Measurement - Maria Alvarez | Steadfast</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..800;1,6..96,400..800&amp;family=Questrial&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface": "#FFFFFF",
+            "on-secondary-container": "#fffbff",
+            "background": "#F4F6FC",
+            "on-primary-fixed-variant": "#0033c1",
+            "surface-container-low": "#f3f2ff",
+            "surface-dim": "#d9d9e5",
+            "on-secondary-fixed-variant": "#1038b3",
+            "surface-variant": "#e2e1ee",
+            "on-tertiary-fixed-variant": "#7b2e00",
+            "text-primary": "#0C101F",
+            "surface-container-highest": "#e2e1ee",
+            "on-primary-container": "#fffbff",
+            "inverse-primary": "#b9c3ff",
+            "danger-tint": "#FEE2E2",
+            "on-error-container": "#93000a",
+            "on-primary": "#ffffff",
+            "success": "#16A34A",
+            "surface-tint": "#224ce7",
+            "error-container": "#ffdad6",
+            "success-tint": "#DCFCE7",
+            "tertiary": "#9e3e00",
+            "on-tertiary-fixed": "#351000",
+            "surface-alt": "#F4F6FC",
+            "primary-fixed-dim": "#b9c3ff",
+            "on-surface": "#1a1b24",
+            "danger": "#DC2626",
+            "warning-tint": "#FEF3C7",
+            "on-error": "#ffffff",
+            "primary-fixed": "#dde1ff",
+            "accent-tint": "#E9EDFF",
+            "border": "#E2E6F2",
+            "on-surface-variant": "#444655",
+            "secondary-container": "#4d6be3",
+            "inverse-surface": "#2f3039",
+            "surface-container-lowest": "#ffffff",
+            "on-background": "#1a1b24",
+            "error": "#ba1a1a",
+            "surface-bright": "#fbf8ff",
+            "support": "#F7979A",
+            "tertiary-fixed": "#ffdbcc",
+            "outline-variant": "#c4c5d8",
+            "on-secondary": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "secondary-fixed-dim": "#b8c4ff",
+            "on-tertiary-container": "#fffbff",
+            "surface-container": "#eeedf9",
+            "inverse-on-surface": "#f0effc",
+            "accent-fill": "#4165FE",
+            "tertiary-fixed-dim": "#ffb695",
+            "surface-container-high": "#e8e7f4",
+            "secondary-fixed": "#dde1ff",
+            "secondary": "#3050c9",
+            "accent-pressed": "#2E52E6",
+            "primary": "#1e49e4",
+            "tertiary-container": "#c64f00",
+            "outline": "#747687",
+            "primary-container": "#4165fe",
+            "on-primary-fixed": "#001257",
+            "text-secondary": "#4A5068",
+            "on-secondary-fixed": "#001355",
+            "text-tertiary": "#8A90A8",
+            "warning": "#D97706"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "20": "20px",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xl": "24px",
+            "space-md": "12px",
+            "gutter": "16px",
+            "margin": "20px",
+            "space-xs": "4px",
+            "space-lg": "16px",
+            "space-2xl": "32px",
+            "space-sm": "8px"
+          },
+          "fontFamily": {
+            "caption-sm": ["Questrial", "sans-serif"],
+            "title-md": ["Questrial", "sans-serif"],
+            "label-md": ["Questrial", "sans-serif"],
+            "headline-lg": ["Bodoni Moda", "serif"],
+            "body-md": ["Questrial", "sans-serif"]
+          },
+          "fontSize": {
+            "caption-sm": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+            "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+          },
+          "boxShadow": {
+            "soft-card": "0 1px 2px rgba(12,16,31,.04), 0 8px 24px rgba(12,16,31,.06)",
+            "elevated-sheet": "0 -4px 20px rgba(12,16,31,.05)"
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined.fill-1 {
+      font-variation-settings: 'FILL' 1;
+    }
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  </style>
+</head>
+<body class="bg-background text-text-primary antialiased font-body-md flex justify-center min-h-screen">
+<!-- Mobile Frame Container (Max 393px width constraint) -->
+<main class="w-full max-w-[393px] bg-background min-h-screen flex flex-col relative pb-36">
+<!-- Modal Drag Handle & Ambient Cap -->
+<header class="sticky top-0 z-40 bg-surface shadow-sm">
+<!-- Status bar height reservation + Sheet Drag Pill -->
+<div class="pt-3 pb-1 flex justify-center">
+<div class="w-10 h-1 bg-border rounded-full"></div>
+</div>
+<!-- Modal Top Bar -->
+<div class="h-14 px-margin flex items-center justify-between">
+<button aria-label="Close" class="w-9 h-9 rounded-full flex items-center justify-center text-text-secondary hover:bg-surface-alt active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[22px]">close</span>
+</button>
+<div class="text-center flex-1 px-2">
+<h1 class="font-headline-lg text-title-md text-text-primary tracking-tight leading-none">New measurement</h1>
+<p class="font-caption-sm text-caption-sm text-text-secondary mt-0.5">Maria Alvarez • NMH-00412</p>
+</div>
+<!-- Right action placeholder for balanced top bar -->
+<div class="w-9 h-9 flex items-center justify-center">
+<span class="w-2 h-2 rounded-full bg-success"></span>
+</div>
+</div>
+</header>
+<!-- Modal Scrollable Content Canvas -->
+<div class="px-margin pt-4 space-y-4">
+<!-- 1. Patient Quick Chip / Info Row -->
+<section class="bg-surface rounded-20 p-3.5 shadow-soft-card flex items-center justify-between border border-border/60">
+<div class="flex items-center space-x-3">
+<img alt="Maria Alvarez" class="w-11 h-11 rounded-full object-cover ring-2 ring-accent-tint" src="https://lh3.googleusercontent.com/aida/AEtjO1XRofZ9kCSJsXmF5FUTxN-TKEihItxDJ80jUOapDSjhbCKgexDS-CIQepM6uRJeRduKeMAH5edFcKFN9bwybB7WVDQT8X8xP6AF1WB0FBYYf0gkT67nXDM2PfbsaEJuufPcTfsaRyqbITTkt_f5H-0AzmDK4BKUDw7Wo2wXCAIkL1vK5HLGniyGmVEunVQ4s2hJs1mkmxPLndU6zPwSn1MSGv2qkAvcfi8d2yFFKE0Jo2UilnvDveiUdw"/>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-title-md text-[15px] font-semibold text-text-primary">Maria Alvarez</span>
+<span class="w-1.5 h-1.5 rounded-full bg-text-tertiary/40"></span>
+<span class="font-caption-sm text-caption-sm text-text-secondary">46y</span>
+</div>
+<p class="font-caption-sm text-[12px] text-text-tertiary">ID NMH-00412</p>
+</div>
+</div>
+<div class="text-right">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full bg-accent-tint text-primary font-caption-sm text-[12px] font-medium">
+            Week 18
+          </span>
+<p class="font-caption-sm text-[11px] text-text-tertiary mt-1">GLP-1 1.0mg</p>
+</div>
+</section>
+<!-- 2. Date & Time Input Field -->
+<section class="space-y-1.5">
+<label class="block font-label-md text-label-md text-text-secondary px-0.5" for="measurement-datetime">Date and time</label>
+<div class="relative bg-surface rounded-xl border border-border shadow-sm flex items-center px-3.5 py-3 transition focus-within:ring-2 focus-within:ring-[#6784FE] focus-within:border-accent-fill">
+<span class="material-symbols-outlined text-primary text-[20px] mr-2.5">schedule</span>
+<input class="w-full bg-transparent p-0 border-0 font-body-md text-body-md text-text-primary focus:ring-0 cursor-default" id="measurement-datetime" readonly="" type="text" value="Oct 22, 2026 • 9:34 AM"/>
+<span class="material-symbols-outlined text-text-tertiary text-[18px]">calendar_today</span>
+</div>
+</section>
+<!-- 3. Measurement Source Selector Card -->
+<section class="bg-surface rounded-20 p-4 shadow-soft-card border border-border/60">
+<div class="flex items-center justify-between mb-3">
+<h2 class="font-label-md text-label-md font-semibold text-text-primary">Measurement source</h2>
+<span class="font-caption-sm text-[11px] text-text-tertiary tracking-wide uppercase font-semibold">Measured on</span>
+</div>
+<div class="space-y-2.5">
+<!-- Option A (Selected): Hume Body Pod -->
+<label class="flex items-center justify-between p-3 rounded-xl bg-accent-tint/70 border-[1.5px] border-accent-fill cursor-pointer transition">
+<div class="flex items-center gap-3">
+<div class="w-5 h-5 rounded-full border-2 border-accent-fill flex items-center justify-center bg-surface">
+<div class="w-2.5 h-2.5 rounded-full bg-accent-fill"></div>
+</div>
+<div>
+<p class="font-label-md text-[14px] font-semibold text-text-primary">Hume Body Pod</p>
+<p class="font-caption-sm text-[12px] text-text-secondary">Clinic Room 2 • BIA Verified</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full text-[11px] font-caption-sm bg-surface text-primary border border-primary/20 font-medium">
+              Pod B
+            </span>
+</label>
+<!-- Option B: Clinic scale -->
+<label class="flex items-center justify-between p-3 rounded-xl bg-surface border border-border cursor-pointer hover:bg-surface-alt/50 transition">
+<div class="flex items-center gap-3">
+<div class="w-5 h-5 rounded-full border border-outline-variant flex items-center justify-center bg-surface"></div>
+<div>
+<p class="font-label-md text-[14px] font-medium text-text-primary">Clinic scale</p>
+<p class="font-caption-sm text-[12px] text-text-tertiary">Seca 703 Medical Grade</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-text-tertiary text-[18px]">balance</span>
+</label>
+<!-- Option C: Patient home scale -->
+<label class="flex items-center justify-between p-3 rounded-xl bg-surface border border-border cursor-pointer hover:bg-surface-alt/50 transition">
+<div class="flex items-center gap-3">
+<div class="w-5 h-5 rounded-full border border-outline-variant flex items-center justify-center bg-surface"></div>
+<div>
+<p class="font-label-md text-[14px] font-medium text-text-primary">Patient home scale</p>
+<p class="font-caption-sm text-[12px] text-text-tertiary">Reported by patient</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-text-tertiary text-[18px]">home</span>
+</label>
+</div>
+</section>
+<!-- 4. Focal Weight Entry Card (Hero Numeral) -->
+<section class="bg-surface rounded-20 p-5 shadow-soft-card border border-border/60 relative overflow-hidden">
+<!-- Top Row: Label & Unit Toggle -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md font-bold tracking-wider text-text-secondary uppercase">Weight</span>
+<span class="w-1.5 h-1.5 rounded-full bg-accent-fill"></span>
+</div>
+<!-- Segmented Toggle [ lb | kg ] -->
+<div class="bg-surface-alt p-0.5 rounded-full flex items-center border border-border/80">
+<button class="px-3.5 py-1 rounded-full text-[13px] font-caption-sm font-semibold bg-accent-fill text-surface shadow-xs" type="button">
+              lb
+            </button>
+<button class="px-3.5 py-1 rounded-full text-[13px] font-caption-sm font-medium text-text-secondary hover:text-text-primary transition" type="button">
+              kg
+            </button>
+</div>
+</div>
+<!-- Big Hero Numeral Input Display -->
+<div class="mt-4 mb-2 flex items-baseline justify-center">
+<input aria-label="Patient Weight in pounds" class="w-44 text-center font-title-md text-[44px] leading-none font-bold text-text-primary bg-transparent border-0 p-0 focus:ring-0 tracking-tight" inputmode="decimal" type="text" value="202.8"/>
+<span class="font-title-md text-[22px] font-medium text-text-tertiary ml-1.5">lb</span>
+</div>
+<!-- Delta Helper Badge -->
+<div class="flex justify-center">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-success-tint text-success font-caption-sm text-caption-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">trending_down</span>
+<span>Change from last visit: -0.6 lb</span>
+</div>
+</div>
+</section>
+<!-- 5. Body Composition Values -->
+<section class="bg-surface rounded-20 p-4 shadow-soft-card border border-border/60 space-y-3.5">
+<div class="flex items-center justify-between border-b border-border/60 pb-2.5">
+<h2 class="font-label-md text-label-md font-semibold text-text-primary">Body composition</h2>
+<span class="font-caption-sm text-[11px] text-text-tertiary">Multi-frequency BIA</span>
+</div>
+<!-- Grid of metrics -->
+<div class="space-y-3">
+<!-- a) Body fat -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<label class="font-label-md text-label-md font-medium text-text-primary" for="body-fat-input">Body fat</label>
+<span class="px-2 py-0.5 rounded-full text-[11px] font-caption-sm bg-accent-tint text-accent-fill font-medium">Estimate</span>
+</div>
+<div class="w-32 relative flex items-center">
+<input class="w-full h-10 bg-surface rounded-xl border border-border text-right pr-9 pl-3 font-title-md text-[15px] font-semibold text-text-primary focus:border-accent-fill focus:ring-2 focus:ring-[#6784FE]/30" id="body-fat-input" type="text" value="38.0"/>
+<span class="absolute right-3 font-caption-sm text-[13px] text-text-tertiary pointer-events-none">%</span>
+</div>
+</div>
+<!-- b) Muscle mass -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<label class="font-label-md text-label-md font-medium text-text-primary" for="muscle-mass-input">Muscle mass</label>
+<span class="px-2 py-0.5 rounded-full text-[11px] font-caption-sm bg-accent-tint text-accent-fill font-medium">Estimate</span>
+</div>
+<div class="w-32 relative flex items-center">
+<input class="w-full h-10 bg-surface rounded-xl border border-border text-right pr-9 pl-3 font-title-md text-[15px] font-semibold text-text-primary focus:border-accent-fill focus:ring-2 focus:ring-[#6784FE]/30" id="muscle-mass-input" type="text" value="71.4"/>
+<span class="absolute right-3 font-caption-sm text-[13px] text-text-tertiary pointer-events-none">lb</span>
+</div>
+</div>
+<!-- c) Fat-free mass -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<label class="font-label-md text-label-md font-medium text-text-primary" for="fat-free-input">Fat-free mass</label>
+<span class="px-2 py-0.5 rounded-full text-[11px] font-caption-sm bg-accent-tint text-accent-fill font-medium">Estimate</span>
+</div>
+<div class="w-32 relative flex items-center">
+<input class="w-full h-10 bg-surface rounded-xl border border-border text-right pr-9 pl-3 font-title-md text-[15px] font-semibold text-text-primary focus:border-accent-fill focus:ring-2 focus:ring-[#6784FE]/30" id="fat-free-input" type="text" value="125.7"/>
+<span class="absolute right-3 font-caption-sm text-[13px] text-text-tertiary pointer-events-none">lb</span>
+</div>
+</div>
+<!-- d) Visceral fat (Not Measured state) -->
+<div class="pt-2 border-t border-border/50 flex items-center justify-between">
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-medium text-text-secondary">Visceral fat</span>
+<span class="px-1.5 py-0.2 rounded text-[10px] font-caption-sm bg-surface-alt text-text-tertiary">Rating</span>
+</div>
+<!-- Toggle switch row -->
+<div class="flex items-center gap-1.5 mt-1">
+<div class="w-7 h-4 bg-accent-fill rounded-full p-0.5 flex items-center justify-end cursor-pointer">
+<div class="w-3 h-3 bg-white rounded-full"></div>
+</div>
+<span class="font-caption-sm text-[11px] text-text-secondary font-medium">Not measured</span>
+</div>
+</div>
+<!-- Disabled Greyed-out Input -->
+<div class="w-32">
+<div class="h-10 bg-surface-alt rounded-xl border border-dashed border-border flex items-center justify-center px-2 select-none">
+<span class="font-caption-sm text-[12px] text-text-tertiary font-medium">Not measured</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. Clinical Notes -->
+<section class="space-y-1.5">
+<div class="flex justify-between items-center px-0.5">
+<label class="block font-label-md text-label-md text-text-secondary" for="clinical-notes">Clinical notes</label>
+<span class="font-caption-sm text-[11px] text-text-tertiary">Optional</span>
+</div>
+<div class="relative bg-surface rounded-xl border border-border shadow-sm p-3 focus-within:ring-2 focus-within:ring-[#6784FE] focus-within:border-accent-fill">
+<textarea class="w-full bg-transparent p-0 border-0 font-body-md text-caption-sm text-text-primary placeholder:text-text-tertiary focus:ring-0 resize-none leading-relaxed" id="clinical-notes" rows="3">Shoes off, morning visit. Patient reports good adherence and zero GI symptoms on current dose.</textarea>
+</div>
+</section>
+<!-- 7. Entry Metadata & Attribution -->
+<section class="bg-surface-alt rounded-xl p-3 border border-border/70 flex items-center space-x-3">
+<img alt="Jordan Lee, Medical Assistant" class="w-9 h-9 rounded-full object-cover border border-white shadow-xs" src="https://lh3.googleusercontent.com/aida/AEtjO1VHHU4OkHxad0IiZ9yNuJznSS0iPf3GweqGCqtI1ruz5QOt2cLuX22lnzeL9g02hkOpZGYSh1z3sqwwQ5c-HPvHfkzFPThDI_SzAROfBN9I_F0g2xt-TJoCV9BWROYdp2CQES3iNaW-uQLrFv1X40C_0kqwy7bxJNLhICT4nMXC5WJsn1eCu-AQqFEcmn960IMQtMaPnQ4_ssJXNHaJg76rGcOgzSNVE7VZPb3C6XBp0A-60vxxp4st5o4"/>
+<div class="flex-1 min-w-0">
+<p class="font-label-md text-[13px] font-semibold text-text-primary truncate">Jordan Lee, MA</p>
+<p class="font-caption-sm text-[11px] text-text-secondary truncate">Northside Metabolic Pod B • Station 2</p>
+</div>
+<span class="material-symbols-outlined text-text-tertiary text-[18px]">verified_user</span>
+</section>
+</div>
+<!-- 8. Bottom Action Bar (Fixed modal sheet footer, strictly NO tab bar) -->
+<footer class="fixed bottom-0 left-0 right-0 max-w-[393px] mx-auto bg-surface/95 backdrop-blur-md border-t border-border px-margin py-3.5 z-50 shadow-elevated-sheet">
+<!-- Primary Save Button -->
+<button class="w-full h-[52px] rounded-full bg-accent-fill hover:bg-accent-pressed active:scale-[0.98] transition-all flex items-center justify-center space-x-2 text-surface font-title-md text-body-md font-semibold shadow-sm" type="button">
+<span>Save measurement</span>
+<span class="material-symbols-outlined text-[20px]">check</span>
+</button>
+<!-- HIPAA Security Microcopy -->
+<div class="flex items-center justify-center gap-1.5 mt-2.5">
+<span class="material-symbols-outlined text-[13px] text-text-tertiary">lock</span>
+<p class="font-caption-sm text-[11px] text-text-tertiary tracking-tight">HIPAA-secured • audit logged</p>
+</div>
+<!-- Safe Area Inset / Home Indicator Spacer -->
+<div class="h-2"></div>
+</footer>
+</main>
+</body></html>

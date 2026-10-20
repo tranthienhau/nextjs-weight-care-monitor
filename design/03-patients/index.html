@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-[#F4F6FC]" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Patients | Northside Metabolic Health</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&amp;family=Questrial&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN with configuration -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "accent-pressed": "#2E52E6",
+            "danger-tint": "#FEE2E2",
+            "error": "#ba1a1a",
+            "primary-container": "#4165fe",
+            "background": "#F4F6FC",
+            "surface-dim": "#d9d9e5",
+            "tertiary": "#9e3e00",
+            "on-tertiary-fixed-variant": "#7b2e00",
+            "inverse-primary": "#b9c3ff",
+            "on-error": "#ffffff",
+            "secondary-fixed-dim": "#b8c4ff",
+            "surface-container-high": "#e8e7f4",
+            "surface-bright": "#fbf8ff",
+            "on-surface-variant": "#444655",
+            "tertiary-container": "#c64f00",
+            "on-primary-fixed-variant": "#0033c1",
+            "secondary-container": "#4d6be3",
+            "tertiary-fixed-dim": "#ffb695",
+            "outline-variant": "#c4c5d8",
+            "surface": "#FFFFFF",
+            "primary-fixed-dim": "#b9c3ff",
+            "inverse-on-surface": "#f0effc",
+            "surface-variant": "#e2e1ee",
+            "primary-fixed": "#dde1ff",
+            "success": "#16A34A",
+            "accent-fill": "#4165FE",
+            "on-primary-fixed": "#001257",
+            "surface-container-low": "#f3f2ff",
+            "surface-container": "#eeedf9",
+            "on-secondary": "#ffffff",
+            "surface-container-lowest": "#ffffff",
+            "secondary-fixed": "#dde1ff",
+            "border": "#E2E6F2",
+            "success-tint": "#DCFCE7",
+            "on-background": "#1a1b24",
+            "on-secondary-fixed": "#001355",
+            "on-primary": "#ffffff",
+            "surface-tint": "#224ce7",
+            "on-tertiary-fixed": "#351000",
+            "on-error-container": "#93000a",
+            "on-primary-container": "#fffbff",
+            "outline": "#747687",
+            "tertiary-fixed": "#ffdbcc",
+            "accent-tint": "#E9EDFF",
+            "warning-tint": "#FEF3C7",
+            "text-primary": "#0C101F",
+            "on-tertiary": "#ffffff",
+            "surface-container-highest": "#e2e1ee",
+            "on-tertiary-container": "#fffbff",
+            "support": "#F7979A",
+            "text-secondary": "#4A5068",
+            "surface-alt": "#F4F6FC",
+            "primary": "#1e49e4",
+            "inverse-surface": "#2f3039",
+            "text-tertiary": "#8A90A8",
+            "on-secondary-container": "#fffbff",
+            "danger": "#DC2626",
+            "secondary": "#3050c9",
+            "on-secondary-fixed-variant": "#1038b3",
+            "warning": "#D97706",
+            "on-surface": "#1a1b24",
+            "error-container": "#ffdad6"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1.25rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xl": "24px",
+            "space-lg": "16px",
+            "gutter": "16px",
+            "space-sm": "8px",
+            "space-xs": "4px",
+            "space-md": "12px",
+            "space-2xl": "32px",
+            "margin": "20px"
+          },
+          "fontFamily": {
+            "caption-sm": ["Questrial"],
+            "headline-lg": ["Bodoni Moda"],
+            "title-md": ["Questrial"],
+            "label-md": ["Questrial"],
+            "body-md": ["Questrial"]
+          },
+          "fontSize": {
+            "caption-sm": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+          },
+          "boxShadow": {
+            "ambient": "0 1px 2px rgba(12,16,31,.04), 0 8px 24px rgba(12,16,31,.06)",
+            "float": "0 4px 16px rgba(65, 101, 254, 0.15), 0 2px 6px rgba(12, 16, 31, 0.06)"
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    /* Custom subtle touch-action & smooth scroll */
+    html, body {
+      font-family: 'Questrial', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background-color: #F4F6FC;
+    }
+    .font-bodoni {
+      font-family: 'Bodoni Moda', serif;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-background text-text-primary min-h-screen flex justify-center items-start antialiased selection:bg-accent-tint selection:text-accent-fill">
+<!-- Mobile Frame Container (393px width constraint) -->
+<div class="relative w-full max-w-[393px] min-h-[852px] bg-background flex flex-col overflow-hidden pb-28">
+<!-- iOS Status Bar Placeholder Simulation (50px) -->
+<div class="w-full h-11 pt-3 px-6 flex justify-between items-center z-40 text-text-primary text-[14px] font-semibold tracking-tight">
+<span>9:41</span>
+<div class="flex items-center gap-1.5 text-text-primary">
+<span class="material-symbols-outlined text-[17px] leading-none">signal_cellular_4_bar</span>
+<span class="material-symbols-outlined text-[17px] leading-none">wifi</span>
+<span class="material-symbols-outlined text-[20px] leading-none">battery_full</span>
+</div>
+</div>
+<!-- Top App Navigation / Clinic Context Header -->
+<header class="w-full px-5 pt-1 pb-3 flex justify-between items-center bg-transparent">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">local_hospital</span>
+<span class="font-title-md text-caption-sm text-text-secondary tracking-wide uppercase font-semibold">Northside Metabolic</span>
+</div>
+<div class="flex items-center gap-3">
+<button aria-label="Notifications" class="w-8 h-8 rounded-full flex items-center justify-center text-text-secondary hover:text-text-primary hover:bg-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[21px]">notifications</span>
+</button>
+</div>
+</header>
+<!-- Main Screen Title & Staff Profile Badge -->
+<section class="px-5 pt-2 pb-3 flex items-center justify-between">
+<div>
+<h1 class="font-bodoni text-[32px] leading-[38px] font-bold text-text-primary tracking-tight">Patients</h1>
+</div>
+<div class="flex items-center gap-2 bg-surface pl-1.5 pr-2.5 py-1 rounded-full border border-border shadow-sm">
+<img alt="Jordan Lee avatar" class="w-7 h-7 rounded-full object-cover ring-1 ring-border" src="https://lh3.googleusercontent.com/aida/AEtjO1VHHU4OkHxad0IiZ9yNuJznSS0iPf3GweqGCqtI1ruz5QOt2cLuX22lnzeL9g02hkOpZGYSh1z3sqwwQ5c-HPvHfkzFPThDI_SzAROfBN9I_F0g2xt-TJoCV9BWROYdp2CQES3iNaW-uQLrFv1X40C_0kqwy7bxJNLhICT4nMXC5WJsn1eCu-AQqFEcmn960IMQtMaPnQ4_ssJXNHaJg76rGcOgzSNVE7VZPb3C6XBp0A-60vxxp4st5o4"/>
+<span class="font-caption-sm text-[11px] font-bold text-primary bg-accent-tint px-1.5 py-0.5 rounded-full leading-none">MA</span>
+<span class="font-caption-sm text-caption-sm text-text-secondary hidden sm:inline">Jordan L.</span>
+</div>
+</section>
+<!-- Search Input & Enrolled Counter -->
+<section class="px-5 pt-1 pb-3">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-4 text-text-tertiary text-[20px] pointer-events-none">search</span>
+<input class="w-full h-[48px] pl-11 pr-4 bg-surface rounded-2xl border border-border text-text-primary placeholder:text-text-tertiary font-body-md text-label-md focus:outline-none focus:ring-2 focus:ring-accent-fill focus:border-transparent transition-all shadow-ambient" placeholder="Search name or patient ID" type="search"/>
+</div>
+<div class="mt-2.5 px-1 flex items-center justify-between">
+<p class="font-caption-sm text-caption-sm text-text-secondary font-medium">142 enrolled</p>
+<span class="font-caption-sm text-[12px] text-text-tertiary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">swap_vert</span>
+          Sort: Recent activity
+        </span>
+</div>
+</section>
+<!-- Filter Chips Horizontal Scroll -->
+<section class="w-full pb-3">
+<div class="flex items-center gap-2 px-5 overflow-x-auto no-scrollbar py-0.5">
+<!-- Active Filter (Selected) -->
+<button class="shrink-0 h-8 px-4 rounded-full bg-accent-tint text-accent-fill text-label-md font-medium flex items-center justify-center transition-all hover:brightness-95" type="button">
+          Active
+        </button>
+<!-- Inactive Filter -->
+<button class="shrink-0 h-8 px-4 rounded-full bg-surface border border-border text-text-secondary text-label-md font-medium flex items-center justify-center transition-all hover:bg-surface-container-low" type="button">
+          Inactive
+        </button>
+<!-- Discharged Filter -->
+<button class="shrink-0 h-8 px-4 rounded-full bg-surface border border-border text-text-secondary text-label-md font-medium flex items-center justify-center transition-all hover:bg-surface-container-low" type="button">
+          Discharged
+        </button>
+<!-- Due check-in Filter -->
+<button class="shrink-0 h-8 px-4 rounded-full bg-surface border border-border text-text-secondary text-label-md font-medium flex items-center justify-center transition-all hover:bg-surface-container-low" type="button">
+          Due check-in
+        </button>
+</div>
+</section>
+<!-- Patient List Content (8 Specified Cards) -->
+<main class="px-5 space-y-3">
+<!-- Patient 1: Maria Alvarez -->
+<article class="bg-surface rounded-2xl p-3.5 shadow-ambient border border-border/60 hover:border-accent-fill/40 transition-all flex items-center justify-between gap-3">
+<div class="flex items-center gap-3 min-w-0">
+<img alt="Maria Alvarez portrait" class="w-12 h-12 rounded-full object-cover shrink-0 ring-1 ring-border" src="https://lh3.googleusercontent.com/aida/AEtjO1XRofZ9kCSJsXmF5FUTxN-TKEihItxDJ80jUOapDSjhbCKgexDS-CIQepM6uRJeRduKeMAH5edFcKFN9bwybB7WVDQT8X8xP6AF1WB0FBYYf0gkT67nXDM2PfbsaEJuufPcTfsaRyqbITTkt_f5H-0AzmDK4BKUDw7Wo2wXCAIkL1vK5HLGniyGmVEunVQ4s2hJs1mkmxPLndU6zPwSn1MSGv2qkAvcfi8d2yFFKE0Jo2UilnvDveiUdw"/>
+<div class="min-w-0">
+<h2 class="font-body-md text-label-md font-bold text-text-primary truncate">Maria Alvarez</h2>
+<p class="font-caption-sm text-caption-sm text-text-secondary truncate">NMH-00412 • Week 18</p>
+<div class="mt-1">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-semibold bg-warning-tint text-warning">
+                Unreviewed
+              </span>
+</div>
+</div>
+</div>
+<div class="text-right shrink-0">
+<div class="font-title-md text-[16px] font-bold text-text-primary tracking-tight">203.4 lb</div>
+<div class="font-caption-sm text-[12px] text-text-tertiary">Oct 15</div>
+</div>
+</article>
+<!-- Patient 2: Kevin Brooks -->
+<article class="bg-surface rounded-2xl p-3.5 shadow-ambient border border-border/60 hover:border-accent-fill/40 transition-all flex items-center justify-between gap-3">
+<div class="flex items-center gap-3 min-w-0">
+<img alt="Kevin Brooks portrait" class="w-12 h-12 rounded-full object-cover shrink-0 ring-1 ring-border" src="https://lh3.googleusercontent.com/aida/AEtjO1ULXgnWfR1FtPWGEmJuT8brvd7qjRMiIsnDPT6ylzsWT8-5NHAPkT9iHqMzmcyuAwwWUU-N4_x5kprSx-3TcDaOtYaGLefie_rprJlzgHaRVABuFPhnJLqQWffR3SqP4EYe4w2m8LXvJiaScDQParMELyjsWAu9SWk8QhrltSMG37Asglin920G-VJ5ZaQSOjMNw8V14TYxHcCS_08dySetThuJDRMdZj_mBkayj-tAFyOcfSGD6OPkbQ"/>
+<div class="min-w-0">
+<h2 class="font-body-md text-label-md font-bold text-text-primary truncate">Kevin Brooks</h2>
+<p class="font-caption-sm text-caption-sm text-text-secondary truncate">NMH-00388 • Week 24</p>
+<div class="mt-1">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-semibold bg-accent-tint text-accent-fill">
+                Ready for MD review
+              </span>
+</div>
+</div>
+</div>
+<div class="text-right shrink-0">
+<div class="font-title-md text-[16px] font-bold text-text-primary tracking-tight">238.1 lb</div>
+<div class="font-caption-sm text-[12px] text-text-tertiary">Oct 19</div>
+</div>
+</article>
+<!-- Patient 3: Aisha Patel -->
+<article class="bg-surface rounded-2xl p-3.5 shadow-ambient border border-border/60 hover:border-accent-fill/40 transition-all flex items-center justify-between gap-3">
+<div class="flex items-center gap-3 min-w-0">
+<img alt="Aisha Patel portrait" class="w-12 h-12 rounded-full object-cover shrink-0 ring-1 ring-border" src="https://lh3.googleusercontent.com/aida/AEtjO1UJbtUZSVtscwu6WzxRQ0gKrWoXnbemjdC3StyaiyUS81Ar2FLXBepQH-rSntVn4lGDaJsxfRmgAXXMcWHTKiZbDs5oIAOCaDks4PtBBataN3b6E0sKNbLLSpcDZvu2c2f574IL1awmIavl_b0IDiHyGXqREsshqAg_MyFzJGYCCs-yXYYl_xoto_Neiwf8eTsAgGSW8bKVFvvA7uAnsnF_wp23vH65zZgyBM2OWYb1GX9YdTTHaOnp0A"/>
+<div class="min-w-0">
+<h2 class="font-body-md text-label-md font-bold text-text-primary truncate">Aisha Patel</h2>
+<p class="font-caption-sm text-caption-sm text-text-secondary truncate">NMH-00502 • Week 12</p>
+<div class="mt-1">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-semibold bg-success-tint text-success">
+                Active
+              </span>
+</div>
+</div>
+</div>
+<div class="text-right shrink-0">
+<div class="font-title-md text-[16px] font-bold text-text-primary tracking-tight">172.6 lb</div>
+<div class="font-caption-sm text-[12px] text-text-tertiary">Oct 21</div>
+</div>
+</article>
+<!-- Patient 4: Robert Chen -->
+<article class="bg-surface rounded-2xl p-3.5 shadow-ambient border border-border/60 hover:border-accent-fill/40 transition-all flex items-center justify-between gap-3">
+<div class="flex items-center gap-3 min-w-0">
+<img alt="Robert Chen portrait" class="w-12 h-12 rounded-full object-cover shrink-0 ring-1 ring-border" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5p3HtmF7Qo-MVlFkjSLTWyBvmwqS8fbtFSWRLCI9OBH4DbbSYCj2N9Y_AfMn4jZg_J-9ilti1Tu5WcAki1ObW19T3KnOQBO-rDaxupQayj9uDqMqCK6WvKl6kN1uy0tS_9hqUg-c-yoXlHjoWP33LcimIdz8eKB3-oTuXaZ2UVswxANswe8ZtyDV4PvaCFqOGgnEAq_9ca-mV88UzplJ87eo7Y3GZrfY-bhl0ttt_ubBHcBrymlj5K-GRpZs-USchqX7YzY6UzLQ"/>
+<div class="min-w-0">
+<h2 class="font-body-md text-label-md font-bold text-text-primary truncate">Robert Chen</h2>
+<p class="font-caption-sm text-caption-sm text-text-secondary truncate">NMH-00291 • Week 32</p>
+<div class="mt-1">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-semibold bg-warning-tint text-warning">
+                Check-in overdue
+              </span>
+</div>
+</div>
+</div>
+<div class="text-right shrink-0">
+<div class="font-title-md text-[16px] font-bold text-text-primary tracking-tight">198.0 lb</div>
+<div class="font-caption-sm text-[12px] text-text-tertiary">Oct 02</div>
+</div>
+</article>
+<!-- Patient 5: Linda Okafor -->
+<article class="bg-surface rounded-2xl p-3.5 shadow-ambient border border-border/60 hover:border-accent-fill/40 transition-all flex items-center justify-between gap-3">
+<div class="flex items-center gap-3 min-w-0">
+<img alt="Linda Okafor portrait" class="w-12 h-12 rounded-full object-cover shrink-0 ring-1 ring-border" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrH5ZP8A0AK4aicZIgHdZVuOLWvD4MPztIgU89uLG850fFa9M4XqlWgQGKVnLTYfMG9k6ji4ytK5IpDLR3zHFjRy7iKRVfqBCsEfXotz26_NSg0hKI0L1EUVwXucPyvJ9Ei4v4Olm7m0CydP4DZ9dQks047aOmXAeUMwIHh7qstghmL-v0dRuK34rB5TPZhSw3ZczlYvDTMWOBJoSfHZqbMxAyCVzdp3QgFK7vB-YC5Dum-Dt0Ep5cIECuRbvv6eVF70l0E7U-cjM"/>
+<div class="min-w-0">
+<h2 class="font-body-md text-label-md font-bold text-text-primary truncate">Linda Okafor</h2>
+<p class="font-caption-sm text-caption-sm text-text-secondary truncate">NMH-00445 • Week 16</p>
+<div class="mt-1">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-semibold bg-success-tint text-success">
+                Active
+              </span>
+</div>
+</div>
+</div>
+<div class="text-right shrink-0">
+<div class="font-title-md text-[16px] font-bold text-text-primary tracking-tight">186.2 lb</div>
+<div class="font-caption-sm text-[12px] text-text-tertiary">Oct 18</div>
+</div>
+</article>
+<!-- Patient 6: James Whitaker -->
+<article class="bg-surface rounded-2xl p-3.5 shadow-ambient border border-border/60 hover:border-accent-fill/40 transition-all flex items-center justify-between gap-3">
+<div class="flex items-center gap-3 min-w-0">
+<img alt="James Whitaker portrait" class="w-12 h-12 rounded-full object-cover shrink-0 ring-1 ring-border" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRrMx7wp2E8x28xI5Gr9mlTRygOwE9CEKEw-tkIVlpMhyjH3cWSJNtD9MOdyn8ydm4_sMqkYPJ0u9afeN0k05SbtV0lNKXQcEQBnw0-JVlN1xW_zLumzw1cxt_pPzemGK1-wIvNolJP3sJWJDM7Tz3N_FFGZ36hZeAwU4lbweK8ghj6-XgDwrDBrn4I2-rZR4vqfSAdVrMVY4HUvZ3MlUj_5e4ni2m4Z6393VLG45oiloX_FRGKZsFd0wQZCP75hUhwiE5WyR02SM"/>
+<div class="min-w-0">
+<h2 class="font-body-md text-label-md font-bold text-text-primary truncate">James Whitaker</h2>
+<p class="font-caption-sm text-caption-sm text-text-secondary truncate">NMH-00319 • Week 28</p>
+<div class="mt-1">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-semibold bg-success-tint text-success">
+                Active
+              </span>
+</div>
+</div>
+</div>
+<div class="text-right shrink-0">
+<div class="font-title-md text-[16px] font-bold text-text-primary tracking-tight">214.5 lb</div>
+<div class="font-caption-sm text-[12px] text-text-tertiary">Oct 17</div>
+</div>
+</article>
+<!-- Patient 7: Sofia Romano -->
+<article class="bg-surface rounded-2xl p-3.5 shadow-ambient border border-border/60 hover:border-accent-fill/40 transition-all flex items-center justify-between gap-3">
+<div class="flex items-center gap-3 min-w-0">
+<img alt="Sofia Romano portrait" class="w-12 h-12 rounded-full object-cover shrink-0 ring-1 ring-border" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeIdvMbBGqM78WT3Y-f_fimx4duoiy4Wnnx2b52F5ogbQmpX_RNVUJt_L3zMEa_IZ4pPtHuOvm88nzkgYx5niji8lBktpDU0m9mBMjHUgxx79qKveO4-2E44GZTZ7rGm9gIXXRwXnoHvvP9yTt1WIFw5dBiACAYxq9L7rOsFLOx6oAMI_w3yn7cF--mmX581I7FsGY2EdHydLQYALCyFgxpLY0LI4t6L6wZDhhthFExn8fpaIwhHbHNcXGlkps_y_oHGhrBg9xXhE"/>
+<div class="min-w-0">
+<h2 class="font-body-md text-label-md font-bold text-text-primary truncate">Sofia Romano</h2>
+<p class="font-caption-sm text-caption-sm text-text-secondary truncate">NMH-00511 • Week 8</p>
+<div class="mt-1">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-semibold bg-warning-tint text-warning">
+                Check-in overdue
+              </span>
+</div>
+</div>
+</div>
+<div class="text-right shrink-0">
+<div class="font-title-md text-[16px] font-bold text-text-primary tracking-tight">165.8 lb</div>
+<div class="font-caption-sm text-[12px] text-text-tertiary">Sep 28</div>
+</div>
+</article>
+<!-- Patient 8: Daniel Kim -->
+<article class="bg-surface rounded-2xl p-3.5 shadow-ambient border border-border/60 hover:border-accent-fill/40 transition-all flex items-center justify-between gap-3">
+<div class="flex items-center gap-3 min-w-0">
+<img alt="Daniel Kim portrait" class="w-12 h-12 rounded-full object-cover shrink-0 ring-1 ring-border" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjijK8f6LzJyCx3CWkv_sNSOGCHAl4iqSwUrVEwXtfg4VibvoHAc78XiTwYR-yOcQlFtDoDkDxTEkc8YQCX8373CiF20Inxak2tLIY-WEggsM_IS_Fm9-xiCfxXb7eZplwdYRr1mlysmHhLZOJ4lj9S-5slSuPzpth6vlmtkcMeQa2E6om5hn2sZryf64QZTw36FZSYwUMz63cr9PWxZ0kV6OQ10yD_9Qsb3Phf0twrfdzZCSzpcYVWt58uh62f2ydTEZ4WkTs68U"/>
+<div class="min-w-0">
+<h2 class="font-body-md text-label-md font-bold text-text-primary truncate">Daniel Kim</h2>
+<p class="font-caption-sm text-caption-sm text-text-secondary truncate">NMH-00580 • Week 1</p>
+<div class="mt-1">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-semibold bg-accent-tint text-accent-fill">
+                New - intake Oct 28
+              </span>
+</div>
+</div>
+</div>
+<div class="text-right shrink-0">
+<div class="font-title-md text-[16px] font-bold text-text-primary tracking-tight">—</div>
+<div class="font-caption-sm text-[12px] text-text-tertiary">Oct 22</div>
+</div>
+</article>
+</main>
+<!-- Contextual Floating Action Button: "New patient" -->
+<div class="fixed bottom-24 right-5 z-40 max-w-[393px]">
+<button class="h-11 pl-3.5 pr-4 rounded-full bg-surface border border-accent-fill text-accent-fill hover:bg-accent-tint font-label-md font-semibold flex items-center gap-1.5 shadow-float active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[20px] font-bold">add</span>
+<span>New patient</span>
+</button>
+</div>
+<!-- Staff Bottom Tab Bar (Semantic Shell from JSON, Active: Patients) -->
+<!-- Docked full-width bottom-0, exactly 5 items: Today, Patients (Active), Review, Tasks, More -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-margin py-2 pb-7 bg-surface shadow-sm border-t border-border">
+<!-- 1. Today (Inactive) -->
+<a class="flex flex-col items-center justify-center text-text-secondary px-3 py-1 hover:text-primary transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined text-[24px]">calendar_today</span>
+<span class="font-caption-sm text-caption-sm mt-0.5">Today</span>
+</a>
+<!-- 2. Patients (ACTIVE) -->
+<a class="flex flex-col items-center justify-center bg-accent-tint text-primary rounded-full px-4 py-1 active:scale-95 transition-transform duration-150 font-medium" href="#">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">groups</span>
+<span class="font-caption-sm text-caption-sm font-semibold mt-0.5">Patients</span>
+</a>
+<!-- 3. Review (Inactive) -->
+<a class="flex flex-col items-center justify-center text-text-secondary px-3 py-1 hover:text-primary transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined text-[24px]">rate_review</span>
+<span class="font-caption-sm text-caption-sm mt-0.5">Review</span>
+</a>
+<!-- 4. Tasks (Inactive) -->
+<a class="flex flex-col items-center justify-center text-text-secondary px-3 py-1 hover:text-primary transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined text-[24px]">checklist</span>
+<span class="font-caption-sm text-caption-sm mt-0.5">Tasks</span>
+</a>
+<!-- 5. More (Inactive) -->
+<a class="flex flex-col items-center justify-center text-text-secondary px-3 py-1 hover:text-primary transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined text-[24px]">more_horiz</span>
+<span class="font-caption-sm text-caption-sm mt-0.5">More</span>
+</a>
+</nav>
+</div>
+</body></html>

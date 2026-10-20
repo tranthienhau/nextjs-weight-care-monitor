@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>October check-in - Steadfast</title>
+<!-- Google Fonts: Bodoni Moda & Questrial -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&amp;family=Questrial&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-low": "#f3f2ff",
+            "on-primary-container": "#fffbff",
+            "surface-variant": "#e2e1ee",
+            "text-secondary": "#4A5068",
+            "outline-variant": "#c4c5d8",
+            "tertiary-fixed-dim": "#ffb695",
+            "text-primary": "#0C101F",
+            "on-primary-fixed": "#001257",
+            "surface-bright": "#fbf8ff",
+            "secondary-container": "#4d6be3",
+            "danger": "#DC2626",
+            "success": "#16A34A",
+            "secondary-fixed-dim": "#b8c4ff",
+            "primary": "#1e49e4",
+            "border": "#E2E6F2",
+            "error": "#ba1a1a",
+            "surface-container-highest": "#e2e1ee",
+            "on-tertiary": "#ffffff",
+            "warning": "#D97706",
+            "secondary-fixed": "#dde1ff",
+            "error-container": "#ffdad6",
+            "surface-container-high": "#e8e7f4",
+            "danger-tint": "#FEE2E2",
+            "surface-tint": "#224ce7",
+            "accent-fill": "#4165FE",
+            "tertiary": "#9e3e00",
+            "surface-alt": "#F4F6FC",
+            "warning-tint": "#FEF3C7",
+            "tertiary-container": "#c64f00",
+            "on-background": "#1a1b24",
+            "surface": "#FFFFFF",
+            "on-secondary-fixed": "#001355",
+            "outline": "#747687",
+            "success-tint": "#DCFCE7",
+            "surface-container": "#eeedf9",
+            "tertiary-fixed": "#ffdbcc",
+            "on-surface-variant": "#444655",
+            "surface-dim": "#d9d9e5",
+            "on-tertiary-container": "#fffbff",
+            "inverse-primary": "#b9c3ff",
+            "accent-pressed": "#2E52E6",
+            "on-secondary-container": "#fffbff",
+            "on-surface": "#1a1b24",
+            "on-primary": "#ffffff",
+            "inverse-surface": "#2f3039",
+            "secondary": "#3050c9",
+            "on-tertiary-fixed": "#351000",
+            "on-secondary-fixed-variant": "#1038b3",
+            "primary-container": "#4165fe",
+            "text-tertiary": "#8A90A8",
+            "background": "#F4F6FC",
+            "primary-fixed-dim": "#b9c3ff",
+            "support": "#F7979A",
+            "surface-container-lowest": "#ffffff",
+            "primary-fixed": "#dde1ff",
+            "on-primary-fixed-variant": "#0033c1",
+            "on-error": "#ffffff",
+            "inverse-on-surface": "#f0effc",
+            "accent-tint": "#E9EDFF",
+            "on-tertiary-fixed-variant": "#7b2e00",
+            "on-secondary": "#ffffff",
+            "on-error-container": "#93000a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1.25rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "4px",
+            "space-2xl": "32px",
+            "gutter": "16px",
+            "space-sm": "8px",
+            "space-lg": "16px",
+            "space-xl": "24px",
+            "space-md": "12px",
+            "margin": "20px"
+          },
+          "fontFamily": {
+            "label-md": ["Questrial", "sans-serif"],
+            "headline-lg": ["Bodoni Moda", "serif"],
+            "title-md": ["Questrial", "sans-serif"],
+            "body-md": ["Questrial", "sans-serif"],
+            "caption-sm": ["Questrial", "sans-serif"]
+          },
+          "fontSize": {
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "caption-sm": ["13px", { "lineHeight": "18px", "fontWeight": "500" }]
+          },
+          "boxShadow": {
+            "card-subtle": "0 1px 2px rgba(12, 16, 31, 0.04), 0 8px 24px rgba(12, 16, 31, 0.06)"
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    /* Hide scrollbars for crisp native feel */
+    body::-webkit-scrollbar {
+      display: none;
+    }
+    body {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-surface-alt text-text-primary antialiased font-body-md min-h-screen flex justify-center selection:bg-accent-tint selection:text-accent-fill">
+<!-- Mobile Frame Container (Standard 393px viewport) -->
+<div class="w-full max-w-[393px] min-h-screen bg-background relative flex flex-col pb-36">
+<!-- Top App Bar & Status Zone -->
+<header class="w-full px-5 pt-12 pb-3 bg-background flex flex-col gap-3">
+<!-- Navigation & Profile Row -->
+<div class="flex justify-between items-center w-full">
+<!-- Close / Dismiss Action -->
+<button aria-label="Close check-in" class="w-10 h-10 rounded-full bg-surface border border-border flex items-center justify-center text-text-primary active:scale-95 transition-transform duration-150 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="close">close</span>
+</button>
+<!-- Maria Alvarez Profile Photo (Trailing Avatar) -->
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-border shadow-sm ring-2 ring-accent-tint">
+<img alt="Maria Alvarez profile photo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1XRofZ9kCSJsXmF5FUTxN-TKEihItxDJ80jUOapDSjhbCKgexDS-CIQepM6uRJeRduKeMAH5edFcKFN9bwybB7WVDQT8X8xP6AF1WB0FBYYf0gkT67nXDM2PfbsaEJuufPcTfsaRyqbITTkt_f5H-0AzmDK4BKUDw7Wo2wXCAIkL1vK5HLGniyGmVEunVQ4s2hJs1mkmxPLndU6zPwSn1MSGv2qkAvcfi8d2yFFKE0Jo2UilnvDveiUdw"/>
+</div>
+</div>
+</div>
+<!-- Clinic Caption & Screen Headline -->
+<div class="mt-1">
+<p class="font-caption-sm text-caption-sm text-text-secondary tracking-normal">Northside Metabolic Health</p>
+<h1 class="font-headline-lg text-headline-lg text-text-primary tracking-tight mt-0.5">October check-in</h1>
+</div>
+<!-- Question Progress Tracker -->
+<div class="mt-2 flex flex-col gap-1.5">
+<div class="flex justify-between items-center text-caption-sm font-caption-sm">
+<span class="text-text-primary font-medium">Question 3 of 8</span>
+<span class="text-text-secondary">38% complete</span>
+</div>
+<!-- Progress Bar (accent: #6784FE, track: #E2E6F2) -->
+<div class="w-full h-1.5 bg-border rounded-full overflow-hidden">
+<div class="h-full bg-accent-fill rounded-full" style="width: 37.5%;"></div>
+</div>
+</div>
+</header>
+<!-- Main Question Canvas -->
+<main class="px-5 flex flex-col gap-4 mt-2">
+<!-- Safety Info Banner -->
+<section aria-label="Safety Notice" class="bg-accent-tint rounded-2xl p-3.5 flex items-start gap-2.5 shadow-sm" role="note">
+<span class="material-symbols-outlined text-accent-fill text-[20px] shrink-0 mt-0.5" data-icon="info">info</span>
+<p class="text-xs font-body-md text-text-primary leading-relaxed">
+          Submitting a check-in does not mean immediate review and is not emergency care. Call 911 for emergencies.
+        </p>
+</section>
+<!-- Focal Question Card -->
+<section class="bg-surface rounded-2xl shadow-card-subtle p-5 border border-border/40">
+<!-- Category Pill Tag -->
+<div class="mb-3">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-label-md bg-accent-tint text-accent-fill">
+            Energy &amp; Daily Rhythm
+          </span>
+</div>
+<!-- Question Headline -->
+<h2 class="text-[22px] leading-[28px] font-title-md text-text-primary font-semibold mb-5">
+          How has your energy level been since your last check-in?
+        </h2>
+<!-- Stacked Option Cards -->
+<div aria-label="Energy level options" class="flex flex-col gap-2.5" role="radiogroup">
+<!-- Option 1: Much lower -->
+<label class="w-full rounded-xl p-4 flex items-center justify-between border border-border bg-surface cursor-pointer active:scale-[0.99] transition-transform select-none hover:border-accent-fill/40">
+<span class="text-base font-body-md text-text-primary">Much lower</span>
+<div class="w-5 h-5 rounded-full border border-border flex items-center justify-center bg-surface"></div>
+<input class="sr-only" name="energy_option" type="radio" value="much_lower"/>
+</label>
+<!-- Option 2: Lower -->
+<label class="w-full rounded-xl p-4 flex items-center justify-between border border-border bg-surface cursor-pointer active:scale-[0.99] transition-transform select-none hover:border-accent-fill/40">
+<span class="text-base font-body-md text-text-primary">Lower</span>
+<div class="w-5 h-5 rounded-full border border-border flex items-center justify-center bg-surface"></div>
+<input class="sr-only" name="energy_option" type="radio" value="lower"/>
+</label>
+<!-- Option 3: About the same (SELECTED STATE) -->
+<label class="w-full rounded-xl p-4 flex items-center justify-between border-2 border-accent-fill bg-accent-tint cursor-pointer active:scale-[0.99] transition-transform select-none shadow-sm">
+<span class="text-base font-label-md text-text-primary font-medium">About the same</span>
+<div class="w-5 h-5 rounded-full bg-accent-fill flex items-center justify-center text-surface shadow-xs">
+<span class="material-symbols-outlined text-[15px] font-bold" data-icon="check">check</span>
+</div>
+<input checked="" class="sr-only" name="energy_option" type="radio" value="about_the_same"/>
+</label>
+<!-- Option 4: Higher -->
+<label class="w-full rounded-xl p-4 flex items-center justify-between border border-border bg-surface cursor-pointer active:scale-[0.99] transition-transform select-none hover:border-accent-fill/40">
+<span class="text-base font-body-md text-text-primary">Higher</span>
+<div class="w-5 h-5 rounded-full border border-border flex items-center justify-center bg-surface"></div>
+<input class="sr-only" name="energy_option" type="radio" value="higher"/>
+</label>
+<!-- Option 5: Much higher -->
+<label class="w-full rounded-xl p-4 flex items-center justify-between border border-border bg-surface cursor-pointer active:scale-[0.99] transition-transform select-none hover:border-accent-fill/40">
+<span class="text-base font-body-md text-text-primary">Much higher</span>
+<div class="w-5 h-5 rounded-full border border-border flex items-center justify-center bg-surface"></div>
+<input class="sr-only" name="energy_option" type="radio" value="much_higher"/>
+</label>
+</div>
+</section>
+<!-- Additional Contextual Inputs Card -->
+<section class="bg-surface rounded-2xl shadow-card-subtle p-5 border border-border/40 space-y-4">
+<!-- Optional Notes Field -->
+<div class="flex flex-col gap-2">
+<label class="text-sm font-label-md text-text-secondary" for="checkin-notes">
+            Anything to add? <span class="text-text-tertiary font-normal">(optional)</span>
+</label>
+<textarea class="w-full rounded-xl border border-border bg-surface p-3 text-sm font-body-md text-text-primary placeholder:text-text-tertiary focus:outline-none focus:ring-2 focus:ring-accent-fill/70 transition-all min-h-[90px] resize-none" id="checkin-notes" placeholder="Note changes in sleep, work schedule, or afternoon fatigue..." rows="3"></textarea>
+</div>
+<!-- Care Team Outreach Toggle Row -->
+<div class="border-t border-border pt-4 flex items-center justify-between gap-3">
+<div class="flex flex-col pr-2">
+<span class="text-[15px] font-label-md font-medium text-text-primary leading-snug">
+              I would like the care team to contact me
+            </span>
+<span class="text-xs font-caption-sm text-text-tertiary mt-0.5 leading-normal">
+              A clinician or medical assistant will reach out within 1-2 business days
+            </span>
+</div>
+<!-- Switch in OFF state -->
+<button aria-checked="false" class="relative inline-flex h-7 w-12 shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-border transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-accent-fill focus:ring-offset-2" id="contact-switch" role="switch" type="button">
+<span class="sr-only">Contact request toggle</span>
+<span class="pointer-events-none inline-block h-6 w-6 transform rounded-full bg-surface shadow ring-0 transition duration-200 ease-in-out translate-x-0" id="switch-handle"></span>
+</button>
+</div>
+</section>
+<!-- Action Buttons Row (Back & Next) -->
+<div class="flex items-center gap-3 mt-2 mb-4">
+<!-- Back Button (Secondary Pill) -->
+<button class="flex-1 h-[52px] rounded-full bg-surface border-[1.5px] border-accent-fill text-accent-fill font-label-md text-body-md font-semibold flex items-center justify-center active:scale-95 transition-transform duration-150" type="button">
+          Back
+        </button>
+<!-- Next Button (Primary Pill) -->
+<button class="flex-1 h-[52px] rounded-full bg-accent-fill text-surface font-label-md text-body-md font-semibold flex items-center justify-center gap-2 active:bg-accent-pressed active:scale-95 transition-all duration-150 shadow-sm" type="button">
+<span>Next</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Patient Portal Standard: Exactly 4 Items) -->
+<nav aria-label="Main Navigation" class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[393px] z-50 flex justify-around items-center px-4 pt-2 pb-8 bg-surface border-t border-border shadow-sm">
+<!-- Tab 1: Home -->
+<button class="flex flex-col items-center justify-center text-text-tertiary px-3 py-1.5 font-caption-sm text-caption-sm hover:text-accent-fill transition-colors" type="button">
+<span class="material-symbols-outlined text-[24px]" data-icon="home">home</span>
+<span class="mt-0.5">Home</span>
+</button>
+<!-- Tab 2: Trends -->
+<button class="flex flex-col items-center justify-center text-text-tertiary px-3 py-1.5 font-caption-sm text-caption-sm hover:text-accent-fill transition-colors" type="button">
+<span class="material-symbols-outlined text-[24px]" data-icon="trending_down">trending_down</span>
+<span class="mt-0.5">Trends</span>
+</button>
+<!-- Tab 3: Check-in (ACTIVE STATE) -->
+<button aria-current="page" class="flex flex-col items-center justify-center bg-accent-tint text-accent-fill rounded-full px-4 py-1.5 font-label-md text-label-md shadow-xs" type="button">
+<span class="material-symbols-outlined text-[24px]" data-icon="assignment" style="font-variation-settings: 'FILL' 1;">assignment</span>
+<span class="mt-0.5 text-xs font-semibold">Check-in</span>
+</button>
+<!-- Tab 4: Messages -->
+<button class="flex flex-col items-center justify-center text-text-tertiary px-3 py-1.5 font-caption-sm text-caption-sm hover:text-accent-fill transition-colors" type="button">
+<span class="material-symbols-outlined text-[24px]" data-icon="chat_bubble">chat_bubble</span>
+<span class="mt-0.5">Messages</span>
+</button>
+</nav>
+</div>
+<!-- Interactive behavior for toggle & radio choices -->
+<script>
+    // Toggle switch interaction
+    const contactSwitch = document.getElementById('contact-switch');
+    const switchHandle = document.getElementById('switch-handle');
+    let isChecked = false;
+
+    if (contactSwitch && switchHandle) {
+      contactSwitch.addEventListener('click', () => {
+        isChecked = !isChecked;
+        contactSwitch.setAttribute('aria-checked', isChecked.toString());
+        if (isChecked) {
+          contactSwitch.classList.remove('bg-border');
+          contactSwitch.classList.add('bg-accent-fill');
+          switchHandle.classList.add('translate-x-5');
+          switchHandle.classList.remove('translate-x-0');
+        } else {
+          contactSwitch.classList.add('bg-border');
+          contactSwitch.classList.remove('bg-accent-fill');
+          switchHandle.classList.remove('translate-x-5');
+          switchHandle.classList.add('translate-x-0');
+        }
+      });
+    }
+
+    // Radio option cards interaction
+    const radioLabels = document.querySelectorAll('main section:nth-of-type(2) label');
+    radioLabels.forEach(label => {
+      label.addEventListener('click', () => {
+        radioLabels.forEach(l => {
+          l.className = 'w-full rounded-xl p-4 flex items-center justify-between border border-border bg-surface cursor-pointer active:scale-[0.99] transition-transform select-none hover:border-accent-fill/40';
+          const indicator = l.querySelector('div');
+          if (indicator) {
+            indicator.className = 'w-5 h-5 rounded-full border border-border flex items-center justify-center bg-surface';
+            indicator.innerHTML = '';
+          }
+          const textSpan = l.querySelector('span');
+          if (textSpan) {
+            textSpan.className = 'text-base font-body-md text-text-primary';
+          }
+        });
+
+        // Set clicked to selected styling
+        label.className = 'w-full rounded-xl p-4 flex items-center justify-between border-2 border-accent-fill bg-accent-tint cursor-pointer active:scale-[0.99] transition-transform select-none shadow-sm';
+        const indicator = label.querySelector('div');
+        if (indicator) {
+          indicator.className = 'w-5 h-5 rounded-full bg-accent-fill flex items-center justify-center text-surface shadow-xs';
+          indicator.innerHTML = '<span class="material-symbols-outlined text-[15px] font-bold" data-icon="check">check</span>';
+        }
+        const textSpan = label.querySelector('span');
+        if (textSpan) {
+          textSpan.className = 'text-base font-label-md text-text-primary font-medium';
+        }
+      });
+    });
+  </script>
+</body></html>

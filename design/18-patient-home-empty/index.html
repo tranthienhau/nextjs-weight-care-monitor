@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Steadfast - Patient Portal</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&amp;family=Questrial&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Configuration -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary-fixed": "#dde1ff",
+            "on-primary-container": "#fffbff",
+            "accent-fill": "#4165FE",
+            "text-tertiary": "#8A90A8",
+            "on-secondary-fixed-variant": "#1038b3",
+            "secondary-fixed": "#dde1ff",
+            "surface-container-low": "#f3f2ff",
+            "on-error": "#ffffff",
+            "on-secondary-fixed": "#001355",
+            "on-tertiary": "#ffffff",
+            "warning": "#D97706",
+            "surface-bright": "#fbf8ff",
+            "secondary-fixed-dim": "#b8c4ff",
+            "secondary-container": "#4d6be3",
+            "primary-container": "#4165fe",
+            "accent-pressed": "#2E52E6",
+            "success": "#16A34A",
+            "inverse-on-surface": "#f0effc",
+            "on-tertiary-fixed": "#351000",
+            "error-container": "#ffdad6",
+            "text-secondary": "#4A5068",
+            "support": "#F7979A",
+            "surface-alt": "#F4F6FC",
+            "on-secondary": "#ffffff",
+            "error": "#ba1a1a",
+            "on-tertiary-container": "#fffbff",
+            "text-primary": "#0C101F",
+            "outline": "#747687",
+            "surface-container-lowest": "#ffffff",
+            "primary": "#1e49e4",
+            "primary-fixed-dim": "#b9c3ff",
+            "surface-container": "#eeedf9",
+            "border": "#E2E6F2",
+            "inverse-primary": "#b9c3ff",
+            "on-surface-variant": "#444655",
+            "background": "#F4F6FC",
+            "warning-tint": "#FEF3C7",
+            "on-background": "#1a1b24",
+            "surface-tint": "#224ce7",
+            "surface-dim": "#d9d9e5",
+            "danger-tint": "#FEE2E2",
+            "on-primary": "#ffffff",
+            "tertiary": "#9e3e00",
+            "on-surface": "#1a1b24",
+            "danger": "#DC2626",
+            "surface-container-high": "#e8e7f4",
+            "surface-variant": "#e2e1ee",
+            "surface-container-highest": "#e2e1ee",
+            "accent-tint": "#E9EDFF",
+            "surface": "#FFFFFF",
+            "on-error-container": "#93000a",
+            "secondary": "#3050c9",
+            "tertiary-container": "#c64f00",
+            "on-primary-fixed": "#001257",
+            "tertiary-fixed": "#ffdbcc",
+            "tertiary-fixed-dim": "#ffb695",
+            "success-tint": "#DCFCE7",
+            "on-primary-fixed-variant": "#0033c1",
+            "on-secondary-container": "#fffbff",
+            "inverse-surface": "#2f3039",
+            "outline-variant": "#c4c5d8",
+            "on-tertiary-fixed-variant": "#7b2e00"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "20": "20px",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "4px",
+            "space-sm": "8px",
+            "margin": "20px",
+            "space-md": "12px",
+            "space-xl": "24px",
+            "space-lg": "16px",
+            "space-2xl": "32px",
+            "gutter": "16px"
+          },
+          "fontFamily": {
+            "headline-lg": ["Bodoni Moda", "serif"],
+            "title-md": ["Questrial", "sans-serif"],
+            "body-md": ["Questrial", "sans-serif"],
+            "label-md": ["Questrial", "sans-serif"],
+            "caption-sm": ["Questrial", "sans-serif"]
+          },
+          "fontSize": {
+            "headline-lg": [
+              "32px",
+              {
+                "lineHeight": "40px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "700"
+              }
+            ],
+            "title-md": [
+              "20px",
+              {
+                "lineHeight": "28px",
+                "fontWeight": "600"
+              }
+            ],
+            "body-md": [
+              "16px",
+              {
+                "lineHeight": "24px",
+                "fontWeight": "400"
+              }
+            ],
+            "label-md": [
+              "14px",
+              {
+                "lineHeight": "20px",
+                "fontWeight": "500"
+              }
+            ],
+            "caption-sm": [
+              "13px",
+              {
+                "lineHeight": "18px",
+                "fontWeight": "500"
+              }
+            ]
+          },
+          "boxShadow": {
+            "ambient": "0 1px 2px rgba(12,16,31,.04), 0 8px 24px rgba(12,16,31,.06)"
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    /* iOS style toggle switch styling */
+    .toggle-checkbox:checked {
+      right: 0;
+      background-color: #4165FE;
+    }
+    .toggle-checkbox:checked + .toggle-label {
+      background-color: #4165FE;
+    }
+  </style>
+</head>
+<body class="bg-background text-text-primary antialiased min-h-screen flex justify-center selection:bg-accent-tint selection:text-accent-fill">
+<!-- Mobile Screen Container (393px iPhone viewport) -->
+<main class="w-full max-w-[393px] min-h-screen bg-background relative flex flex-col pb-28">
+<!-- Top Status Bar Clearance & Header -->
+<header class="px-5 pt-12 pb-4 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-caption-sm text-caption-sm text-text-secondary tracking-wide">
+          Northside Metabolic Health
+        </span>
+<h1 class="font-headline-lg text-headline-lg text-text-primary tracking-tight mt-0.5">
+          Welcome, Daniel
+        </h1>
+</div>
+<!-- Daniel Kim Profile Avatar with subtle active indicator ring -->
+<div class="relative flex-shrink-0 cursor-pointer active:scale-95 transition-transform duration-150">
+<div class="w-9 h-9 rounded-full ring-2 ring-white shadow-sm overflow-hidden bg-surface-alt">
+<img alt="Daniel Kim profile photo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1WhebsoJwyh610fJT0cmVI6k5_6mZF48MZTH0YALdj70w138cBbT2fkP-8VetD2oICzHANro4MlThszNGYZ7BP6OYKhBd1YeEZiUR9iE0-Nv6YmENPQqYJ8m0BCPcfWsX2-hMRlh61ArWBRZQtVKJpYZMz3gDfU-57P9cltZjgn2CMd1QuzuUEMQsg8Jw50KArVppAfH7jXqtazGCwlg5dnRS4CQWcIKlR2muFPjrSaclV5MG-y4osasCc"/>
+</div>
+<span aria-label="Active status" class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-success rounded-full ring-2 ring-white"></span>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<div class="px-5 space-y-4 flex-1">
+<!-- Focal Hero Card: First-run Empty State -->
+<section aria-labelledby="intake-hero-heading" class="bg-surface rounded-20 p-4 shadow-ambient transition-all">
+<!-- Clinic Reception Photography -->
+<div class="w-full h-44 rounded-20 overflow-hidden relative bg-surface-alt shadow-inner">
+<img alt="Bright medical clinic reception desk with plants and cornflower blue wall" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIPD3kw2CeKGYJHTe4wbOmm7tISKQS8_9WQNeXXTlFNrokKkfK3YcwheqwolYw8tkJXNppCoZ8qwOG4V8KvYRCH-RpEm0GDC2MDSsP9KNvP64acQo-h7zlxOwUI1iQp3YsVbWMOV0z_B8QMyl_DlLDXawPu0GKBIDbK_pzpPD_DlRP2kWpXRlTfz8Q8-snxhWnk3-T0mEq46oRZ0FxZbCX07Pq_mw1FOW814nWWOYWgVxIEstCtDLE-bJwr3UlZthrmsiYOuJQRHU"/>
+<!-- Intake Appointment Indicator Badge -->
+<div class="absolute top-3 left-3 bg-surface/95 backdrop-blur-md px-3 py-1.5 rounded-full flex items-center space-x-1.5 shadow-sm border border-border/60">
+<span class="w-2 h-2 rounded-full bg-accent-fill animate-pulse"></span>
+<span class="font-caption-sm text-caption-sm text-text-primary font-medium">Upcoming Intake • Oct 28, 2026</span>
+</div>
+</div>
+<!-- Hero Content / Empty State Guidance -->
+<div class="pt-4 pb-1 px-1">
+<p class="font-title-md text-title-md text-text-primary font-semibold leading-snug" id="intake-hero-heading">
+            Your journey begins here
+          </p>
+<p class="font-body-md text-body-md text-text-secondary mt-1.5 leading-relaxed">
+            Your first measurements will appear after your intake visit on Oct 28.
+          </p>
+</div>
+</section>
+<!-- Checklist Card: "Before your visit" -->
+<section aria-labelledby="checklist-title" class="bg-surface rounded-20 p-5 shadow-ambient">
+<!-- Card Header with Pill Counter -->
+<div class="flex items-center justify-between pb-3 border-b border-border">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-accent-fill text-xl">event_available</span>
+<h2 class="font-title-md text-title-md text-text-primary" id="checklist-title">
+              Before your visit
+            </h2>
+</div>
+<!-- Progress indicator chip -->
+<span class="font-caption-sm text-caption-sm bg-accent-tint text-accent-fill px-2.5 py-0.5 rounded-full font-medium">
+            0 of 3
+          </span>
+</div>
+<!-- Checklist Rows -->
+<div class="divide-y divide-border">
+<!-- Row 1: Intake Questionnaire -->
+<div class="py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="space-y-0.5 pr-2">
+<h3 class="font-label-md text-label-md text-text-primary font-semibold">
+                Complete intake questionnaire
+              </h3>
+<p class="font-caption-sm text-caption-sm text-text-secondary">
+                Estimated 5 min • Medical history &amp; lifestyle
+              </p>
+</div>
+<div class="flex-shrink-0">
+<button class="w-full sm:w-auto h-[40px] px-5 bg-accent-fill hover:bg-accent-pressed active:scale-95 text-white font-label-md text-label-md rounded-full shadow-sm transition-all duration-150 flex items-center justify-center space-x-1" type="button">
+<span>Start intake</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Row 2: Review and Sign Consent -->
+<div class="py-4 flex items-center justify-between cursor-pointer group active:opacity-75 transition-opacity">
+<div class="space-y-0.5 pr-2">
+<h3 class="font-label-md text-label-md text-text-primary font-semibold group-hover:text-accent-fill transition-colors">
+                Review and sign consent
+              </h3>
+<p class="font-caption-sm text-caption-sm text-text-secondary">
+                Program consent and privacy notice
+              </p>
+</div>
+<div class="flex-shrink-0 text-text-tertiary group-hover:text-accent-fill transition-colors">
+<span class="material-symbols-outlined text-xl">chevron_right</span>
+</div>
+</div>
+<!-- Row 3: Reminders Toggle -->
+<div class="pt-4 flex items-center justify-between">
+<div class="space-y-0.5 pr-3">
+<h3 class="font-label-md text-label-md text-text-primary font-semibold">
+                Turn on check-in reminders
+              </h3>
+<p class="font-caption-sm text-caption-sm text-text-secondary">
+                Weekly medication and measurement prompts
+              </p>
+</div>
+<!-- Styled iOS-like toggle switch in OFF state -->
+<label class="relative inline-flex items-center cursor-pointer flex-shrink-0 select-none">
+<input class="sr-only peer" id="reminder-toggle" type="checkbox"/>
+<div class="w-11 h-6 bg-border peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-border after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-accent-fill"></div>
+</label>
+</div>
+</div>
+</section>
+<!-- Clinician Care Team Mini Note -->
+<section class="bg-surface-alt rounded-20 p-4 border border-border flex items-center space-x-3.5">
+<div class="w-10 h-10 rounded-full bg-accent-tint flex items-center justify-center flex-shrink-0 text-accent-fill">
+<span class="material-symbols-outlined text-xl">stethoscope</span>
+</div>
+<div class="flex-1">
+<h4 class="font-label-md text-label-md text-text-primary font-semibold">Dr. Sarah Jenkins, MD</h4>
+<p class="font-caption-sm text-caption-sm text-text-secondary">Assigned Lead Metabolic Physician</p>
+</div>
+</section>
+<!-- Footer Safety Banner -->
+<aside class="bg-accent-tint/60 border border-border rounded-xl p-3.5 flex items-start space-x-2.5">
+<span class="material-symbols-outlined text-accent-fill text-lg flex-shrink-0 mt-0.5">info</span>
+<p class="font-caption-sm text-caption-sm text-text-secondary leading-tight">
+          Not monitored 24/7. For emergencies call 911.
+        </p>
+</aside>
+</div>
+<!-- Bottom Tab Bar (Patient Portal: Exactly 4 Tabs in order: Home, Trends, Check-in, Messages) -->
+<!-- Fixed shell layout adhering to Shared Component specifications -->
+<nav aria-label="Main Navigation" class="fixed bottom-0 left-0 right-0 w-full z-50 flex justify-around items-center px-4 pt-2 pb-8 max-w-[393px] mx-auto bg-surface border-t border-border shadow-sm">
+<!-- Tab 1: Home (Active) -->
+<a aria-current="page" class="flex flex-col items-center justify-center bg-accent-tint text-accent-fill rounded-full px-4 py-1.5 font-label-md text-label-md transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined text-xl mb-0.5" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-caption-sm text-caption-sm">Home</span>
+</a>
+<!-- Tab 2: Trends (Inactive) -->
+<a class="flex flex-col items-center justify-center text-text-tertiary hover:text-accent-fill px-4 py-1.5 font-caption-sm text-caption-sm transition-colors active:scale-95" href="#">
+<span class="material-symbols-outlined text-xl mb-0.5">trending_down</span>
+<span class="font-caption-sm text-caption-sm">Trends</span>
+</a>
+<!-- Tab 3: Check-in (Inactive) -->
+<a class="flex flex-col items-center justify-center text-text-tertiary hover:text-accent-fill px-4 py-1.5 font-caption-sm text-caption-sm transition-colors active:scale-95" href="#">
+<span class="material-symbols-outlined text-xl mb-0.5">assignment</span>
+<span class="font-caption-sm text-caption-sm">Check-in</span>
+</a>
+<!-- Tab 4: Messages (Inactive) -->
+<a class="flex flex-col items-center justify-center text-text-tertiary hover:text-accent-fill px-4 py-1.5 font-caption-sm text-caption-sm transition-colors active:scale-95" href="#">
+<span class="material-symbols-outlined text-xl mb-0.5">chat_bubble</span>
+<span class="font-caption-sm text-caption-sm">Messages</span>
+</a>
+</nav>
+</main>
+<!-- Interactive Micro-scripts -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggle = document.getElementById('reminder-toggle');
+      if (toggle) {
+        toggle.addEventListener('change', (e) => {
+          if (e.target.checked) {
+            console.log('Check-in reminders enabled');
+          } else {
+            console.log('Check-in reminders disabled');
+          }
+        });
+      }
+    });
+  </script>
+</body></html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Steadfast - Patient Portal</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&amp;family=Questrial&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "error": "#ba1a1a",
+            "danger-tint": "#FEE2E2",
+            "warning": "#D97706",
+            "on-primary-fixed": "#001257",
+            "surface": "#FFFFFF",
+            "surface-bright": "#fbf8ff",
+            "on-primary-fixed-variant": "#0033c1",
+            "accent-pressed": "#2E52E6",
+            "tertiary-container": "#c64f00",
+            "on-error": "#ffffff",
+            "primary-fixed-dim": "#b9c3ff",
+            "surface-container-lowest": "#ffffff",
+            "support": "#F7979A",
+            "outline": "#747687",
+            "tertiary-fixed": "#ffdbcc",
+            "surface-tint": "#224ce7",
+            "text-secondary": "#4A5068",
+            "surface-variant": "#e2e1ee",
+            "success-tint": "#DCFCE7",
+            "accent-tint": "#E9EDFF",
+            "on-tertiary": "#ffffff",
+            "error-container": "#ffdad6",
+            "secondary-container": "#4d6be3",
+            "tertiary-fixed-dim": "#ffb695",
+            "on-primary-container": "#fffbff",
+            "surface-container-highest": "#e2e1ee",
+            "success": "#16A34A",
+            "warning-tint": "#FEF3C7",
+            "surface-dim": "#d9d9e5",
+            "on-secondary-fixed-variant": "#1038b3",
+            "on-background": "#1a1b24",
+            "surface-container": "#eeedf9",
+            "primary-container": "#4165fe",
+            "on-surface": "#1a1b24",
+            "inverse-primary": "#b9c3ff",
+            "on-tertiary-fixed-variant": "#7b2e00",
+            "surface-container-high": "#e8e7f4",
+            "on-secondary-container": "#fffbff",
+            "secondary-fixed": "#dde1ff",
+            "on-tertiary-container": "#fffbff",
+            "on-surface-variant": "#444655",
+            "border": "#E2E6F2",
+            "text-tertiary": "#8A90A8",
+            "tertiary": "#9e3e00",
+            "on-primary": "#ffffff",
+            "outline-variant": "#c4c5d8",
+            "danger": "#DC2626",
+            "surface-container-low": "#f3f2ff",
+            "primary": "#1e49e4",
+            "on-tertiary-fixed": "#351000",
+            "surface-alt": "#F4F6FC",
+            "secondary": "#3050c9",
+            "inverse-surface": "#2f3039",
+            "accent-fill": "#4165FE",
+            "on-secondary": "#ffffff",
+            "background": "#F4F6FC",
+            "inverse-on-surface": "#f0effc",
+            "on-error-container": "#93000a",
+            "text-primary": "#0C101F",
+            "on-secondary-fixed": "#001355",
+            "secondary-fixed-dim": "#b8c4ff",
+            "primary-fixed": "#dde1ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1.25rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xl": "24px",
+            "space-md": "12px",
+            "space-2xl": "32px",
+            "gutter": "16px",
+            "space-xs": "4px",
+            "space-sm": "8px",
+            "space-lg": "16px",
+            "margin": "20px"
+          },
+          "fontFamily": {
+            "title-md": ["Questrial"],
+            "body-md": ["Questrial"],
+            "label-md": ["Questrial"],
+            "headline-lg": ["Bodoni Moda"],
+            "caption-sm": ["Questrial"]
+          },
+          "fontSize": {
+            "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "caption-sm": ["13px", { "lineHeight": "18px", "fontWeight": "500" }]
+          },
+          "boxShadow": {
+            "card": "0 1px 2px rgba(12,16,31,.04), 0 8px 24px rgba(12,16,31,.06)"
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+  </style>
+</head>
+<body class="bg-background text-text-primary font-body-md antialiased min-h-full selection:bg-accent-tint selection:text-accent-fill pb-28">
+<!-- Main Container Mobile Frame (max-w-md matching 393px standard) -->
+<div class="max-w-md mx-auto min-h-screen flex flex-col relative px-5">
+<!-- Top Navigation Anchor (Shared Component: TopAppBar) -->
+<header class="flex justify-between items-center w-full pt-12 pb-4">
+<div class="flex flex-col">
+<span class="font-caption-sm text-caption-sm text-text-secondary font-medium tracking-wide">
+          Northside Metabolic Health
+        </span>
+<h1 class="font-headline-lg text-headline-lg text-text-primary tracking-tight mt-0.5">
+          Hi Maria
+        </h1>
+</div>
+<!-- Trailing Profile Photo with Status Indicator -->
+<div class="relative shrink-0">
+<img alt="Maria Alvarez profile photo" class="w-11 h-11 rounded-full object-cover shadow-sm ring-2 ring-surface" src="https://lh3.googleusercontent.com/aida/AEtjO1XRofZ9kCSJsXmF5FUTxN-TKEihItxDJ80jUOapDSjhbCKgexDS-CIQepM6uRJeRduKeMAH5edFcKFN9bwybB7WVDQT8X8xP6AF1WB0FBYYf0gkT67nXDM2PfbsaEJuufPcTfsaRyqbITTkt_f5H-0AzmDK4BKUDw7Wo2wXCAIkL1vK5HLGniyGmVEunVQ4s2hJs1mkmxPLndU6zPwSn1MSGv2qkAvcfi8d2yFFKE0Jo2UilnvDveiUdw"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 bg-success rounded-full ring-2 ring-surface"></span>
+</div>
+</header>
+<!-- Main Content Stream -->
+<main class="flex flex-col space-y-4 pt-1">
+<!-- Hero Focal Progress Card -->
+<section class="rounded-2xl p-6 text-on-primary shadow-card relative overflow-hidden" style="background: linear-gradient(135deg, #6784FE 0%, #F7979A 100%);">
+<!-- Background subtle decorative glow/pattern -->
+<div class="absolute -top-12 -right-12 w-44 h-44 rounded-full bg-white/10 blur-xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col">
+<!-- Top Row: Badge & Context -->
+<div class="flex items-center justify-between mb-4">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-caption-sm font-semibold tracking-wider uppercase bg-white/20 backdrop-blur-md text-white border border-white/20">
+              PROGRESS
+            </span>
+<span class="font-caption-sm text-caption-sm text-white/90">
+              -8.4% since enrollment
+            </span>
+</div>
+<!-- Hero Metrics -->
+<div class="flex items-baseline justify-between">
+<div>
+<div class="text-[40px] leading-none font-bold tracking-tight text-white font-body-md">
+                -18.6 <span class="text-2xl font-medium">lb</span>
+</div>
+<p class="font-caption-sm text-caption-sm text-white/80 mt-1">
+                since June start
+              </p>
+</div>
+<!-- Minimalist Sparkline Graph -->
+<div class="w-24 h-12 flex items-center justify-end">
+<svg class="w-24 h-10 overflow-visible" fill="none" stroke="currentColor" viewbox="0 0 100 40">
+<path d="M 0,5 Q 25,12 50,18 T 85,28 L 100,34" fill="none" stroke="white" stroke-linecap="round" stroke-width="2.5"></path>
+<circle class="animate-pulse" cx="100" cy="34" fill="white" r="3.5"></circle>
+</svg>
+</div>
+</div>
+<!-- Card Footer Metadata -->
+<div class="mt-5 pt-3 border-t border-white/15 flex items-center justify-between text-white/85">
+<div class="flex items-center gap-1.5 font-caption-sm text-caption-sm">
+<span class="material-symbols-outlined text-[16px]">local_hospital</span>
+<span>Last measured Oct 15 at the clinic</span>
+</div>
+<span class="material-symbols-outlined text-[18px] opacity-80 cursor-pointer hover:opacity-100 transition-opacity">chevron_right</span>
+</div>
+</div>
+</section>
+<!-- Card 1: Check-in Action -->
+<section class="bg-surface rounded-2xl p-5 shadow-card border border-border/60 transition-all hover:shadow-md">
+<div class="flex items-start gap-3.5 mb-4">
+<div class="w-10 h-10 rounded-full bg-accent-tint flex items-center justify-center shrink-0 text-accent-fill">
+<span class="material-symbols-outlined text-[22px]">calendar_today</span>
+</div>
+<div class="flex-1">
+<h2 class="font-title-md text-title-md text-text-primary leading-tight">
+              Monthly check-in due Nov 1
+            </h2>
+<p class="font-caption-sm text-caption-sm text-text-secondary mt-1">
+              Review your weekly symptoms, side effects, and vitals with Dr. Marsh.
+            </p>
+</div>
+</div>
+<!-- Pill Button (52px height) -->
+<button class="w-full h-[52px] bg-accent-fill hover:bg-accent-pressed active:scale-[0.98] transition-all text-white font-title-md text-[16px] rounded-full flex items-center justify-center gap-2 shadow-sm">
+<span>Start check-in</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</section>
+<!-- Card 2: Clinical Plan (View-only) -->
+<section class="bg-surface rounded-2xl p-5 shadow-card border border-border/60">
+<div class="flex items-center justify-between pb-3 border-b border-border/60">
+<div class="flex items-center gap-2">
+<h3 class="font-title-md text-[18px] text-text-primary">
+              Your plan
+            </h3>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[12px] font-caption-sm font-semibold bg-success-tint text-success">
+              Active Rx
+            </span>
+</div>
+<span class="font-caption-sm text-caption-sm text-text-tertiary">
+            Day 5 of 7
+          </span>
+</div>
+<div class="mt-3.5">
+<div class="text-text-primary font-medium text-[15px] leading-snug">
+            Semaglutide 1.0 mg • once weekly
+          </div>
+<div class="text-accent-fill font-caption-sm text-caption-sm mt-0.5 font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span>Next dose scheduled this Sunday</span>
+</div>
+</div>
+<!-- Clinician Signature Line -->
+<div class="mt-3 pt-3 border-t border-dashed border-border flex items-center justify-between text-text-secondary font-caption-sm text-caption-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[17px] text-accent-fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span>Set by Dr. Elena Marsh</span>
+</div>
+<span class="text-text-tertiary">Questions? Message your care team</span>
+</div>
+</section>
+<!-- Card 3: Lifestyle & Nutrition Education -->
+<section class="bg-surface rounded-2xl overflow-hidden shadow-card border border-border/60 group cursor-pointer transition-all hover:shadow-md">
+<div class="relative w-full h-44 overflow-hidden bg-surface-alt">
+<img alt="Grilled salmon salad with asparagus" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4zIORACH7OEmgaCarKbfTGKW4AlYxDAr1kpCZSwbbxpDl4tDUxHr-9GAolQsYHluR3lL5S2s6Wlj4arNJM7JS3GtFMoHyGz-76TN-K8Bc5b6FkBRW3JSC6yoaRX4kmMihFAwerMP55M0pr8ScW_27CTWVtM_uoMP2mIyn1y8_q2bqyjfpIP1ZkoKwUf9ljLXzNDuIATgqoCCvEP3FxfY_fS-hL0GeV8fgHAVJesjtvfKIjyqmIG0I_6o2eSg8_vHbzWH6sUmLS3U"/>
+<div class="absolute top-3 left-3">
+<span class="px-2.5 py-1 rounded-full text-[11px] font-caption-sm font-semibold bg-surface/90 backdrop-blur-md text-text-primary shadow-sm border border-border/40">
+              Nutrition &amp; GLP-1
+            </span>
+</div>
+</div>
+<div class="p-5">
+<h4 class="font-title-md text-title-md text-text-primary group-hover:text-accent-fill transition-colors leading-snug">
+            Protein first: eating well on GLP-1
+          </h4>
+<p class="font-caption-sm text-caption-sm text-text-secondary mt-1.5 line-clamp-2">
+            Essential strategies to safeguard lean muscle mass while navigating appetite changes and hydration needs.
+          </p>
+<div class="mt-3 flex items-center gap-2 text-text-tertiary font-caption-sm text-caption-sm">
+<span>4 min read</span>
+<span>•</span>
+<span class="flex items-center gap-1 text-text-secondary">
+<span class="material-symbols-outlined text-[15px] text-success">check_circle</span>
+              Dr. Elena Marsh approved
+            </span>
+</div>
+</div>
+</section>
+<!-- Clinical Safety Banner -->
+<section class="bg-accent-tint/60 rounded-xl p-3.5 flex items-center gap-3 border border-border/40">
+<span class="material-symbols-outlined text-accent-fill shrink-0 text-[20px]">info</span>
+<p class="font-caption-sm text-caption-sm text-text-secondary leading-tight">
+          Not monitored 24/7. For emergencies call 911 or visit the nearest acute center.
+        </p>
+</section>
+</main>
+</div>
+<!-- Shared Component: BottomNavBar (Patient: Home, Trends, Check-in, Messages) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pt-2 pb-6 max-w-md mx-auto right-0 bg-surface shadow-sm" style="box-shadow: 0 -4px 16px rgba(12, 16, 31, 0.04);">
+<!-- Tab 1: Home (Active) -->
+<a class="flex flex-col items-center justify-center bg-accent-tint text-accent-fill rounded-full px-4 py-1.5 font-label-md text-label-md transition-transform active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-caption-sm text-caption-sm font-semibold mt-0.5">Home</span>
+</a>
+<!-- Tab 2: Trends -->
+<a class="flex flex-col items-center justify-center text-text-tertiary hover:text-accent-fill px-4 py-1.5 font-caption-sm text-caption-sm transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined text-[22px]">trending_down</span>
+<span class="font-caption-sm text-caption-sm mt-0.5">Trends</span>
+</a>
+<!-- Tab 3: Check-in -->
+<a class="flex flex-col items-center justify-center text-text-tertiary hover:text-accent-fill px-4 py-1.5 font-caption-sm text-caption-sm transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined text-[22px]">assignment</span>
+<span class="font-caption-sm text-caption-sm mt-0.5">Check-in</span>
+</a>
+<!-- Tab 4: Messages -->
+<a class="flex flex-col items-center justify-center text-text-tertiary hover:text-accent-fill px-4 py-1.5 font-caption-sm text-caption-sm transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined text-[22px]">chat_bubble</span>
+<span class="font-caption-sm text-caption-sm mt-0.5">Messages</span>
+</a>
+</nav>
+</body></html>

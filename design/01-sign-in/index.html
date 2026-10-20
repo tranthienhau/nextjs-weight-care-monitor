@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sign in — Steadfast | Northside Metabolic Health</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Bodoni Moda & Questrial -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&amp;family=Questrial&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "warning-tint": "#FEF3C7",
+            "secondary-fixed": "#dde1ff",
+            "secondary-container": "#4d6be3",
+            "error-container": "#ffdad6",
+            "surface-container-lowest": "#ffffff",
+            "secondary-fixed-dim": "#b8c4ff",
+            "surface-bright": "#fbf8ff",
+            "on-tertiary-fixed-variant": "#7b2e00",
+            "on-secondary-fixed": "#001355",
+            "surface-tint": "#224ce7",
+            "surface-container-low": "#f3f2ff",
+            "on-secondary-container": "#fffbff",
+            "accent-pressed": "#2E52E6",
+            "on-error": "#ffffff",
+            "inverse-primary": "#b9c3ff",
+            "on-tertiary-container": "#fffbff",
+            "inverse-on-surface": "#f0effc",
+            "surface-variant": "#e2e1ee",
+            "inverse-surface": "#2f3039",
+            "surface-container-highest": "#e2e1ee",
+            "secondary": "#3050c9",
+            "background": "#F4F6FC",
+            "on-surface": "#1a1b24",
+            "primary": "#1e49e4",
+            "on-primary": "#ffffff",
+            "on-secondary-fixed-variant": "#1038b3",
+            "outline-variant": "#c4c5d8",
+            "text-tertiary": "#8A90A8",
+            "outline": "#747687",
+            "on-primary-container": "#fffbff",
+            "support": "#F7979A",
+            "primary-fixed": "#dde1ff",
+            "accent-tint": "#E9EDFF",
+            "text-primary": "#0C101F",
+            "tertiary-container": "#c64f00",
+            "surface-container-high": "#e8e7f4",
+            "on-error-container": "#93000a",
+            "primary-container": "#4165fe",
+            "surface-alt": "#F4F6FC",
+            "surface": "#FFFFFF",
+            "on-tertiary-fixed": "#351000",
+            "danger-tint": "#FEE2E2",
+            "on-primary-fixed-variant": "#0033c1",
+            "success-tint": "#DCFCE7",
+            "tertiary-fixed": "#ffdbcc",
+            "primary-fixed-dim": "#b9c3ff",
+            "error": "#ba1a1a",
+            "text-secondary": "#4A5068",
+            "on-primary-fixed": "#001257",
+            "tertiary-fixed-dim": "#ffb695",
+            "tertiary": "#9e3e00",
+            "danger": "#DC2626",
+            "on-background": "#1a1b24",
+            "on-secondary": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "accent-fill": "#4165FE",
+            "border": "#E2E6F2",
+            "success": "#16A34A",
+            "surface-dim": "#d9d9e5",
+            "warning": "#D97706",
+            "surface-container": "#eeedf9",
+            "on-surface-variant": "#444655"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "12px",
+            "space-xl": "24px",
+            "space-xs": "4px",
+            "gutter": "16px",
+            "space-sm": "8px",
+            "space-2xl": "32px",
+            "margin": "20px",
+            "space-lg": "16px"
+          },
+          "fontFamily": {
+            "caption-sm": ["Questrial", "sans-serif"],
+            "body-md": ["Questrial", "sans-serif"],
+            "title-md": ["Questrial", "sans-serif"],
+            "headline-lg": ["Bodoni Moda", "serif"],
+            "label-md": ["Questrial", "sans-serif"]
+          },
+          "fontSize": {
+            "caption-sm": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 350, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      line-height: 1;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+    }
+    .sheet-shadow {
+      box-shadow: 0 -4px 20px -2px rgba(12, 16, 31, 0.06), 0 -1px 3px 0 rgba(12, 16, 31, 0.04);
+    }
+  </style>
+</head>
+<body class="bg-background text-text-primary min-h-screen flex justify-center items-start antialiased selection:bg-accent-tint selection:text-primary">
+<!-- iPhone 16 Frame Container (393px width target) -->
+<div class="relative w-full max-w-[393px] min-h-[852px] bg-surface flex flex-col overflow-hidden shadow-2xl">
+<!-- Top Visual / Photo Section (~38% of viewport) -->
+<div class="relative w-full h-[320px] shrink-0 bg-surface-alt overflow-hidden">
+<!-- Clinic Consultation Room Image -->
+<img alt="Northside Metabolic Health Consultation Suite" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFdWD9L_y3p1zADRyXxHg-GOIvGWHKBxg2kc-jHlUhaubQ5tCw4yV1rYVQclXvt3KCmpM_sCNQoZ_SKzHeoJEoOwvf_vHlge3zOQ4AhVw4Ym4z72gR-nPcJ9nUq-tCyMZUTJM35KZzMDLuygT0UyBaSdjgpf48LaAopGFFKz6F78zTl3rn9-pcHwwAljVi31Rm_x1h8YEO5h1ysUISEWCM-C3Bc_dMeQjcGo9gq8VoThf2I_bnS-vNpbEqvSUel90tr5uONQnzu24"/>
+<!-- Subtle Ambient Tint & Bottom Soft Gradient Blend -->
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-black/15 pointer-events-none"></div>
+<!-- iOS Status Bar & Top Action Overlay -->
+<div class="absolute top-0 left-0 w-full pt-[14px] px-[20px] flex justify-between items-center z-10 pointer-events-none text-text-primary">
+<span class="font-label-md text-caption-sm text-text-primary tracking-tight font-semibold">9:41</span>
+<div class="flex items-center gap-1.5 text-text-primary">
+<span class="material-symbols-outlined text-[15px]" data-icon="signal_cellular_alt">signal_cellular_alt</span>
+<span class="material-symbols-outlined text-[15px]" data-icon="wifi">wifi</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="battery_full">battery_full</span>
+</div>
+</div>
+<!-- Clinic Micro Badge Floating -->
+<div class="absolute top-[48px] left-[20px] z-10 flex items-center gap-1.5 bg-surface/90 backdrop-blur-md px-2.5 py-1 rounded-full shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-support"></span>
+<span class="font-caption-sm text-caption-sm text-text-secondary text-[11px] leading-tight">Clinic Portal</span>
+</div>
+</div>
+<!-- Main Content Surface Sheet with 20px Top Radius Docked Over Photo -->
+<div class="relative -mt-6 flex-1 bg-surface rounded-t-[20px] sheet-shadow px-margin pt-6 pb-6 flex flex-col justify-between z-20">
+<!-- Brand & Headers Section -->
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="font-caption-sm text-caption-sm text-primary font-medium tracking-wide">
+            Northside Metabolic Health
+          </span>
+<div class="flex items-center gap-1 bg-surface-alt px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-primary text-[14px]" data-icon="verified">verified</span>
+<span class="font-caption-sm text-[11px] text-text-secondary font-medium">MD Monitored</span>
+</div>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-text-primary leading-tight">
+          Steadfast
+        </h1>
+<p class="font-body-md text-label-md text-text-secondary mt-0.5">
+          Physician-led weight care
+        </p>
+<!-- Form Elements -->
+<form class="mt-5 space-y-3.5" onsubmit="event.preventDefault();">
+<!-- Email Input Field -->
+<div class="space-y-1">
+<label class="block font-caption-sm text-caption-sm text-text-secondary" for="email">
+              Email address
+            </label>
+<div class="relative rounded-[12px] border border-border bg-surface transition-all focus-within:ring-2 focus-within:ring-accent-fill/30 focus-within:border-accent-fill">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-text-tertiary">
+<span class="material-symbols-outlined text-[19px]" data-icon="mail">mail</span>
+</div>
+<input class="w-full h-[48px] pl-10 pr-3.5 py-2.5 bg-transparent border-0 rounded-[12px] font-body-md text-label-md text-text-primary focus:ring-0 focus:outline-none placeholder-text-tertiary" id="email" name="email" placeholder="name@example.com" type="email" value="maria.alvarez@email.com"/>
+</div>
+</div>
+<!-- Password Input Field -->
+<div class="space-y-1">
+<label class="block font-caption-sm text-caption-sm text-text-secondary" for="password">
+              Password
+            </label>
+<div class="relative rounded-[12px] border border-border bg-surface transition-all focus-within:ring-2 focus-within:ring-accent-fill/30 focus-within:border-accent-fill">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-text-tertiary">
+<span class="material-symbols-outlined text-[19px]" data-icon="lock">lock</span>
+</div>
+<input class="w-full h-[48px] pl-10 pr-11 py-2.5 bg-transparent border-0 rounded-[12px] font-body-md text-label-md text-text-primary focus:ring-0 focus:outline-none tracking-widest placeholder-text-tertiary" id="password" name="password" placeholder="Enter password" type="password" value="••••••••••••"/>
+<button aria-label="Toggle password visibility" class="absolute inset-y-0 right-0 pr-3 flex items-center text-text-tertiary hover:text-text-primary transition-colors focus:outline-none" id="toggle-password" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="visibility_off" id="toggle-icon">visibility_off</span>
+</button>
+</div>
+<!-- Forgot Password Right Link -->
+<div class="flex justify-end pt-0.5">
+<a class="font-label-md text-caption-sm text-accent-fill hover:text-accent-pressed font-medium transition-colors" href="#">
+                Forgot password?
+              </a>
+</div>
+</div>
+<!-- Primary & Secondary Buttons Group -->
+<div class="pt-1.5 space-y-2.5">
+<!-- Primary Sign In Pill Button (52px) -->
+<button class="w-full h-[52px] rounded-full bg-accent-fill hover:bg-accent-pressed active:scale-[0.98] transition-all text-on-primary font-body-md font-semibold text-[16px] shadow-sm flex items-center justify-center gap-2" type="submit">
+<span>Sign in</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<!-- Secondary Outline Pill Button (50px) -->
+<button class="w-full h-[50px] rounded-full bg-surface border-[1.5px] border-accent-fill hover:bg-surface-alt active:scale-[0.98] transition-all text-accent-fill font-label-md font-medium text-[15px] flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-[20px] text-accent-fill" data-icon="key">key</span>
+<span>Use passkey</span>
+</button>
+</div>
+</form>
+<!-- Security Notice Info Row -->
+<div class="mt-4 p-2.5 bg-surface-alt rounded-[12px] flex items-center gap-2.5 border border-border/70">
+<div class="shrink-0 w-7 h-7 rounded-full bg-accent-tint flex items-center justify-center text-accent-fill">
+<span class="material-symbols-outlined text-[17px]" data-icon="shield">shield</span>
+</div>
+<p class="font-caption-sm text-[12.5px] leading-snug text-text-secondary">
+            A verification code will be sent to your authenticator app
+          </p>
+</div>
+</div>
+<!-- Trust & Compliance Footer -->
+<div class="pt-5 mt-auto border-t border-border/50 space-y-1.5 text-center">
+<div class="flex items-center justify-center gap-1.5 text-text-secondary font-caption-sm text-[12px]">
+<span class="material-symbols-outlined text-[14px] text-text-tertiary" data-icon="lock">lock</span>
+<span>HIPAA-secured, encrypted session</span>
+<span class="inline-block w-1 h-1 rounded-full bg-success"></span>
+</div>
+<p class="font-caption-sm text-[11px] leading-tight text-text-tertiary">
+          Not for emergencies. If this is an emergency, call 911.
+        </p>
+<!-- iOS Home Indicator Spacing -->
+<div class="pt-2 flex justify-center items-center">
+<div class="w-[134px] h-[4px] bg-text-primary/20 rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+    // Password toggle micro-interaction
+    const toggleBtn = document.getElementById('toggle-password');
+    const passwordInput = document.getElementById('password');
+    const toggleIcon = document.getElementById('toggle-icon');
+
+    if (toggleBtn && passwordInput && toggleIcon) {
+      toggleBtn.addEventListener('click', () => {
+        const isPassword = passwordInput.getAttribute('type') === 'password';
+        passwordInput.setAttribute('type', isPassword ? 'text' : 'password');
+        toggleIcon.textContent = isPassword ? 'visibility' : 'visibility_off';
+      });
+    }
+  </script>
+</body></html>

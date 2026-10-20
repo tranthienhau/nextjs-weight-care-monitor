@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Operational Reports - Steadfast</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Bodoni Moda (Display) & Questrial (Body/UI) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&amp;family=Questrial&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-variant": "#e2e1ee",
+            "on-surface": "#1a1b24",
+            "on-tertiary-fixed-variant": "#7b2e00",
+            "text-tertiary": "#8A90A8",
+            "inverse-primary": "#b9c3ff",
+            "accent-pressed": "#2E52E6",
+            "surface-dim": "#d9d9e5",
+            "surface-bright": "#fbf8ff",
+            "outline-variant": "#c4c5d8",
+            "on-primary-container": "#fffbff",
+            "on-background": "#1a1b24",
+            "on-tertiary-fixed": "#351000",
+            "on-secondary-fixed": "#001355",
+            "text-secondary": "#4A5068",
+            "tertiary-fixed": "#ffdbcc",
+            "surface-container-high": "#e8e7f4",
+            "inverse-on-surface": "#f0effc",
+            "on-primary": "#ffffff",
+            "border": "#E2E6F2",
+            "success-tint": "#DCFCE7",
+            "inverse-surface": "#2f3039",
+            "on-secondary": "#ffffff",
+            "background": "#F4F6FC",
+            "accent-tint": "#E9EDFF",
+            "warning-tint": "#FEF3C7",
+            "on-error": "#ffffff",
+            "surface": "#FFFFFF",
+            "error-container": "#ffdad6",
+            "primary-fixed-dim": "#b9c3ff",
+            "error": "#ba1a1a",
+            "on-tertiary": "#ffffff",
+            "surface-alt": "#F4F6FC",
+            "on-secondary-fixed-variant": "#1038b3",
+            "accent-fill": "#4165FE",
+            "success": "#16A34A",
+            "outline": "#747687",
+            "danger-tint": "#FEE2E2",
+            "surface-container-low": "#f3f2ff",
+            "tertiary-fixed-dim": "#ffb695",
+            "on-primary-fixed": "#001257",
+            "support": "#F7979A",
+            "on-error-container": "#93000a",
+            "warning": "#D97706",
+            "on-surface-variant": "#444655",
+            "surface-container-highest": "#e2e1ee",
+            "surface-container": "#eeedf9",
+            "secondary-fixed": "#dde1ff",
+            "danger": "#DC2626",
+            "secondary": "#3050c9",
+            "on-secondary-container": "#fffbff",
+            "surface-container-lowest": "#ffffff",
+            "primary": "#1e49e4",
+            "primary-fixed": "#dde1ff",
+            "secondary-container": "#4d6be3",
+            "primary-container": "#4165fe",
+            "on-primary-fixed-variant": "#0033c1",
+            "tertiary-container": "#c64f00",
+            "on-tertiary-container": "#fffbff",
+            "text-primary": "#0C101F",
+            "tertiary": "#9e3e00",
+            "surface-tint": "#224ce7",
+            "secondary-fixed-dim": "#b8c4ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "20": "20px",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin": "20px",
+            "space-lg": "16px",
+            "space-xl": "24px",
+            "space-md": "12px",
+            "space-2xl": "32px",
+            "space-sm": "8px",
+            "space-xs": "4px",
+            "gutter": "16px"
+          },
+          "fontFamily": {
+            "body-md": ["Questrial", "sans-serif"],
+            "title-md": ["Questrial", "sans-serif"],
+            "label-md": ["Questrial", "sans-serif"],
+            "caption-sm": ["Questrial", "sans-serif"],
+            "headline-lg": ["Bodoni Moda", "serif"]
+          },
+          "fontSize": {
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "caption-sm": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-lg-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+          },
+          "boxShadow": {
+            "soft": "0 1px 2px rgba(12,16,31,.04), 0 8px 24px rgba(12,16,31,.06)"
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    body {
+      background-color: #F4F6FC;
+      color: #0C101F;
+      font-family: 'Questrial', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+</head>
+<body class="bg-background text-text-primary min-h-screen flex justify-center selection:bg-accent-tint selection:text-primary">
+<!-- Mobile Frame Container (393px width constraint) -->
+<div class="w-full max-w-[393px] min-h-screen bg-background relative flex flex-col pb-28">
+<!-- Top App Bar & Clinic Context Header -->
+<header class="sticky top-0 z-40 bg-surface/95 backdrop-blur-md px-margin pt-4 pb-3 shadow-soft transition-colors">
+<!-- Clinic Title Sub-bar -->
+<div class="flex items-center justify-between pb-2">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="local_hospital">local_hospital</span>
+<span class="text-caption-sm font-caption-sm text-text-secondary tracking-tight">Northside Metabolic Health</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-medium bg-accent-tint text-accent-fill tracking-wide">
+            Admin
+          </span>
+<img alt="Tom Becker" class="w-9 h-9 rounded-full object-cover ring-2 ring-border ml-1.5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgC6xUcybevmSvHOzuKLuWguIF8pWTwjQXS535TtrW1S8n7cIfQybBQZiucqWOvyggwnKYKbMya-1XLUmfvDDB19R5y2BP1H8CmbXjuM0vaDoAeYHjPEiM9CErJ6c7_a9LRffMpNIjLgpgHJxpBIUk2r_tO_3X3p-p2GX35vHSVcnB7sR1eXJNvA0k0my6DUJSgiWDFTb3lzLcbRDRr_z36AjksNA6_WhIcE8wrtQHjnn6YL2oK7EPcs9labe0RptTYwan519nzP4"/>
+</div>
+</div>
+<!-- Main Operational Reports Bar -->
+<div class="flex items-center justify-between pt-1">
+<div>
+<h1 class="font-headline-lg text-headline-lg-mobile text-text-primary font-bold tracking-tight">Reports</h1>
+<p class="text-caption-sm font-caption-sm text-text-secondary">Practice analytics &amp; census</p>
+</div>
+<!-- Month Filter Selector -->
+<button class="flex items-center gap-1.5 bg-surface-alt hover:bg-surface-container-high border border-border px-3 py-1.5 rounded-full transition-all active:scale-95 text-text-primary text-caption-sm font-caption-sm shadow-sm" type="button">
+<span>October 2026</span>
+<span class="material-symbols-outlined text-[18px] text-text-secondary" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="px-margin pt-5 space-y-4 flex-1">
+<!-- Focal Card: Enrolled Patients Census -->
+<section class="bg-surface rounded-20 p-5 shadow-soft border border-border/60">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-caption-sm font-caption-sm text-text-secondary uppercase tracking-wider block">Patient Census</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="text-5xl font-bold font-title-md tracking-tight text-text-primary">142</span>
+<span class="text-label-md font-label-md text-text-secondary">enrolled patients</span>
+</div>
+</div>
+<div class="p-2.5 rounded-full bg-accent-tint text-accent-fill">
+<span class="material-symbols-outlined text-[24px]" data-icon="monitoring">monitoring</span>
+</div>
+</div>
+<!-- Horizontal Split Progress Bar (~90% Active, ~10% Inactive) -->
+<div class="mt-5 w-full h-3 rounded-full bg-surface-alt p-0.5 flex items-center overflow-hidden gap-1">
+<div class="h-full bg-[#6784FE] rounded-l-full transition-all duration-500" style="width: 90.1%;"></div>
+<div class="h-full bg-support rounded-r-full transition-all duration-500" style="width: 9.9%;"></div>
+</div>
+<!-- Legend and Monthly Influx -->
+<div class="mt-4 flex items-center justify-between pt-2 border-t border-border/70 text-caption-sm font-caption-sm">
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-[#6784FE]"></span>
+<span class="font-medium text-text-primary">128</span>
+<span class="text-text-secondary">Active</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-support"></span>
+<span class="font-medium text-text-primary">14</span>
+<span class="text-text-secondary">Inactive</span>
+</div>
+</div>
+<div class="flex items-center gap-1 text-success font-medium">
+<span class="material-symbols-outlined text-[16px]" data-icon="trending_up">trending_up</span>
+<span>+8 this mo</span>
+</div>
+</div>
+</section>
+<!-- 2x2 Operational Stat Tiles Grid -->
+<section class="grid grid-cols-2 gap-3">
+<!-- Tile 1: Check-ins completed -->
+<div class="bg-surface rounded-20 p-4 shadow-soft border border-border/60 flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<span class="text-caption-sm font-caption-sm text-text-secondary leading-tight">Check-ins completed</span>
+<span class="material-symbols-outlined text-text-tertiary text-[18px]" data-icon="assignment_turned_in">assignment_turned_in</span>
+</div>
+<div class="my-3">
+<span class="text-3xl font-bold font-title-md text-text-primary">96</span>
+</div>
+<div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-medium bg-warning-tint text-warning">
+<span class="w-1.5 h-1.5 rounded-full bg-warning"></span>
+              11 overdue
+            </span>
+</div>
+</div>
+<!-- Tile 2: Awaiting MD review -->
+<div class="bg-surface rounded-20 p-4 shadow-soft border border-border/60 flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<span class="text-caption-sm font-caption-sm text-text-secondary leading-tight">Awaiting MD review</span>
+<span class="material-symbols-outlined text-text-tertiary text-[18px]" data-icon="stethoscope">stethoscope</span>
+</div>
+<div class="my-3">
+<span class="text-3xl font-bold font-title-md text-text-primary">6</span>
+</div>
+<div class="text-[12px] font-caption-sm text-text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-text-tertiary" data-icon="schedule">schedule</span>
+<span>Avg review 1.4 min</span>
+</div>
+</div>
+<!-- Tile 3: Due for follow-up -->
+<div class="bg-surface rounded-20 p-4 shadow-soft border border-border/60 flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<span class="text-caption-sm font-caption-sm text-text-secondary leading-tight">Due for follow-up</span>
+<span class="material-symbols-outlined text-text-tertiary text-[18px]" data-icon="event_repeat">event_repeat</span>
+</div>
+<div class="my-3">
+<span class="text-3xl font-bold font-title-md text-text-primary">9</span>
+</div>
+<div class="text-[12px] font-caption-sm text-text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-text-tertiary" data-icon="hourglass_top">hourglass_top</span>
+<span>Next 48 hours</span>
+</div>
+</div>
+<!-- Tile 4: Measurement completion (with SVG Ring) -->
+<div class="bg-surface rounded-20 p-4 shadow-soft border border-border/60 flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<span class="text-caption-sm font-caption-sm text-text-secondary leading-tight">Measurement completion</span>
+<span class="material-symbols-outlined text-text-tertiary text-[18px]" data-icon="straighten">straighten</span>
+</div>
+<div class="flex items-center justify-between my-2">
+<span class="text-3xl font-bold font-title-md text-text-primary">92%</span>
+<!-- Circular Progress Ring at 92% -->
+<div class="relative w-10 h-10 flex items-center justify-center">
+<svg class="w-10 h-10 transform -rotate-90" viewbox="0 0 36 36">
+<!-- Background Ring -->
+<path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#E9EDFF" stroke-width="3.5"></path>
+<!-- Progress Ring (92%) -->
+<path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#6784FE" stroke-dasharray="92, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+</div>
+</div>
+<div class="text-[12px] font-caption-sm text-text-secondary">
+<span>Measurements entered by staff</span>
+</div>
+</div>
+</section>
+<!-- Weekly Trend Bar Chart Card -->
+<section class="bg-surface rounded-20 p-5 shadow-soft border border-border/60">
+<div class="flex items-center justify-between mb-4">
+<div>
+<h2 class="text-title-md font-title-md text-text-primary text-base font-semibold">Check-ins per week</h2>
+<p class="text-caption-sm font-caption-sm text-text-secondary">October 2026 trajectory</p>
+</div>
+<div class="text-right">
+<span class="text-title-md font-title-md text-accent-fill font-bold">96 total</span>
+</div>
+</div>
+<!-- Custom Crisp Bar Chart Layout -->
+<div class="relative pt-6 pb-2">
+<!-- Horizontal dashed guide lines -->
+<div class="absolute inset-x-0 top-6 border-b border-dashed border-border pointer-events-none"></div>
+<div class="absolute inset-x-0 top-16 border-b border-dashed border-border pointer-events-none"></div>
+<div class="absolute inset-x-0 top-26 border-b border-dashed border-border pointer-events-none"></div>
+<!-- Vertical Bars Grid -->
+<div class="grid grid-cols-4 items-end gap-3 h-36 px-2 relative z-10">
+<!-- Wk 1: 22 -->
+<div class="flex flex-col items-center gap-1.5 h-full justify-end group">
+<span class="text-[11px] font-caption-sm text-text-secondary group-hover:text-primary transition-colors">22</span>
+<div class="w-full max-w-[32px] bg-[#6784FE]/85 hover:bg-[#6784FE] rounded-t-lg transition-all duration-300" style="height: 68%;"></div>
+<span class="text-[11px] font-caption-sm text-text-secondary mt-1 tracking-tight">Oct 1-7</span>
+</div>
+<!-- Wk 2: 25 -->
+<div class="flex flex-col items-center gap-1.5 h-full justify-end group">
+<span class="text-[11px] font-caption-sm text-text-secondary group-hover:text-primary transition-colors">25</span>
+<div class="w-full max-w-[32px] bg-[#6784FE]/85 hover:bg-[#6784FE] rounded-t-lg transition-all duration-300" style="height: 78%;"></div>
+<span class="text-[11px] font-caption-sm text-text-secondary mt-1 tracking-tight">Oct 8-14</span>
+</div>
+<!-- Wk 3: 28 (Peak) -->
+<div class="flex flex-col items-center gap-1.5 h-full justify-end group">
+<span class="text-[11px] font-caption-sm font-bold text-accent-fill">28</span>
+<div class="w-full max-w-[32px] bg-[#6784FE] rounded-t-lg transition-all duration-300 shadow-sm" style="height: 88%;"></div>
+<span class="text-[11px] font-caption-sm font-semibold text-text-primary mt-1 tracking-tight">Oct 15-21</span>
+</div>
+<!-- Wk 4: 21 -->
+<div class="flex flex-col items-center gap-1.5 h-full justify-end group">
+<span class="text-[11px] font-caption-sm text-text-secondary group-hover:text-primary transition-colors">21</span>
+<div class="w-full max-w-[32px] bg-[#6784FE]/85 hover:bg-[#6784FE] rounded-t-lg transition-all duration-300" style="height: 64%;"></div>
+<span class="text-[11px] font-caption-sm text-text-secondary mt-1 tracking-tight">Oct 22-28</span>
+</div>
+</div>
+</div>
+<!-- Weekly Summary Footer -->
+<div class="mt-3 pt-3 border-t border-border flex items-center justify-between text-caption-sm font-caption-sm text-text-secondary">
+<span>Weekly target: 20 check-ins</span>
+<span class="text-success font-medium inline-flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[15px]" data-icon="check_circle">check_circle</span>
+            All weeks met
+          </span>
+</div>
+</section>
+<!-- Data Export Card -->
+<section class="bg-surface rounded-20 p-5 shadow-soft border border-border/60 space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="p-1.5 rounded-lg bg-surface-alt text-primary">
+<span class="material-symbols-outlined text-[20px]" data-icon="database">database</span>
+</div>
+<h2 class="text-title-md font-title-md text-text-primary text-base font-semibold">Export clinic data</h2>
+</div>
+<span class="text-caption-sm font-caption-sm text-text-tertiary">HIPAA Logged</span>
+</div>
+<!-- Dataset Dropdown Selector -->
+<div>
+<label class="block text-caption-sm font-caption-sm text-text-secondary mb-1.5">Selected Dataset</label>
+<div class="relative">
+<select class="w-full bg-surface border border-border rounded-xl px-3.5 py-2.5 text-body-md font-body-md text-text-primary appearance-none focus:outline-none focus:ring-2 focus:ring-[#6784FE] transition-shadow pr-10 cursor-pointer">
+<option selected="">Dataset: Measurements</option>
+<option>Dataset: Patient Census &amp; Cohorts</option>
+<option>Dataset: Clinical Review Logs</option>
+<option>Dataset: Medication Adherence</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-text-secondary">
+<span class="material-symbols-outlined text-[20px]" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Format Selector Chips & Date Range -->
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<label class="text-caption-sm font-caption-sm text-text-secondary">Format</label>
+<div class="flex items-center gap-2">
+<!-- CSV (Selected) -->
+<button class="px-3.5 py-1.5 rounded-full text-caption-sm font-caption-sm font-medium bg-accent-tint text-accent-fill border border-accent-fill transition-all" type="button">
+                CSV
+              </button>
+<!-- JSON (Unselected) -->
+<button class="px-3.5 py-1.5 rounded-full text-caption-sm font-caption-sm font-medium bg-surface text-text-secondary border border-border hover:bg-surface-alt transition-all" type="button">
+                JSON
+              </button>
+</div>
+</div>
+<!-- Date Range Display -->
+<div class="flex items-center justify-between bg-surface-alt px-3.5 py-2.5 rounded-xl border border-border text-caption-sm font-caption-sm">
+<div class="flex items-center gap-2 text-text-secondary">
+<span class="material-symbols-outlined text-[18px] text-text-tertiary" data-icon="calendar_today">calendar_today</span>
+<span>Date range</span>
+</div>
+<span class="font-medium text-text-primary">Oct 1 – Oct 31, 2026</span>
+</div>
+</div>
+<!-- Compliance Caption with Lock Icon -->
+<div class="flex items-start gap-2 pt-1 text-text-tertiary text-caption-sm font-caption-sm leading-relaxed">
+<span class="material-symbols-outlined text-[16px] text-text-tertiary mt-0.5" data-icon="lock">lock</span>
+<span>Exports are permission-checked and logged in the audit trail.</span>
+</div>
+<!-- Primary Action Button: 52px Pill -->
+<button class="w-full h-[52px] rounded-full bg-accent-fill hover:bg-accent-pressed text-on-primary font-medium text-base flex items-center justify-center gap-2 shadow-sm transition-all duration-150 active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="download">download</span>
+<span>Export CSV</span>
+</button>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Staff 5 Tabs) -->
+<!-- Destination Rule: Operational Reports lives under Practice Admin 'More' Ecosystem -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-margin py-2 pb-8 bg-surface shadow-[0_-2px_12px_rgba(12,16,31,0.05)] max-w-[393px] mx-auto right-0">
+<!-- Tab 1: Today (Inactive) -->
+<a class="flex flex-col items-center justify-center text-text-secondary px-3 py-1 hover:text-primary transition-colors active:scale-95 duration-150" href="#today">
+<span class="material-symbols-outlined text-[22px]" data-icon="calendar_today">calendar_today</span>
+<span class="text-caption-sm font-caption-sm mt-0.5">Today</span>
+</a>
+<!-- Tab 2: Patients (Inactive) -->
+<a class="flex flex-col items-center justify-center text-text-secondary px-3 py-1 hover:text-primary transition-colors active:scale-95 duration-150" href="#patients">
+<span class="material-symbols-outlined text-[22px]" data-icon="groups">groups</span>
+<span class="text-caption-sm font-caption-sm mt-0.5">Patients</span>
+</a>
+<!-- Tab 3: Review (Inactive) -->
+<a class="flex flex-col items-center justify-center text-text-secondary px-3 py-1 hover:text-primary transition-colors active:scale-95 duration-150" href="#review">
+<span class="material-symbols-outlined text-[22px]" data-icon="rate_review">rate_review</span>
+<span class="text-caption-sm font-caption-sm mt-0.5">Review</span>
+</a>
+<!-- Tab 4: Tasks (Inactive) -->
+<a class="flex flex-col items-center justify-center text-text-secondary px-3 py-1 hover:text-primary transition-colors active:scale-95 duration-150" href="#tasks">
+<span class="material-symbols-outlined text-[22px]" data-icon="checklist">checklist</span>
+<span class="text-caption-sm font-caption-sm mt-0.5">Tasks</span>
+</a>
+<!-- Tab 5: More (ACTIVE for Practice Reports & Settings) -->
+<a class="flex flex-col items-center justify-center bg-accent-tint text-primary rounded-full px-3 py-1 active:scale-95 transition-transform duration-150" href="#more">
+<span class="material-symbols-outlined text-[22px]" data-icon="more_horiz">more_horiz</span>
+<span class="text-caption-sm font-caption-sm mt-0.5 font-medium">More</span>
+</a>
+</nav>
+</div>
+</body></html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Steadfast - Users and Roles</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Fonts: Bodoni Moda & Questrial -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&amp;family=Questrial&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with Forms & Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "warning": "#D97706",
+            "border": "#E2E6F2",
+            "surface-dim": "#d9d9e5",
+            "on-error-container": "#93000a",
+            "primary-container": "#4165fe",
+            "on-secondary-fixed": "#001355",
+            "support": "#F7979A",
+            "on-background": "#1a1b24",
+            "background": "#F4F6FC",
+            "surface-bright": "#fbf8ff",
+            "on-secondary-container": "#fffbff",
+            "surface-tint": "#224ce7",
+            "on-tertiary": "#ffffff",
+            "on-secondary": "#ffffff",
+            "inverse-on-surface": "#f0effc",
+            "on-tertiary-fixed-variant": "#7b2e00",
+            "on-surface": "#1a1b24",
+            "surface-variant": "#e2e1ee",
+            "surface": "#FFFFFF",
+            "text-secondary": "#4A5068",
+            "tertiary-fixed-dim": "#ffb695",
+            "secondary-container": "#4d6be3",
+            "primary": "#1e49e4",
+            "on-primary-fixed-variant": "#0033c1",
+            "surface-container-high": "#e8e7f4",
+            "on-error": "#ffffff",
+            "text-primary": "#0C101F",
+            "on-primary-fixed": "#001257",
+            "on-surface-variant": "#444655",
+            "accent-pressed": "#2E52E6",
+            "error": "#ba1a1a",
+            "danger": "#DC2626",
+            "surface-alt": "#F4F6FC",
+            "surface-container-low": "#f3f2ff",
+            "tertiary-fixed": "#ffdbcc",
+            "tertiary": "#9e3e00",
+            "secondary-fixed": "#dde1ff",
+            "warning-tint": "#FEF3C7",
+            "success": "#16A34A",
+            "on-secondary-fixed-variant": "#1038b3",
+            "secondary-fixed-dim": "#b8c4ff",
+            "on-primary-container": "#fffbff",
+            "accent-fill": "#4165FE",
+            "text-tertiary": "#8A90A8",
+            "surface-container-lowest": "#ffffff",
+            "secondary": "#3050c9",
+            "inverse-primary": "#b9c3ff",
+            "success-tint": "#DCFCE7",
+            "on-tertiary-container": "#fffbff",
+            "surface-container-highest": "#e2e1ee",
+            "on-tertiary-fixed": "#351000",
+            "danger-tint": "#FEE2E2",
+            "accent-tint": "#E9EDFF",
+            "on-primary": "#ffffff",
+            "outline-variant": "#c4c5d8",
+            "inverse-surface": "#2f3039",
+            "surface-container": "#eeedf9",
+            "primary-fixed-dim": "#b9c3ff",
+            "primary-fixed": "#dde1ff",
+            "outline": "#747687",
+            "error-container": "#ffdad6",
+            "tertiary-container": "#c64f00"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px",
+            "card": "20px"
+          },
+          "spacing": {
+            "margin": "20px",
+            "space-md": "12px",
+            "space-xl": "24px",
+            "space-sm": "8px",
+            "gutter": "16px",
+            "space-xs": "4px",
+            "space-lg": "16px",
+            "space-2xl": "32px"
+          },
+          "fontFamily": {
+            "label-md": ["Questrial", "sans-serif"],
+            "body-md": ["Questrial", "sans-serif"],
+            "headline-lg": ["Bodoni Moda", "serif"],
+            "title-md": ["Questrial", "sans-serif"],
+            "caption-sm": ["Questrial", "sans-serif"]
+          },
+          "fontSize": {
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "caption-sm": ["13px", { "lineHeight": "18px", "fontWeight": "500" }]
+          },
+          "boxShadow": {
+            "steadfast": "0 1px 2px rgba(12,16,31,.04), 0 8px 24px rgba(12,16,31,.06)"
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  </style>
+</head>
+<body class="bg-background text-text-primary min-h-screen flex justify-center selection:bg-accent-tint selection:text-primary">
+<!-- Mobile Frame (393px width standard) -->
+<div class="w-full max-w-[393px] min-h-screen bg-background relative flex flex-col pb-28">
+<!-- Top Status Bar Spacer (Mobile ~44-54px) -->
+<div class="h-11 w-full bg-surface shrink-0"></div>
+<!-- TopAppBar (Derived from Shared Components JSON) -->
+<header class="w-full bg-surface flex justify-between items-center px-margin h-14 shadow-sm z-30 sticky top-0">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">local_hospital</span>
+<span class="font-headline-lg text-title-md text-text-primary tracking-tight">Northside Metabolic Health</span>
+</div>
+<button class="p-1.5 rounded-full hover:bg-surface-container-low active:scale-95 transition-all text-text-secondary">
+<span class="material-symbols-outlined text-xl">notifications</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="px-margin pt-6 flex flex-col gap-6">
+<!-- Screen Title & User Context Banner -->
+<section class="flex flex-col gap-4">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<h1 class="font-headline-lg text-headline-lg-mobile text-text-primary">Users and roles</h1>
+<p class="font-body-md text-caption-sm text-text-secondary mt-1">Access control &amp; practice permissions</p>
+</div>
+<!-- Current User Profile & Role Indicator -->
+<div class="flex flex-col items-end gap-1 shrink-0 pt-1">
+<div class="relative">
+<img alt="Tom Becker" class="w-9 h-9 rounded-full object-cover ring-2 ring-white shadow-sm" src="https://lh3.googleusercontent.com/aida/AEtjO1UbvPztrx7TxWE4ZkjuVr22l8S2nGOCuCZT8zNvhpFgwp5jEonsIBWDehziqp1TEJKS0477qHrAnZtpVNXdn32GMqrzLk255VJCuQgHeNZsR4ErkaHN3i4--2xLGZ1zoXoq3pdloto4aLOD5w2OrhiygqpzOo8unxdPsVxs9hWZ7vHTVEHLERbpQsQmMFVdw7iD4Qjaut9YixQ_XSZL0g_k82-JwQa_hCNgNOTM87iBlkAcT0RES6jAmUo"/>
+</div>
+<span class="bg-accent-tint text-accent-fill font-label-md text-[11px] leading-tight px-2 py-0.5 rounded-full font-medium">Admin</span>
+</div>
+</div>
+<!-- Primary Pill Action Button -->
+<button class="w-full h-[52px] bg-accent-fill hover:bg-accent-pressed active:scale-[0.98] text-white rounded-full flex items-center justify-center gap-2 transition-transform shadow-steadfast font-label-md text-body-md font-semibold">
+<span class="material-symbols-outlined text-xl">add</span>
+<span>Invite user</span>
+</button>
+</section>
+<!-- Staff User List Section -->
+<section class="flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<h2 class="font-title-md text-[18px] text-text-primary font-semibold">Clinic staff</h2>
+<span class="bg-surface-variant text-text-secondary text-caption-sm font-label-md px-2 py-0.5 rounded-full">5</span>
+</div>
+<button class="text-caption-sm font-label-md text-primary flex items-center gap-0.5 hover:underline">
+<span>Filter</span>
+<span class="material-symbols-outlined text-sm">tune</span>
+</button>
+</div>
+<!-- Card Container with Staff Rows -->
+<div class="bg-surface rounded-card shadow-steadfast p-4 flex flex-col divide-y divide-border">
+<!-- 1. Dr. Elena Marsh -->
+<div class="py-3.5 first:pt-1 last:pb-1 flex items-center justify-between gap-3">
+<div class="flex items-center gap-3 min-w-0">
+<img alt="Dr. Elena Marsh, MD" class="w-10 h-10 rounded-full object-cover ring-1 ring-border shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1UlgXEZQBwc0Z55rji0mqG0ZxOQ7LNVNtj-sLfpg7bpD40-2Eh7yI9tSt6F7MrDyRmQMsncLm7RrPr9MZB51vS81xFXOO3nv5wHkS4aaAl1pHMAqBktIiCSn2ysHjq0F0byPDVCKePGFJc2BFVrVd3gigSKGh6NOSqt5swrXlesUilKICeRZiJR27rXt9Tm00wkuuRSlEbHL6dwVhb1oUYprnNPtfYUBCrz2CRIUT0tqyjrd_EycS9YJ-w"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-[15px] font-semibold text-text-primary truncate">Dr. Elena Marsh, MD</span>
+<span class="font-caption-sm text-[13px] text-text-secondary truncate">Physician • Clinical Lead</span>
+</div>
+</div>
+<span class="bg-success-tint text-success font-label-md text-[12px] font-semibold px-2.5 py-1 rounded-full shrink-0">Active</span>
+</div>
+<!-- 2. Jordan Lee -->
+<div class="py-3.5 flex items-center justify-between gap-3">
+<div class="flex items-center gap-3 min-w-0">
+<img alt="Jordan Lee" class="w-10 h-10 rounded-full object-cover ring-1 ring-border shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1VHHU4OkHxad0IiZ9yNuJznSS0iPf3GweqGCqtI1ruz5QOt2cLuX22lnzeL9g02hkOpZGYSh1z3sqwwQ5c-HPvHfkzFPThDI_SzAROfBN9I_F0g2xt-TJoCV9BWROYdp2CQES3iNaW-uQLrFv1X40C_0kqwy7bxJNLhICT4nMXC5WJsn1eCu-AQqFEcmn960IMQtMaPnQ4_ssJXNHaJg76rGcOgzSNVE7VZPb3C6XBp0A-60vxxp4st5o4"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-[15px] font-semibold text-text-primary truncate">Jordan Lee</span>
+<span class="font-caption-sm text-[13px] text-text-secondary truncate">Medical Assistant • Pod B</span>
+</div>
+</div>
+<span class="bg-success-tint text-success font-label-md text-[12px] font-semibold px-2.5 py-1 rounded-full shrink-0">Active</span>
+</div>
+<!-- 3. Priya Nair -->
+<div class="py-3.5 flex items-center justify-between gap-3">
+<div class="flex items-center gap-3 min-w-0">
+<img alt="Priya Nair" class="w-10 h-10 rounded-full object-cover ring-1 ring-border shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAn1tq34k9aYBdeCgUoHAaQvhXAREkZo6CKzEe0bTh59ZfnU33_DVRnTUDL6MYYaCLh5xrK-IVLvTnm5ae2xZjowEwhxZm5G80aTydihFUarwzthIbO1mKPK6IHcItl2mtDpGruGXuo9qNpa03hCJlkxjrxxgVmyeB_gT5wgJd4RZIZukxXThxg-WNKelKnZHkJf32D4DotK7t277sfJTrC1jOnrXfdAXl9cJxYG8ycnJBj2wR3Y7Pb13RPYJUSCvMkYMWBHc5PffY"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-[15px] font-semibold text-text-primary truncate">Priya Nair</span>
+<span class="font-caption-sm text-[13px] text-text-secondary truncate">Medical Assistant</span>
+</div>
+</div>
+<span class="bg-success-tint text-success font-label-md text-[12px] font-semibold px-2.5 py-1 rounded-full shrink-0">Active</span>
+</div>
+<!-- 4. Tom Becker -->
+<div class="py-3.5 flex items-center justify-between gap-3">
+<div class="flex items-center gap-3 min-w-0">
+<img alt="Tom Becker" class="w-10 h-10 rounded-full object-cover ring-1 ring-border shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1UbvPztrx7TxWE4ZkjuVr22l8S2nGOCuCZT8zNvhpFgwp5jEonsIBWDehziqp1TEJKS0477qHrAnZtpVNXdn32GMqrzLk255VJCuQgHeNZsR4ErkaHN3i4--2xLGZ1zoXoq3pdloto4aLOD5w2OrhiygqpzOo8unxdPsVxs9hWZ7vHTVEHLERbpQsQmMFVdw7iD4Qjaut9YixQ_XSZL0g_k82-JwQa_hCNgNOTM87iBlkAcT0RES6jAmUo"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-[15px] font-semibold text-text-primary truncate">Tom Becker</span>
+<span class="font-caption-sm text-[13px] text-text-secondary truncate">Practice Admin</span>
+</div>
+</div>
+<span class="bg-success-tint text-success font-label-md text-[12px] font-semibold px-2.5 py-1 rounded-full shrink-0">Active</span>
+</div>
+<!-- 5. Rachel Diaz -->
+<div class="py-3.5 last:pb-1 flex items-center justify-between gap-3">
+<div class="flex items-center gap-3 min-w-0 opacity-80">
+<img alt="Rachel Diaz" class="w-10 h-10 rounded-full object-cover ring-1 ring-border grayscale-[20%] shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6y7HcX_KWWAyrcmyI0xe2VTL5JYtdY_Bqv3ypgUnNKGUzjYEvQ9cxISGY5FLgBhWN3vCZiJ3WcWxPduI64DHFY7Pd2M44jXJl4skP83tsn3gYTQ_EeojSwrXLJpMBPpBHRW9cL-wZ-Wzz9K3_UUkEHYyqx2vpV3KUe_zH4yiipl5kBVFvxh5VXd8Av8PThxJn8LbSunobRRwdiFhgmwljmtr-Rs4t3aJaSbPKnzX9Qqpcvvb32mNbBEO_HbyM1xXr05ko3NOYZBg"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-[15px] font-semibold text-text-secondary truncate">Rachel Diaz</span>
+<span class="font-caption-sm text-[13px] text-text-tertiary truncate">Medical Assistant</span>
+</div>
+</div>
+<span class="bg-surface-alt border border-border text-text-tertiary font-label-md text-[11px] font-medium px-2 py-0.5 rounded-full shrink-0 text-center">Access removed Oct 3</span>
+</div>
+</div>
+</section>
+<!-- Focal Card: Permission Matrix -->
+<section class="bg-surface rounded-card shadow-steadfast p-5 flex flex-col gap-4">
+<div>
+<h3 class="font-title-md text-title-md text-text-primary">Permission matrix</h3>
+<p class="font-caption-sm text-caption-sm text-text-secondary mt-0.5">Role-based access privileges</p>
+</div>
+<!-- Matrix Table -->
+<div class="w-full overflow-hidden">
+<div class="grid grid-cols-12 pb-3 border-b border-border text-center items-center">
+<div class="col-span-6 text-left">
+<span class="font-caption-sm text-caption-sm text-text-secondary font-medium">Capability</span>
+</div>
+<div class="col-span-2 flex justify-center">
+<span class="bg-accent-tint text-accent-fill font-label-md text-[11px] font-semibold px-2 py-0.5 rounded-full">MD</span>
+</div>
+<div class="col-span-2 flex justify-center">
+<span class="bg-accent-tint text-accent-fill font-label-md text-[11px] font-semibold px-2 py-0.5 rounded-full">MA</span>
+</div>
+<div class="col-span-2 flex justify-center">
+<span class="bg-accent-tint text-accent-fill font-label-md text-[11px] font-semibold px-1.5 py-0.5 rounded-full">Admin</span>
+</div>
+</div>
+<div class="divide-y divide-border">
+<!-- Row 1 -->
+<div class="grid grid-cols-12 py-3 items-center text-center">
+<span class="col-span-6 text-left font-caption-sm text-[13px] text-text-primary">View clinical data</span>
+<div class="col-span-2 flex justify-center">
+<span class="material-symbols-outlined text-accent-fill text-[19px]">check</span>
+</div>
+<div class="col-span-2 flex justify-center">
+<span class="material-symbols-outlined text-accent-fill text-[19px]">check</span>
+</div>
+<div class="col-span-2 flex justify-center">
+<span class="text-text-tertiary text-sm font-semibold">—</span>
+</div>
+</div>
+<!-- Row 2 -->
+<div class="grid grid-cols-12 py-3 items-center text-center">
+<span class="col-span-6 text-left font-caption-sm text-[13px] text-text-primary">Enter measurements</span>
+<div class="col-span-2 flex justify-center">
+<span class="material-symbols-outlined text-accent-fill text-[19px]">check</span>
+</div>
+<div class="col-span-2 flex justify-center">
+<span class="material-symbols-outlined text-accent-fill text-[19px]">check</span>
+</div>
+<div class="col-span-2 flex justify-center">
+<span class="text-text-tertiary text-sm font-semibold">—</span>
+</div>
+</div>
+<!-- Row 3 -->
+<div class="grid grid-cols-12 py-3 items-center text-center">
+<span class="col-span-6 text-left font-caption-sm text-[13px] text-text-primary">Sign clinical review</span>
+<div class="col-span-2 flex justify-center">
+<span class="material-symbols-outlined text-accent-fill text-[19px]">check</span>
+</div>
+<div class="col-span-2 flex justify-center">
+<span class="text-text-tertiary text-sm font-semibold">—</span>
+</div>
+<div class="col-span-2 flex justify-center">
+<span class="text-text-tertiary text-sm font-semibold">—</span>
+</div>
+</div>
+<!-- Row 4 -->
+<div class="grid grid-cols-12 py-3 items-center text-center">
+<span class="col-span-6 text-left font-caption-sm text-[13px] text-text-primary">Billing and membership</span>
+<div class="col-span-2 flex justify-center">
+<span class="text-text-tertiary text-sm font-semibold">—</span>
+</div>
+<div class="col-span-2 flex justify-center">
+<span class="text-text-tertiary text-sm font-semibold">—</span>
+</div>
+<div class="col-span-2 flex justify-center">
+<span class="material-symbols-outlined text-accent-fill text-[19px]">check</span>
+</div>
+</div>
+<!-- Row 5 -->
+<div class="grid grid-cols-12 py-3 items-center text-center">
+<span class="col-span-6 text-left font-caption-sm text-[13px] text-text-primary">Export data</span>
+<div class="col-span-2 flex justify-center">
+<span class="material-symbols-outlined text-accent-fill text-[19px]">check</span>
+</div>
+<div class="col-span-2 flex justify-center">
+<span class="text-text-tertiary text-sm font-semibold">—</span>
+</div>
+<div class="col-span-2 flex justify-center">
+<span class="material-symbols-outlined text-accent-fill text-[19px]">check</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Compliance & Guidance Footnote -->
+<div class="pt-2 flex flex-col gap-2 bg-surface-alt -mx-5 -mb-5 p-4 rounded-b-card border-t border-border">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-text-secondary text-[18px] shrink-0 mt-0.5">shield</span>
+<p class="font-caption-sm text-caption-sm text-text-secondary leading-snug">
+              Admin access does not include clinical records by default.
+            </p>
+</div>
+<div class="flex items-center gap-1.5 text-text-tertiary">
+<span class="material-symbols-outlined text-[15px]">verified_user</span>
+<span class="font-caption-sm text-[11px] leading-tight">Role changes are audited and logged according to clinic compliance.</span>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Shared Components JSON execution) -->
+<!-- Active mapping logic: "Users and roles" sits under "More" administration -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-margin py-2 pb-8 bg-surface shadow-sm">
+<!-- Tab 1: Today (inactive) -->
+<button class="flex flex-col items-center justify-center text-text-secondary px-3 py-1 hover:text-primary transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined text-[24px]">calendar_today</span>
+<span class="font-caption-sm text-[12px] mt-0.5">Today</span>
+</button>
+<!-- Tab 2: Patients (inactive) -->
+<button class="flex flex-col items-center justify-center text-text-secondary px-3 py-1 hover:text-primary transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined text-[24px]">groups</span>
+<span class="font-caption-sm text-[12px] mt-0.5">Patients</span>
+</button>
+<!-- Tab 3: Review (inactive) -->
+<button class="flex flex-col items-center justify-center text-text-secondary px-3 py-1 hover:text-primary transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined text-[24px]">rate_review</span>
+<span class="font-caption-sm text-[12px] mt-0.5">Review</span>
+</button>
+<!-- Tab 4: Tasks (inactive) -->
+<button class="flex flex-col items-center justify-center text-text-secondary px-3 py-1 hover:text-primary transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined text-[24px]">checklist</span>
+<span class="font-caption-sm text-[12px] mt-0.5">Tasks</span>
+</button>
+<!-- Tab 5: More (ACTIVE: Users and roles belongs to practice configuration) -->
+<button class="flex flex-col items-center justify-center bg-accent-tint text-primary rounded-full px-3 py-1 transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined text-[24px]">more_horiz</span>
+<span class="font-caption-sm text-[12px] mt-0.5 font-medium">More</span>
+</button>
+</nav>
+</div>
+</body></html>

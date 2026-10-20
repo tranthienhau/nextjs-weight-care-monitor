@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Steadfast Metabolic Health - Body Tracking</title>
+<!-- Material Symbols Outlined font -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Bodoni Moda (Headline) & Questrial (Body/Labels) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&amp;family=Questrial&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-error": "#ffffff",
+            "on-surface": "#1a1b24",
+            "warning-tint": "#FEF3C7",
+            "surface-container-highest": "#e2e1ee",
+            "surface-bright": "#fbf8ff",
+            "surface-container-high": "#e8e7f4",
+            "surface-container-lowest": "#ffffff",
+            "tertiary-fixed-dim": "#ffb695",
+            "error": "#ba1a1a",
+            "on-secondary-container": "#fffbff",
+            "on-tertiary-fixed": "#351000",
+            "error-container": "#ffdad6",
+            "secondary-fixed": "#dde1ff",
+            "surface-tint": "#224ce7",
+            "primary-container": "#4165fe",
+            "tertiary-container": "#c64f00",
+            "secondary-fixed-dim": "#b8c4ff",
+            "on-error-container": "#93000a",
+            "on-primary-container": "#fffbff",
+            "success": "#16A34A",
+            "on-tertiary": "#ffffff",
+            "secondary": "#3050c9",
+            "primary-fixed": "#dde1ff",
+            "outline": "#747687",
+            "secondary-container": "#4d6be3",
+            "accent-pressed": "#2E52E6",
+            "outline-variant": "#c4c5d8",
+            "on-secondary-fixed-variant": "#1038b3",
+            "on-primary-fixed": "#001257",
+            "on-primary-fixed-variant": "#0033c1",
+            "border": "#E2E6F2",
+            "support": "#F7979A",
+            "on-tertiary-container": "#fffbff",
+            "background": "#F4F6FC",
+            "success-tint": "#DCFCE7",
+            "primary-fixed-dim": "#b9c3ff",
+            "on-primary": "#ffffff",
+            "surface-container-low": "#f3f2ff",
+            "accent-tint": "#E9EDFF",
+            "on-tertiary-fixed-variant": "#7b2e00",
+            "on-secondary": "#ffffff",
+            "text-secondary": "#4A5068",
+            "on-surface-variant": "#444655",
+            "tertiary-fixed": "#ffdbcc",
+            "accent-fill": "#4165FE",
+            "inverse-primary": "#b9c3ff",
+            "primary": "#1e49e4",
+            "on-background": "#1a1b24",
+            "inverse-on-surface": "#f0effc",
+            "surface-dim": "#d9d9e5",
+            "surface": "#FFFFFF",
+            "text-tertiary": "#8A90A8",
+            "text-primary": "#0C101F",
+            "inverse-surface": "#2f3039",
+            "on-secondary-fixed": "#001355",
+            "danger": "#DC2626",
+            "surface-variant": "#e2e1ee",
+            "surface-container": "#eeedf9",
+            "tertiary": "#9e3e00",
+            "warning": "#D97706",
+            "danger-tint": "#FEE2E2",
+            "surface-alt": "#F4F6FC"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px",
+            "card": "20px"
+          },
+          "spacing": {
+            "space-md": "12px",
+            "space-lg": "16px",
+            "space-2xl": "32px",
+            "space-xs": "4px",
+            "margin": "20px",
+            "space-sm": "8px",
+            "gutter": "16px",
+            "space-xl": "24px"
+          },
+          "fontFamily": {
+            "title-md": ["Questrial", "sans-serif"],
+            "label-md": ["Questrial", "sans-serif"],
+            "headline-lg": ["Bodoni Moda", "serif"],
+            "caption-sm": ["Questrial", "sans-serif"],
+            "body-md": ["Questrial", "sans-serif"]
+          },
+          "fontSize": {
+            "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "caption-sm": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+          },
+          "boxShadow": {
+            "ambient": "0 1px 2px rgba(12,16,31,.04), 0 8px 24px rgba(12,16,31,.06)",
+            "chart-tooltip": "0 2px 10px rgba(65, 101, 254, 0.18)"
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    /* Hide scrollbars for crisp native look */
+    ::-webkit-scrollbar { display: none; }
+    * { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+</head>
+<body class="bg-background text-text-primary antialiased flex justify-center min-h-screen selection:bg-accent-tint selection:text-primary">
+<!-- Mobile Frame Container (Strict 393px phone viewport simulation) -->
+<div class="w-full max-w-[393px] min-h-screen bg-background relative flex flex-col pb-28">
+<!-- Top App Bar / Clinical Header (Docked full-width top-0, no hard borders) -->
+<header class="sticky top-0 z-40 bg-surface/95 backdrop-blur-md px-margin pt-3 pb-3 shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-2">
+<button aria-label="Go back" class="w-9 h-9 rounded-full flex items-center justify-center hover:bg-surface-container-low active:scale-95 transition-all text-text-primary" type="button">
+<span class="material-symbols-outlined text-[24px]">chevron_left</span>
+</button>
+<div>
+<h1 class="font-headline-lg text-title-md text-text-primary tracking-tight leading-none">Body</h1>
+<p class="font-caption-sm text-caption-sm text-text-secondary mt-0.5">Maria Alvarez • NMH-00412 • Week 18</p>
+</div>
+</div>
+<!-- Staff Profile & Context Actions -->
+<div class="flex items-center gap-1.5">
+<div class="relative flex items-center">
+<img alt="Jordan Lee, MA" class="w-9 h-9 rounded-full object-cover border border-border shadow-sm" src="https://lh3.googleusercontent.com/aida/AEtjO1VHHU4OkHxad0IiZ9yNuJznSS0iPf3GweqGCqtI1ruz5QOt2cLuX22lnzeL9g02hkOpZGYSh1z3sqwwQ5c-HPvHfkzFPThDI_SzAROfBN9I_F0g2xt-TJoCV9BWROYdp2CQES3iNaW-uQLrFv1X40C_0kqwy7bxJNLhICT4nMXC5WJsn1eCu-AQqFEcmn960IMQtMaPnQ4_ssJXNHaJg76rGcOgzSNVE7VZPb3C6XBp0A-60vxxp4st5o4"/>
+<span class="absolute -bottom-1 -right-1 bg-primary-container text-white text-[9px] font-bold px-1 py-0.2 rounded-full leading-tight ring-2 ring-white">MA</span>
+</div>
+<button aria-label="Patient options" class="w-8 h-8 rounded-full flex items-center justify-center text-text-secondary hover:text-text-primary hover:bg-surface-alt transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas (Grid / Bento Card Structure) -->
+<main class="flex-1 px-margin pt-4 space-y-4">
+<!-- Time Range Selector + Baseline Stat Banner -->
+<section class="flex items-center justify-between gap-2">
+<!-- Horizontal Filter Chips -->
+<div class="flex items-center gap-1.5 p-1 bg-surface rounded-full shadow-ambient border border-border/60">
+<button class="px-3 py-1 rounded-full text-caption-sm font-label-md text-text-secondary hover:text-primary transition-colors">3M</button>
+<button class="px-3 py-1 rounded-full text-caption-sm font-label-md bg-accent-tint text-primary font-semibold shadow-xs">6M</button>
+<button class="px-3 py-1 rounded-full text-caption-sm font-label-md text-text-secondary hover:text-primary transition-colors">1Y</button>
+<button class="px-3 py-1 rounded-full text-caption-sm font-label-md text-text-secondary hover:text-primary transition-colors">All</button>
+</div>
+<!-- Right Baseline delta tag -->
+<div class="text-right">
+<div class="text-[11px] font-caption-sm text-text-tertiary">Baseline: 222.0 lb</div>
+<div class="text-[12px] font-label-md text-success font-semibold tracking-tight">-18.6 lb (-8.4%)</div>
+</div>
+</section>
+<!-- FOCAL ELEMENT 1: Weight Trend Card (20px border radius, 16px padding, subtle shadow) -->
+<section class="bg-surface rounded-card p-4 shadow-ambient border border-border/40 relative overflow-hidden">
+<!-- Card Header -->
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-accent-fill"></span>
+<h2 class="font-title-md text-[17px] font-semibold text-text-primary tracking-tight">Weight trend</h2>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-accent-tint text-primary text-caption-sm font-label-md font-semibold">
+            Current: 203.4 lb
+          </span>
+</div>
+<!-- SVG Clinical Vector Chart (High-fidelity interactive data representation) -->
+<div class="relative w-full h-56 pt-2">
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 353 190">
+<defs>
+<!-- Primary gradient fill under weight curve -->
+<lineargradient id="weightAreaGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#4165FE" stop-opacity="0.18"></stop>
+<stop offset="100%" stop-color="#4165FE" stop-opacity="0.00"></stop>
+</lineargradient>
+</defs>
+<!-- Horizontal Y-Axis Gridlines & Reference Labels -->
+<!-- 225 lb -->
+<line stroke="#E2E6F2" stroke-dasharray="2 3" stroke-width="1" x1="28" x2="345" y1="12" y2="12"></line>
+<text fill="#8A90A8" font-family="Questrial" font-size="10" x="2" y="16">225</text>
+<!-- 220 lb -->
+<line stroke="#E2E6F2" stroke-width="1" x1="28" x2="345" y1="44" y2="44"></line>
+<text fill="#8A90A8" font-family="Questrial" font-size="10" x="2" y="48">220</text>
+<!-- 215 lb -->
+<line stroke="#E2E6F2" stroke-width="1" x1="28" x2="345" y1="76" y2="76"></line>
+<text fill="#8A90A8" font-family="Questrial" font-size="10" x="2" y="80">215</text>
+<!-- 210 lb -->
+<line stroke="#E2E6F2" stroke-width="1" x1="28" x2="345" y1="108" y2="108"></line>
+<text fill="#8A90A8" font-family="Questrial" font-size="10" x="2" y="112">210</text>
+<!-- 205 lb -->
+<line stroke="#E2E6F2" stroke-width="1" x1="28" x2="345" y1="140" y2="140"></line>
+<text fill="#8A90A8" font-family="Questrial" font-size="10" x="2" y="144">205</text>
+<!-- 200 lb -->
+<line stroke="#E2E6F2" stroke-width="1" x1="28" x2="345" y1="172" y2="172"></line>
+<text fill="#8A90A8" font-family="Questrial" font-size="10" x="2" y="176">200</text>
+<!-- Gradient Area under recorded line -->
+<polygon fill="url(#weightAreaGrad)" points="35,31 82,66 135,95 135,172 35,172"></polygon>
+<polygon fill="url(#weightAreaGrad)" points="230,126 280,140 332,150 332,172 230,172"></polygon>
+<!-- Segment 1: Solid Jun 18 (222.0) -> Jul 10 (216.5) -> Jul 28 (212.0) -->
+<path d="M 35 31 L 82 66 L 135 95" fill="none" stroke="#4165FE" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+<!-- Segment 2: August Gap (Jul 28 to Sep 17) - Medical Dashed Gap Segment -->
+<path d="M 135 95 L 230 126" fill="none" stroke="#8A90A8" stroke-dasharray="4 4" stroke-width="1.8"></path>
+<!-- Segment 3: Solid Sep 17 (207.2) -> Oct 1 (205.0) -> Oct 15 (203.4) -->
+<path d="M 230 126 L 280 140 L 332 150" fill="none" stroke="#4165FE" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+<!-- Data Point Circles (White centers with bold royal blue borders) -->
+<!-- Jun 18: 222.0 lb -->
+<circle cx="35" cy="31" fill="#FFFFFF" r="4" stroke="#4165FE" stroke-width="2.5"></circle>
+<!-- Jul 10: 216.5 lb -->
+<circle cx="82" cy="66" fill="#FFFFFF" r="3.5" stroke="#4165FE" stroke-width="2"></circle>
+<!-- Jul 28: 212.0 lb -->
+<circle cx="135" cy="95" fill="#FFFFFF" r="4" stroke="#4165FE" stroke-width="2.5"></circle>
+<!-- Sep 17: 207.2 lb -->
+<circle cx="230" cy="126" fill="#FFFFFF" r="4" stroke="#4165FE" stroke-width="2.5"></circle>
+<!-- Oct 1: 205.0 lb -->
+<circle cx="280" cy="140" fill="#FFFFFF" r="3.5" stroke="#4165FE" stroke-width="2"></circle>
+<!-- Oct 15 (Latest Active Point): 203.4 lb -->
+<circle class="shadow-sm" cx="332" cy="150" fill="#4165FE" r="5" stroke="#FFFFFF" stroke-width="2.5"></circle>
+<circle cx="332" cy="150" fill="none" r="9" stroke="#4165FE" stroke-opacity="0.3" stroke-width="1.5"></circle>
+</svg>
+<!-- August Gap Warning Pill Overlay -->
+<div class="absolute left-[44%] top-[48%] -translate-x-1/2 -translate-y-1/2 bg-surface/90 border border-border px-2 py-0.5 rounded-full shadow-xs flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-text-tertiary"></span>
+<span class="text-[10px] font-caption-sm text-text-secondary font-medium">No reading (Aug)</span>
+</div>
+<!-- Tooltip Callout on Oct 15 Point -->
+<div class="absolute right-0 top-[60%] -translate-y-1/2 bg-text-primary text-white px-2.5 py-1 rounded-xl shadow-chart-tooltip flex flex-col items-end pointer-events-none">
+<div class="text-[12px] font-bold leading-tight flex items-center gap-1">
+<span>203.4 lb</span>
+<span class="text-[10px] text-success font-semibold">-0.6 lb</span>
+</div>
+<span class="text-[9px] text-text-tertiary">Oct 15 Visit</span>
+</div>
+</div>
+<!-- X-Axis Labels -->
+<div class="flex justify-between pl-8 pr-2 pt-2 text-[11px] font-caption-sm text-text-secondary border-t border-border/30 mt-1">
+<span>Jun</span>
+<span>Jul</span>
+<span class="text-text-tertiary italic">Aug</span>
+<span>Sep</span>
+<span class="font-semibold text-primary">Oct</span>
+</div>
+</section>
+<!-- FOCAL ELEMENT 2: Body Composition Card (Coral #F7979A Theme) -->
+<section class="bg-surface rounded-card p-4 shadow-ambient border border-border/40">
+<div class="flex items-start justify-between mb-2">
+<div>
+<div class="flex items-center gap-1.5">
+<h2 class="font-body-md text-[16px] font-semibold text-text-primary tracking-tight">Body fat %</h2>
+<span class="bg-surface-alt border border-border text-[10px] text-text-secondary px-1.5 py-0.2 rounded font-caption-sm">estimate</span>
+</div>
+<p class="text-[11px] font-caption-sm text-text-tertiary">Bioimpedance metric</p>
+</div>
+<div class="text-right">
+<span class="text-title-md font-bold text-text-primary text-[18px]">38.2%</span>
+<div class="text-[11px] font-caption-sm text-success font-medium">-3.9% from start</div>
+</div>
+</div>
+<!-- Coral Trend Chart -->
+<div class="relative w-full h-24 my-1">
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 353 80">
+<defs>
+<lineargradient id="coralAreaGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#F7979A" stop-opacity="0.30"></stop>
+<stop offset="100%" stop-color="#F7979A" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<!-- Baseline reference line at 40% -->
+<line stroke="#FEE2E2" stroke-dasharray="3 3" stroke-width="1" x1="10" x2="345" y1="36" y2="36"></line>
+<!-- Coral area fill -->
+<polygon fill="url(#coralAreaGrad)" points="15,14 90,26 150,38 240,56 295,64 340,68 340,78 15,78"></polygon>
+<!-- Coral stroke line (Jun 42.1% to Oct 38.2%) -->
+<path d="M 15 14 Q 100 28 170 45 T 340 68" fill="none" stroke="#F7979A" stroke-linecap="round" stroke-width="2.5"></path>
+<!-- Points -->
+<circle cx="15" cy="14" fill="#FFFFFF" r="3.5" stroke="#F7979A" stroke-width="2"></circle>
+<circle cx="170" cy="45" fill="#FFFFFF" r="3" stroke="#F7979A" stroke-width="2"></circle>
+<circle cx="340" cy="68" fill="#F7979A" r="4" stroke="#FFFFFF" stroke-width="2"></circle>
+</svg>
+</div>
+<!-- Metrics Row below Chart -->
+<div class="grid grid-cols-2 gap-2 pt-2 border-t border-border/50">
+<div class="bg-surface-alt p-2.5 rounded-xl border border-border/40">
+<div class="text-[11px] font-caption-sm text-text-secondary">Muscle mass</div>
+<div class="font-title-md text-[15px] font-semibold text-text-primary mt-0.5">
+              71.4 lb <span class="text-[10px] font-normal text-text-tertiary">(Est.)</span>
+</div>
+</div>
+<div class="bg-surface-alt p-2.5 rounded-xl border border-border/40">
+<div class="text-[11px] font-caption-sm text-text-secondary">Fat-free mass</div>
+<div class="font-title-md text-[15px] font-semibold text-text-primary mt-0.5">
+              125.7 lb <span class="text-[10px] font-normal text-text-tertiary">(Est.)</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: Measurement Entries Table Card (With Audit Box) -->
+<section class="bg-surface rounded-card p-4 shadow-ambient border border-border/40">
+<!-- Section Header -->
+<div class="flex items-center justify-between pb-3 border-b border-border/50">
+<div class="flex items-center gap-1.5">
+<h2 class="font-title-md text-[16px] font-semibold text-text-primary">Entries</h2>
+<span class="text-caption-sm text-text-tertiary font-label-md">(6)</span>
+</div>
+<!-- Outline Pill Button: Export CSV -->
+<button class="h-8 px-3 rounded-full border border-primary text-primary hover:bg-accent-tint/50 text-[12px] font-label-md font-semibold flex items-center gap-1 transition-colors active:scale-95" type="button">
+<span class="material-symbols-outlined text-[16px]">download</span>
+<span>Export CSV</span>
+</button>
+</div>
+<!-- Entries List -->
+<div class="divide-y divide-border/40 text-left">
+<!-- Row 1: Oct 15 -->
+<div class="py-3 flex items-center justify-between gap-2">
+<div>
+<div class="flex items-center gap-2">
+<span class="text-[13px] font-caption-sm font-semibold text-text-primary">Oct 15</span>
+<span class="text-[15px] font-title-md font-bold text-text-primary tracking-tight">203.4 lb</span>
+</div>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="text-[10px] font-caption-sm text-text-secondary px-1.5 py-0.2 rounded border border-border bg-surface-alt">Hume Body Pod</span>
+<span class="text-[10px] font-caption-sm text-primary px-1.5 py-0.2 rounded border border-primary/40 bg-accent-tint/30 font-medium">J. Lee, MA</span>
+</div>
+</div>
+<div class="text-right">
+<span class="text-[13px] font-label-md text-text-secondary font-medium">38.2% BF</span>
+<span class="block text-[10px] text-text-tertiary">Clinic scale</span>
+</div>
+</div>
+<!-- Row 2: Oct 1 -->
+<div class="py-3 flex items-center justify-between gap-2">
+<div>
+<div class="flex items-center gap-2">
+<span class="text-[13px] font-caption-sm font-semibold text-text-primary">Oct 1</span>
+<span class="text-[15px] font-title-md font-bold text-text-primary tracking-tight">205.0 lb</span>
+</div>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="text-[10px] font-caption-sm text-text-secondary px-1.5 py-0.2 rounded border border-border bg-surface-alt">Hume Body Pod</span>
+<span class="text-[10px] font-caption-sm text-text-secondary px-1.5 py-0.2 rounded border border-border font-medium">P. Nair, MA</span>
+</div>
+</div>
+<div class="text-right">
+<span class="text-[13px] font-label-md text-text-secondary font-medium">38.8% BF</span>
+<span class="block text-[10px] text-text-tertiary">Clinic scale</span>
+</div>
+</div>
+<!-- Row 3: Sep 17 with Edited Status -->
+<div class="pt-3 pb-2">
+<div class="flex items-center justify-between gap-2">
+<div>
+<div class="flex items-center gap-2">
+<span class="text-[13px] font-caption-sm font-semibold text-text-primary">Sep 17</span>
+<span class="text-[15px] font-title-md font-bold text-text-primary tracking-tight">207.2 lb</span>
+<!-- Amber Tag for Edited Entry -->
+<span class="bg-warning-tint text-warning border border-warning/30 text-[10px] font-label-md font-semibold px-1.5 py-0.2 rounded-full inline-flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[11px]">edit</span>
+<span>Edited</span>
+</span>
+</div>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="text-[10px] font-caption-sm text-text-secondary px-1.5 py-0.2 rounded border border-border bg-surface-alt">Hume Body Pod</span>
+</div>
+</div>
+<div class="text-right">
+<span class="text-[13px] font-label-md text-text-secondary font-medium">39.5% BF</span>
+<span class="block text-[10px] text-text-tertiary">Clinic scale</span>
+</div>
+</div>
+<!-- Nested Expanded Clinical Audit Box -->
+<div class="mt-2.5 p-2.5 bg-surface-alt rounded-xl border border-border/80 flex items-start gap-2 text-left">
+<span class="material-symbols-outlined text-[16px] text-text-tertiary mt-0.5 shrink-0">history</span>
+<div class="text-[11px] font-caption-sm text-text-secondary leading-snug">
+<span class="font-medium text-text-primary">Corrected 207.9 to 207.2 lb</span> by <span class="font-medium">J. Lee, MA</span>, Sep 17 4:12 PM.
+                <span class="block text-text-tertiary mt-0.5 italic">Reason: transcription error.</span>
+</div>
+</div>
+</div>
+<!-- Row 4: Jul 28 -->
+<div class="py-3 flex items-center justify-between gap-2">
+<div>
+<div class="flex items-center gap-2">
+<span class="text-[13px] font-caption-sm font-semibold text-text-primary">Jul 28</span>
+<span class="text-[15px] font-title-md font-bold text-text-primary tracking-tight">212.0 lb</span>
+</div>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="text-[10px] font-caption-sm text-text-secondary px-1.5 py-0.2 rounded border border-border bg-surface-alt">Hume Body Pod</span>
+<span class="text-[10px] font-caption-sm text-text-secondary px-1.5 py-0.2 rounded border border-border font-medium">J. Lee, MA</span>
+</div>
+</div>
+<div class="text-right">
+<span class="text-[13px] font-label-md text-text-secondary font-medium">40.4% BF</span>
+<span class="block text-[10px] text-text-tertiary">Clinic scale</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Safety & Regulatory Banner -->
+<section class="bg-accent-tint/60 rounded-xl p-3 border border-border/60 flex items-center gap-2.5 text-left">
+<span class="material-symbols-outlined text-[20px] text-primary shrink-0">verified_user</span>
+<p class="font-caption-sm text-[12px] text-text-secondary leading-tight">HIPAA-secured • audit logged. Clinical flags require MD review.</p>
+</section>
+</main>
+<!-- Bottom Tab Bar: Staff Navigation View (Exactly 5 destinations, Patients ACTIVE) -->
+<!-- Prohibiting border-t, utilizing elevation & tonal shifts per Design System -->
+<nav aria-label="Staff Global Navigation" class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-margin py-2 pb-6 bg-surface shadow-sm max-w-[393px] left-1/2 -translate-x-1/2">
+<!-- Tab 1: Today (Inactive) -->
+<a class="flex flex-col items-center justify-center text-text-secondary px-3 py-1 hover:text-primary transition-colors active:scale-95 duration-150" href="#today">
+<span class="material-symbols-outlined text-[22px]">calendar_today</span>
+<span class="text-caption-sm font-caption-sm mt-0.5">Today</span>
+</a>
+<!-- Tab 2: Patients (Active Lock: Patient details page maps to Patients destination) -->
+<a aria-current="page" class="flex flex-col items-center justify-center bg-accent-tint text-primary rounded-full px-3.5 py-1 transition-colors active:scale-95 duration-150 font-semibold" href="#patients">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">groups</span>
+<span class="text-caption-sm font-caption-sm mt-0.5">Patients</span>
+</a>
+<!-- Tab 3: Review (Inactive) -->
+<a class="flex flex-col items-center justify-center text-text-secondary px-3 py-1 hover:text-primary transition-colors active:scale-95 duration-150" href="#review">
+<span class="material-symbols-outlined text-[22px]">rate_review</span>
+<span class="text-caption-sm font-caption-sm mt-0.5">Review</span>
+</a>
+<!-- Tab 4: Tasks (Inactive) -->
+<a class="flex flex-col items-center justify-center text-text-secondary px-3 py-1 hover:text-primary transition-colors active:scale-95 duration-150" href="#tasks">
+<span class="material-symbols-outlined text-[22px]">checklist</span>
+<span class="text-caption-sm font-caption-sm mt-0.5">Tasks</span>
+</a>
+<!-- Tab 5: More (Inactive) -->
+<a class="flex flex-col items-center justify-center text-text-secondary px-3 py-1 hover:text-primary transition-colors active:scale-95 duration-150" href="#more">
+<span class="material-symbols-outlined text-[22px]">more_horiz</span>
+<span class="text-caption-sm font-caption-sm mt-0.5">More</span>
+</a>
+</nav>
+</div>
+</body></html>
