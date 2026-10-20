@@ -1,0 +1,6 @@
+design/
+screenshots/
+scripts/
+promo/
+*.md
+!README.md
