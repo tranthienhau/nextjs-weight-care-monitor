@@ -99,7 +99,7 @@ export default function DocumentReviewPage() {
           me && (
             <span className="flex items-center gap-2 pl-1 pr-2 py-1 bg-surface rounded-full border border-border shadow-card-sm">
               <Avatar src={me.avatar} alt="" size={28} />
-              <span className="text-[11px] font-semibold text-accent-fill bg-accent-tint px-1.5 py-0.5 rounded-full">{roleChip(role)}</span>
+              <span className="text-[12px] font-semibold text-accent-fill bg-accent-tint px-1.5 py-0.5 rounded-full">{roleChip(role)}</span>
             </span>
           )
         }
@@ -115,7 +115,7 @@ export default function DocumentReviewPage() {
               </span>
               <span className="text-text-secondary truncate hidden sm:inline">- Wk {p.programWeek} - {planMed(p.id)}</span>
             </Link>
-            <span className="text-[11px] font-semibold text-warning bg-warning-tint px-2 py-0.5 rounded-full shrink-0">{items.length ? "Awaiting MD" : "Up to date"}</span>
+            <span className="text-[12px] font-semibold text-warning bg-warning-tint px-2 py-0.5 rounded-full shrink-0">{items.length ? "Awaiting MD" : "Up to date"}</span>
           </div>
 
           <ItemsCard items={items} checked={checked} onToggle={toggle} />

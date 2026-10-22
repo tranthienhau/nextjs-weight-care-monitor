@@ -17,7 +17,7 @@ export function AdherenceDots({ taken, scheduled }: { taken: number; scheduled: 
             >
               <Icon name={done ? "check" : "remove"} size={18} />
             </span>
-            <span className="mt-1.5 text-[11px] text-text-secondary">
+            <span className="mt-1.5 text-[12px] text-text-secondary">
               Dose {i + 1}
               <span className="sr-only">{done ? ", taken" : ", not reported taken"}</span>
             </span>

@@ -73,7 +73,7 @@ export default function ReviewQueuePage() {
         <HeroCard>
           <div className="absolute -right-10 -bottom-10 w-44 h-44 rounded-full bg-white/10 blur-xl pointer-events-none" />
           <div className="relative">
-            <span className="inline-flex items-center gap-1.5 bg-white/20 border border-white/20 rounded-full px-3 py-1 text-[12px] font-semibold tracking-wide uppercase">
+            <span className="inline-flex items-center gap-1.5 bg-black/20 border border-white/25 rounded-full px-3 py-1 text-[12px] font-semibold tracking-wide uppercase">
               <Icon name="flag" size={14} />
               Clinician queue
             </span>
@@ -92,7 +92,7 @@ export default function ReviewQueuePage() {
       <div className="flex items-center gap-2 overflow-x-auto no-scrollbar -mx-5 px-5 lg:mx-0 lg:px-0 py-1" role="group" aria-label="Filter queue">
         {chips.map((c) => (
           <Chip key={c.key} selected={filter === c.key} onClick={() => setFilter(c.key)}>
-            {c.dot && <span className="w-2 h-2 rounded-full bg-danger" aria-hidden />}
+            {c.dot && <span className="w-2 h-2 rounded-full bg-warning" aria-hidden />}
             {c.key === "all" ? `All (${counts.all})` : `${c.label} ${counts[c.key]}`}
           </Chip>
         ))}

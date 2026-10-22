@@ -21,7 +21,7 @@ function ProgressHero({ patient }: { patient: Patient }) {
       <div className="absolute -top-12 -right-12 w-44 h-44 rounded-full bg-white/10 blur-xl pointer-events-none" />
       <div className="relative">
         <div className="flex items-center justify-between mb-4">
-          <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-semibold tracking-wider uppercase bg-white/20 border border-white/20">Progress</span>
+          <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[12px] font-semibold tracking-wider uppercase bg-black/20 border border-white/25">Progress</span>
           {pct != null && <span className="text-caption-sm text-white/90">{signed(pct)}% since enrollment</span>}
         </div>
         <div className="flex items-end justify-between gap-4">
@@ -128,7 +128,7 @@ function EducationCard() {
       <div className="relative w-full h-44 bg-surface-alt">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={a.image ?? images.meal} alt="Balanced plate with salmon and vegetables" className="w-full h-full object-cover" />
-        <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-surface/90 text-text-primary shadow-sm border border-border/40">
+        <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[12px] font-semibold bg-surface/90 text-text-primary shadow-sm border border-border/40">
           {a.tag}
         </span>
       </div>

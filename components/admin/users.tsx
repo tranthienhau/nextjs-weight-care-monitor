@@ -27,7 +27,7 @@ export function StaffList({ canEdit, userId }: { canEdit: boolean; userId: strin
           const removed = s.status === "removed";
           return (
             <div key={s.id} className="py-3.5 flex items-center justify-between gap-3 flex-wrap">
-              <div className={`flex items-center gap-3 min-w-0 ${removed ? "opacity-80" : ""}`}>
+              <div className={`flex items-center gap-3 min-w-0 `}>
                 <Avatar src={s.avatar} alt="" size={40} className={`ring-1 ring-border ${removed ? "grayscale-[20%]" : ""}`} />
                 <div className="min-w-0">
                   <p className={`text-[15px] font-semibold truncate ${removed ? "text-text-secondary" : "text-text-primary"}`}>
@@ -79,7 +79,7 @@ export function PermissionMatrix() {
           </span>
           {["MD", "MA", "Admin"].map((r) => (
             <span role="columnheader" key={r} className="col-span-2 flex justify-center">
-              <span className="bg-accent-tint text-accent-fill text-[11px] font-semibold px-2 py-0.5 rounded-full">{r}</span>
+              <span className="bg-accent-tint text-accent-fill text-[12px] font-semibold px-2 py-0.5 rounded-full">{r}</span>
             </span>
           ))}
         </div>
@@ -101,7 +101,7 @@ export function PermissionMatrix() {
           <Icon name="shield" size={18} className="shrink-0" />
           Admin access does not include clinical records by default.
         </p>
-        <p className="flex items-center gap-1.5 text-[11px] text-text-tertiary">
+        <p className="flex items-center gap-1.5 text-[12px] text-text-tertiary">
           <Icon name="verified_user" size={15} />
           Role changes are recorded in the audit log.
         </p>

@@ -40,7 +40,7 @@ export function ItemsCard({ items, checked, onToggle }: { items: ReviewItem[]; c
                     warn ? "bg-[#FFFDF7] border-[#FDE68A] hover:bg-[#FEF9E7]" : "bg-surface-alt/70 border-border hover:bg-surface-alt",
                   )}
                 >
-                  <input type="checkbox" checked={checked.has(it.id)} onChange={() => onToggle(it.id)} className="mt-1 w-4 h-4 accent-[#4165FE]" />
+                  <input type="checkbox" checked={checked.has(it.id)} onChange={() => onToggle(it.id)} className="mt-1 w-4 h-4 accent-[#3451D1]" />
                   <span className="flex-1 min-w-0">
                     <span className="flex items-center justify-between gap-2 flex-wrap">
                       <span className="text-[14px] font-semibold text-text-primary">{it.title}</span>
@@ -146,17 +146,17 @@ export function MessageCard({
             <textarea rows={3} className={clsx(inputCls, "h-auto py-3 resize-none")} value={body} onChange={(e) => onBody(e.target.value)} placeholder={`Hi ${patientFirst}, ...`} />
           </label>
           <div>
-            <p className="text-[11px] font-semibold uppercase tracking-wider text-text-tertiary mb-2">Patient preview</p>
+            <p className="text-[12px] font-semibold uppercase tracking-wider text-text-tertiary mb-2">Patient preview</p>
             <div className="bg-surface-alt rounded-control p-3 border border-border space-y-2">
               <div className="flex items-center gap-2">
                 {signer && <Avatar src={signer.avatar} alt="" size={20} />}
                 <span className="text-[12px] font-medium text-text-primary">{signer?.name ?? "Physician"}</span>
-                <span className="text-[10px] text-text-tertiary ml-auto">Just now</span>
+                <span className="text-[12px] text-text-tertiary ml-auto">Just now</span>
               </div>
               <div className="bg-surface rounded-lg p-3 text-[13px] leading-relaxed text-text-primary border border-border/80 shadow-card-sm">
                 {body || <span className="text-text-tertiary">Your message will appear here.</span>}
               </div>
-              <span className="inline-flex items-center gap-1 text-[11px] font-medium text-[#15803D] bg-success-tint rounded-full px-2 py-0.5">
+              <span className="inline-flex items-center gap-1 text-[12px] font-medium text-[#15803D] bg-success-tint rounded-full px-2 py-0.5">
                 <Icon name="verified" size={13} />
                 Reviewed and sent by {signer?.shortName ?? "the physician"}
               </span>

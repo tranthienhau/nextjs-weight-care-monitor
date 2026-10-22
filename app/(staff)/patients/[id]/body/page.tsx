@@ -90,7 +90,7 @@ function BodyTab({ patient }: { patient: Patient }) {
       <section className="flex flex-wrap items-center justify-between gap-2">
         <RangeChips value={range} onChange={setRange} />
         <div className="text-right">
-          <div className="text-[11px] text-text-tertiary">Baseline: {patient.startWeightLb ? `${patient.startWeightLb.toFixed(1)} lb` : "Not measured"}</div>
+          <div className="text-[12px] text-text-tertiary">Baseline: {patient.startWeightLb ? `${patient.startWeightLb.toFixed(1)} lb` : "Not measured"}</div>
           {change != null && (
             <div className="text-[12px] text-text-primary font-semibold">
               {signed(change)} lb ({signed((change / patient.startWeightLb) * 100)}%)

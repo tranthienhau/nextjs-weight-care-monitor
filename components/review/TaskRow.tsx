@@ -52,7 +52,7 @@ export function TaskRow({ task, showAssignee }: { task: Task; showAssignee?: boo
               <span className="text-label-md font-semibold text-text-secondary">Practice task</span>
             )}
             {urgent ? (
-              <span className="inline-flex items-center gap-1 text-[11px] font-semibold px-2 py-0.5 rounded-full bg-warning-tint text-warning shrink-0">
+              <span className="inline-flex items-center gap-1 text-[12px] font-semibold px-2 py-0.5 rounded-full bg-warning-tint text-warning shrink-0">
                 <span className="w-1.5 h-1.5 rounded-full bg-warning" aria-hidden />
                 {task.due === TODAY ? "Due today" : "Overdue"}
               </span>
@@ -60,7 +60,7 @@ export function TaskRow({ task, showAssignee }: { task: Task; showAssignee?: boo
               task.tag && (
                 <span
                   className={clsx(
-                    "text-[11px] px-2 py-0.5 rounded-full border shrink-0",
+                    "text-[12px] px-2 py-0.5 rounded-full border shrink-0",
                     automated ? "bg-[#EEF0F6] text-text-tertiary border-border" : task.tag === "Lab entry" ? "bg-accent-tint text-accent-fill border-border" : "bg-surface-alt text-text-secondary border-border",
                   )}
                 >

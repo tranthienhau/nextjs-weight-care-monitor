@@ -5,14 +5,14 @@ import { fmtDay } from "@/lib/format";
 
 export const C = {
   accent: "#6784FE",
-  fill: "#4165FE",
-  support: "#F7979A",
+  fill: "#3451D1",
+  support: "#D9485F",
   grid: "#E2E6F2",
-  text: "#8A90A8",
-  warning: "#D97706",
+  text: "#646A82",
+  warning: "#B45309",
 };
 
-const axis = { stroke: C.text, fontSize: 11, tickLine: false, axisLine: false } as const;
+const axis = { stroke: C.text, fontSize: 12, tickLine: false, axisLine: false } as const;
 
 export interface Point {
   at: string;

@@ -37,7 +37,7 @@ export function withGaps(series: Measurement[]): { points: Point[]; gaps: { from
 function GapCaption({ gaps }: { gaps: { from: string; to: string }[] }) {
   if (!gaps.length) return null;
   return (
-    <p className="mt-2 flex flex-wrap items-center gap-1.5 text-[11px] text-text-secondary">
+    <p className="mt-2 flex flex-wrap items-center gap-1.5 text-[12px] text-text-secondary">
       <span className="w-1.5 h-1.5 rounded-full bg-text-tertiary" />
       {gaps.map((g) => (
         <span key={g.from}>
@@ -85,11 +85,11 @@ export function BodyFatCard({ series, muscle, fatFree }: { series: Measurement[]
             <h2 className="text-[16px] font-semibold tracking-tight">Body fat % (estimate)</h2>
             <EstimateTag />
           </div>
-          <p className="text-[11px] text-text-tertiary">Bioimpedance estimate from the body pod</p>
+          <p className="text-[12px] text-text-tertiary">Bioimpedance estimate from the body pod</p>
         </div>
         <div className="text-right shrink-0">
           <span className="text-[18px] font-bold">{fmtVal(last?.value, "%")}</span>
-          {delta != null && <div className="text-[11px] text-text-secondary">{delta > 0 ? "+" : ""}{delta} % in range</div>}
+          {delta != null && <div className="text-[12px] text-text-secondary">{delta > 0 ? "+" : ""}{delta} % in range</div>}
         </div>
       </div>
       {series.length ? (
@@ -104,9 +104,9 @@ export function BodyFatCard({ series, muscle, fatFree }: { series: Measurement[]
           { label: "Fat-free mass", m: fatFree },
         ].map(({ label, m }) => (
           <div key={label} className="bg-surface-alt p-2.5 rounded-xl border border-border/40">
-            <div className="text-[11px] text-text-secondary">{label}</div>
+            <div className="text-[12px] text-text-secondary">{label}</div>
             <div className="text-[15px] font-semibold mt-0.5">
-              {fmtVal(m?.value, "lb")} {m?.value != null && <span className="text-[10px] font-normal text-text-tertiary">(Est.)</span>}
+              {fmtVal(m?.value, "lb")} {m?.value != null && <span className="text-[12px] font-normal text-text-tertiary">(Est.)</span>}
             </div>
           </div>
         ))}

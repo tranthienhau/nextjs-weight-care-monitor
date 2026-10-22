@@ -91,7 +91,7 @@ function EntryRow({ m, bodyFat }: { m: Measurement; bodyFat?: Measurement }) {
                 type="button"
                 onClick={() => setOpen((o) => !o)}
                 aria-expanded={open}
-                className="bg-warning-tint text-warning border border-warning/30 text-[11px] font-semibold px-2 h-6 rounded-full inline-flex items-center gap-0.5"
+                className="bg-warning-tint text-warning border border-warning/30 text-[12px] font-semibold px-2 h-6 rounded-full inline-flex items-center gap-0.5"
               >
                 <Icon name="edit" size={12} />
                 Edited
@@ -107,7 +107,7 @@ function EntryRow({ m, bodyFat }: { m: Measurement; bodyFat?: Measurement }) {
         </div>
         <div className="text-right shrink-0 flex flex-col items-end gap-1">
           <span className="text-[13px] text-text-secondary">{bodyFat ? `${fmtVal(bodyFat.value, "%")} BF` : ""}</span>
-          {bodyFat?.value != null && <span className="text-[10px] text-text-tertiary">Estimate</span>}
+          {bodyFat?.value != null && <span className="text-[12px] text-text-tertiary">Estimate</span>}
           {can(role, "enterMeasurements") && !editing && (
             <button
               type="button"

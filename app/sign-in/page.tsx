@@ -81,7 +81,7 @@ export default function SignInPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-black/15 lg:from-black/25 pointer-events-none" />
         <div className="absolute top-[max(env(safe-area-inset-top),20px)] left-5 lg:top-8 lg:left-8 flex items-center gap-1.5 bg-surface/90 backdrop-blur-md px-2.5 py-1 rounded-full shadow-sm">
           <span className="w-1.5 h-1.5 rounded-full bg-support" />
-          <span className="text-[11px] leading-tight text-text-secondary">Clinic Portal</span>
+          <span className="text-[12px] leading-tight text-text-secondary">Clinic Portal</span>
         </div>
       </div>
 
@@ -91,7 +91,7 @@ export default function SignInPage() {
             <span className="text-caption-sm text-primary font-medium tracking-wide">{PRACTICE_NAME}</span>
             <span className="flex items-center gap-1 bg-surface-alt px-2 py-0.5 rounded-full">
               <Icon name="verified" size={14} className="text-primary" />
-              <span className="text-[11px] text-text-secondary font-medium">MD Monitored</span>
+              <span className="text-[12px] text-text-secondary font-medium">MD Monitored</span>
             </span>
           </div>
           <h1 className="font-serif text-headline-lg text-text-primary leading-tight">Steadfast</h1>
@@ -106,7 +106,7 @@ export default function SignInPage() {
               HIPAA-secured, encrypted session
               <span className="inline-block w-1 h-1 rounded-full bg-success" />
             </p>
-            <p className="text-[11px] leading-tight text-text-tertiary">Not for emergencies. If this is an emergency, call 911.</p>
+            <p className="text-[12px] leading-tight text-text-tertiary">Not for emergencies. If this is an emergency, call 911.</p>
           </footer>
         </div>
       </main>

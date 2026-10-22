@@ -14,7 +14,7 @@ export function DateDivider({ label }: { label: string }) {
 }
 
 const Time = ({ at, className = "text-text-tertiary" }: { at: string; className?: string }) => (
-  <time dateTime={at} className={`text-[11px] ${className}`}>
+  <time dateTime={at} className={`text-[12px] ${className}`}>
     {fmtDayTime(at)}
   </time>
 );
@@ -39,7 +39,7 @@ function PatientBubble({ m }: { m: Message }) {
     <div className="self-end max-w-[82%] bg-accent-fill text-white rounded-2xl rounded-tr-sm px-4 py-3 shadow-card-sm flex flex-col gap-1.5">
       <p className="text-[15px] leading-relaxed whitespace-pre-wrap break-words">{m.body}</p>
       <div className="flex items-center justify-end gap-1">
-        <Time at={m.at} className="text-white/75" />
+        <Time at={m.at} className="text-white/90" />
         <Icon name="done_all" size={14} className="text-white/80" />
       </div>
     </div>
@@ -60,12 +60,12 @@ function ClinicianBubble({ m, staff }: { m: Message; staff: Staff[] }) {
       <p className="text-[15px] text-text-primary leading-relaxed whitespace-pre-wrap break-words">{m.body}</p>
       <div className="flex flex-wrap items-center justify-between gap-2 pt-1">
         {m.reviewedBy ? (
-          <span className="inline-flex items-center gap-1 bg-success-tint text-[#15803D] px-2.5 py-1 rounded-full text-[11px] font-semibold">
+          <span className="inline-flex items-center gap-1 bg-success-tint text-[#15803D] px-2.5 py-1 rounded-full text-[12px] font-semibold">
             <Icon name="verified" size={14} />
             Reviewed and sent by {whoName(m.reviewedBy, staff)}
           </span>
         ) : (
-          <span className="text-[11px] text-text-tertiary">Sent by your care team</span>
+          <span className="text-[12px] text-text-tertiary">Sent by your care team</span>
         )}
         <Time at={m.at} />
       </div>

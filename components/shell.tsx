@@ -52,7 +52,7 @@ const NO_TAB_BAR = [/^\/patients\/[^/]+\/measure/, /^\/patients\/[^/]+\/bp\/new/
 
 function BottomTabs({ tabs, path }: { tabs: Tab[]; path: string }) {
   return (
-    <nav className="lg:hidden fixed bottom-0 inset-x-0 z-30 bg-surface border-t border-border pb-[env(safe-area-inset-bottom)]">
+    <nav aria-label="Main" className="lg:hidden fixed bottom-0 inset-x-0 z-30 bg-surface border-t border-border pb-[env(safe-area-inset-bottom)]">
       <ul className="flex justify-around max-w-xl mx-auto px-2 pt-2 pb-2">
         {tabs.map((t) => {
           const on = t.match(path);
@@ -74,13 +74,13 @@ function BottomTabs({ tabs, path }: { tabs: Tab[]; path: string }) {
 
 function SideNav({ tabs, path, footer }: { tabs: Tab[]; path: string; footer: ReactNode }) {
   return (
-    <aside className="hidden lg:flex fixed inset-y-0 left-0 w-64 flex-col bg-surface border-r border-border z-30">
+    <aside aria-label="Sidebar" className="hidden lg:flex fixed inset-y-0 left-0 w-64 flex-col bg-surface border-r border-border z-30">
       <div className="flex items-center gap-3 px-6 h-20 border-b border-border">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/icon-192.png" alt="" className="w-9 h-9 rounded-xl" />
         <div>
           <div className="font-serif text-[20px] font-bold leading-6">Steadfast</div>
-          <div className="text-[11px] text-text-tertiary">{PRACTICE_NAME}</div>
+          <div className="text-[12px] text-text-tertiary">{PRACTICE_NAME}</div>
         </div>
       </div>
       <ul className="flex-1 px-3 py-4 space-y-1">

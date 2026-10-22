@@ -58,7 +58,7 @@ export function PatientMini({ p }: { p: Patient }) {
         <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-accent-tint text-accent-fill text-[12px] font-medium">
           {p.programWeek > 0 ? `Week ${p.programWeek}` : "New patient"}
         </span>
-        {plan && <p className="text-[11px] text-text-tertiary mt-1">{plan.name}</p>}
+        {plan && <p className="text-[12px] text-text-tertiary mt-1">{plan.name}</p>}
       </div>
     </Card>
   );
@@ -73,11 +73,11 @@ export function EnteredBy({ note, patientSource }: { note?: string; patientSourc
       <Avatar src={staff.avatar} alt="" size={36} className="border border-white" />
       <div className="flex-1 min-w-0">
         <p className="text-[13px] font-semibold text-text-primary truncate">Entered by {staffLabel(staff)}</p>
-        <p className="text-[11px] text-text-secondary truncate">{note ?? PRACTICE_NAME}</p>
+        <p className="text-[12px] text-text-secondary truncate">{note ?? PRACTICE_NAME}</p>
       </div>
       <span
         className={clsx(
-          "text-[11px] px-2.5 py-1 rounded-full border shrink-0",
+          "text-[12px] px-2.5 py-1 rounded-full border shrink-0",
           patientSource ? "border-dashed border-text-tertiary text-text-secondary bg-surface" : "border-border/60 text-text-secondary bg-surface",
         )}
       >
@@ -142,7 +142,7 @@ export function MobileFormFooter({ children }: { children: ReactNode }) {
 
 export function AuditNote() {
   return (
-    <div className="flex items-center justify-center gap-1.5 mt-2.5 text-[11px] text-text-tertiary">
+    <div className="flex items-center justify-center gap-1.5 mt-2.5 text-[12px] text-text-tertiary">
       <Icon name="lock" size={13} />
       <span>Secure entry - audit logged</span>
     </div>

@@ -126,7 +126,7 @@ export function MeasureForm({ p }: { p: Patient }) {
         <Card className="p-4 rounded-[20px] space-y-3.5">
           <div className="flex items-center justify-between border-b border-border/60 pb-2.5">
             <h2 className="text-label-md font-semibold text-text-primary">Body composition</h2>
-            <span className="text-[11px] text-text-tertiary">Optional - device estimates</span>
+            <span className="text-[12px] text-text-tertiary">Optional - device estimates</span>
           </div>
           <CompRow id="m-bf" label="Body fat" unit="%" value={bodyFat} onChange={setBodyFat} error={errors.bodyFat} />
           <CompRow id="m-mm" label="Muscle mass" unit={unit} value={muscle} onChange={setMuscle} error={errors.muscle} />
@@ -167,7 +167,7 @@ export function MeasureForm({ p }: { p: Patient }) {
             <label htmlFor="m-notes" className="text-label-md text-text-secondary">
               Clinical notes
             </label>
-            <span className="text-[11px] text-text-tertiary">Optional</span>
+            <span className="text-[12px] text-text-tertiary">Optional</span>
           </div>
           <textarea
             id="m-notes"

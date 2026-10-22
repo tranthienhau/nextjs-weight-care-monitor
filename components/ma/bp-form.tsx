@@ -74,7 +74,7 @@ export function BpForm({ p, measuredAt }: { p: Patient; measuredAt: string }) {
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-accent" />
-              <span className="text-[11px] font-semibold tracking-wider text-text-secondary uppercase">Vital measurement</span>
+              <span className="text-[12px] font-semibold tracking-wider text-text-secondary uppercase">Vital measurement</span>
             </div>
             <span className="text-[12px] text-text-secondary font-medium px-2 py-0.5 bg-surface-alt rounded-md border border-border/60">{position.split(",")[0]}</span>
           </div>
@@ -167,7 +167,7 @@ export function BpForm({ p, measuredAt }: { p: Patient; measuredAt: string }) {
 function BigInput({ id, label, value, onChange, onBlur, invalid }: { id: string; label: string; value: string; onChange: (v: string) => void; onBlur: () => void; invalid: boolean }) {
   return (
     <div className={clsx("flex-1 text-center bg-surface rounded-xl py-3.5 px-1 shadow-card-sm border", invalid ? "border-danger" : "border-border/50")}>
-      <label htmlFor={id} className="block text-[11px] uppercase tracking-wider text-text-secondary font-medium mb-1">
+      <label htmlFor={id} className="block text-[12px] uppercase tracking-wider text-text-secondary font-medium mb-1">
         {label}
       </label>
       <input

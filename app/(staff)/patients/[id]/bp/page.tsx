@@ -75,7 +75,7 @@ function BpTab({ patient }: { patient: Patient }) {
           <div className="bg-surface-alt/40 rounded-xl p-1">
             <BpChart data={readings.map((b) => ({ at: b.measuredAt, sys: b.systolic, dia: b.diastolic }))} threshold={rule.systolicGte} />
           </div>
-          <p className="mt-2 text-[11px] text-text-tertiary">
+          <p className="mt-2 text-[12px] text-text-tertiary">
             The dashed line is the practice review rule set by the physician. It marks readings for review and is not a diagnosis.
           </p>
         </Card>

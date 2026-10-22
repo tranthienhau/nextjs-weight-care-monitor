@@ -46,7 +46,7 @@ export default function TasksPage() {
             )}
           >
             {s.label}
-            {seg === s.key && <span className="min-w-5 h-5 px-1 rounded-full bg-accent-fill text-white grid place-items-center text-[11px] font-bold">{s.count}</span>}
+            {seg === s.key && <span className="min-w-5 h-5 px-1 rounded-full bg-accent-fill text-white grid place-items-center text-[12px] font-bold">{s.count}</span>}
           </button>
         ))}
       </div>

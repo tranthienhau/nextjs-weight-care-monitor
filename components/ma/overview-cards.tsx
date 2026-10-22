@@ -27,7 +27,7 @@ export function WeightHero({ p }: { p: Patient }) {
         <div className="flex items-center justify-between">
           <span className="text-caption-sm font-semibold tracking-wider uppercase text-white/90">Weight change</span>
           {pct != null && (
-            <span className="inline-flex items-center gap-1 text-caption-sm bg-white/20 backdrop-blur-sm px-2.5 py-0.5 rounded-full">
+            <span className="inline-flex items-center gap-1 text-caption-sm bg-black/20 backdrop-blur-sm px-2.5 py-0.5 rounded-full">
               <Icon name={pct <= 0 ? "trending_down" : "trending_up"} size={14} />
               {signed(pct)}%
             </span>
@@ -37,7 +37,7 @@ export function WeightHero({ p }: { p: Patient }) {
           <span className="text-[32px] leading-10 font-bold tracking-tight">{change != null ? `${signed(change)} lb` : "No change yet"}</span>
           <span className="text-label-md text-white/80">since enrollment</span>
         </div>
-        <div className="my-3" aria-hidden>
+        <div className="my-3" role="img" aria-label="Weight trend since enrollment">
           <Sparkline values={series.map((m) => m.value as number)} height={52} />
         </div>
         <div className="pt-2 border-t border-white/20 flex items-center justify-between gap-2 text-caption-sm text-white/90 flex-wrap">
@@ -157,7 +157,7 @@ export function OverviewGrid({ p }: { p: Patient }) {
             <div className="text-caption-sm text-accent-fill font-medium">
               {plan.dose} {plan.frequency.toLowerCase()}
             </div>
-            <div className="text-[11px] text-text-secondary mt-0.5">{plan.route}</div>
+            <div className="text-[12px] text-text-secondary mt-0.5">{plan.route}</div>
           </>
         ) : (
           <Missing>No current plan</Missing>

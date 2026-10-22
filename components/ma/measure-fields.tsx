@@ -16,7 +16,7 @@ export function SourcePicker({ value, onChange }: { value: string; onChange: (s:
     <fieldset aria-labelledby="source-label" className="bg-surface rounded-[20px] p-4 shadow-soft-card border border-border/60">
       <div className="flex items-center justify-between mb-3">
         <h2 id="source-label" className="text-label-md font-semibold text-text-primary">Measurement source</h2>
-        <span className="text-[11px] text-text-tertiary tracking-wide uppercase font-semibold">Measured on</span>
+        <span className="text-[12px] text-text-tertiary tracking-wide uppercase font-semibold">Measured on</span>
       </div>
       <div className="space-y-2.5">
         {SOURCES.map((o) => {

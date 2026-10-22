@@ -63,7 +63,7 @@ export function CheckInCard({ ci, defaultOpen }: { ci: CheckIn; defaultOpen?: bo
 
       {ci.comment && (
         <blockquote className="mt-3 p-3 rounded-xl bg-surface-alt border-l-2 border-accent-fill text-caption-sm leading-relaxed">
-          <span className="block text-[11px] text-text-tertiary mb-0.5">Patient comment</span>&ldquo;{ci.comment}&rdquo;
+          <span className="block text-[12px] text-text-tertiary mb-0.5">Patient comment</span>&ldquo;{ci.comment}&rdquo;
         </blockquote>
       )}
 
@@ -89,7 +89,7 @@ export function CheckInCard({ ci, defaultOpen }: { ci: CheckIn; defaultOpen?: bo
                 <div className="flex flex-wrap items-center gap-2 sm:justify-end">
                   <span className={clsx("text-[14px] font-semibold", hit && "text-[#92400E]")}>{a.answer}</span>
                   {hit && (
-                    <span className="inline-flex items-center gap-1 h-6 px-2 rounded-full text-[11px] font-semibold bg-warning-tint text-[#92400E] border border-warning/30">
+                    <span className="inline-flex items-center gap-1 h-6 px-2 rounded-full text-[12px] font-semibold bg-warning-tint text-[#92400E] border border-warning/30">
                       <Icon name="task_alt" size={13} />
                       Triggered staff task
                     </span>

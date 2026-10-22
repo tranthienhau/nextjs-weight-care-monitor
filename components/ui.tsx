@@ -38,7 +38,7 @@ export function HeroCard({ children, className }: { children: ReactNode; classNa
   return (
     <section
       className={clsx("rounded-2xl p-5 text-white shadow-hero relative overflow-hidden", className)}
-      style={{ background: "linear-gradient(135deg, #5B78FE 0%, #7F8CF5 55%, #F7979A 130%)" }}
+      style={{ background: "linear-gradient(135deg, #4165FE 0%, #3451D1 60%, #2E52E6 100%)" }}
     >
       {children}
     </section>
@@ -100,7 +100,7 @@ const reviewStyles: Record<ReviewStatus, string> = {
   unreviewed: "bg-warning-tint text-[#92400E]",
   flagged: "bg-warning-tint text-[#92400E]",
   ready: "bg-accent-tint text-accent-fill",
-  reviewed: "bg-success-tint text-[#15803D]",
+  reviewed: "bg-success-tint text-[#166534]",
 };
 
 /** Review status chip. "Reviewed" is only shown with who signed it. */
@@ -127,7 +127,7 @@ export function SourceTag({ children, patient, className }: { children: ReactNod
   return (
     <span
       className={clsx(
-        "inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[11px] leading-tight text-text-tertiary bg-surface border",
+        "inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[12px] leading-tight text-text-tertiary bg-surface border",
         patient ? "border-dashed border-text-tertiary" : "border-border",
         className,
       )}
@@ -139,13 +139,13 @@ export function SourceTag({ children, patient, className }: { children: ReactNod
 }
 
 export function EstimateTag() {
-  return <span className="inline-flex items-center h-5 px-2 rounded-full text-[11px] font-medium bg-accent-tint text-accent-fill">Estimate</span>;
+  return <span className="inline-flex items-center h-6 px-2 rounded-full text-[12px] font-medium bg-accent-tint text-accent-fill">Estimate</span>;
 }
 
 export function StatusPill({ children, tone = "neutral" }: { children: ReactNode; tone?: "neutral" | "success" | "warning" | "accent" | "muted" }) {
   const t = {
     neutral: "bg-surface-alt text-text-secondary",
-    success: "bg-success-tint text-[#15803D]",
+    success: "bg-success-tint text-[#166534]",
     warning: "bg-warning-tint text-[#92400E]",
     accent: "bg-accent-tint text-accent-fill",
     muted: "bg-[#EEF0F6] text-text-tertiary",
@@ -250,7 +250,7 @@ export function EmptyState({ image, title, body, action }: { image: string; titl
 /** Segmented control (e.g. Overview / Body / BP / Labs / Meds). */
 export function Segmented({ items, active }: { items: { label: string; href: string }[]; active: string }) {
   return (
-    <nav className="flex gap-6 overflow-x-auto no-scrollbar border-b border-border -mx-5 px-5 lg:mx-0 lg:px-0">
+    <nav aria-label="Record sections" className="flex gap-6 overflow-x-auto no-scrollbar border-b border-border -mx-5 px-5 lg:mx-0 lg:px-0">
       {items.map((it) => (
         <Link
           key={it.href}

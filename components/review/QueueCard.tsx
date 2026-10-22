@@ -9,7 +9,7 @@ import { Avatar, Icon, ReviewBadge } from "@/components/ui";
 import { planMed, type QueueCard as Q } from "./queue";
 
 const reasonIcon: Record<Q["reason"]["kind"], { icon: string; cls: string }> = {
-  bp: { icon: "emergency", cls: "text-danger" },
+  bp: { icon: "flag", cls: "text-warning" },
   checkin: { icon: "contact_support", cls: "text-accent-fill" },
   labs: { icon: "science", cls: "text-accent-fill" },
   measurement: { icon: "scale", cls: "text-accent-fill" },
@@ -46,7 +46,7 @@ export function QueueCard({ card }: { card: Q }) {
           <Icon name={ri.icon} size={18} className={clsx("shrink-0", ri.cls)} />
           <div className="text-caption-sm text-text-primary leading-snug">
             <p>
-              <span className={clsx("font-bold", card.flagged && reason.kind === "bp" ? "text-danger" : "text-accent-fill")}>{reason.strong}</span>
+              <span className={clsx("font-bold", card.flagged && reason.kind === "bp" ? "text-warning" : "text-accent-fill")}>{reason.strong}</span>
               {reason.text}
             </p>
             {card.more.length > 0 && <p className="text-text-tertiary mt-0.5">Also: {card.more.join(", ")}</p>}

@@ -36,9 +36,9 @@ export function ExportButton({ dataset, fileName, rows }: { dataset: string; fil
         <Icon name={allowed ? "download" : "lock"} size={16} />
         Export CSV
       </button>
-      {!allowed && <span className="text-[11px] text-text-tertiary mt-1">Physician or admin only</span>}
+      {!allowed && <span className="text-[12px] text-text-tertiary mt-1">Physician or admin only</span>}
       {done != null && (
-        <span role="status" className="text-[11px] text-success mt-1">
+        <span role="status" className="text-[12px] text-success mt-1">
           {done} rows exported, audit logged
         </span>
       )}

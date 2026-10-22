@@ -35,7 +35,7 @@ export default function TodayPage() {
         {staff && (
           <div className="flex items-center gap-2 bg-surface pl-1.5 pr-2 py-1 rounded-full shadow-clinical border border-border shrink-0 lg:hidden">
             <Avatar src={staff.avatar} alt={staff.name} size={36} />
-            <span className="px-2 py-0.5 rounded-full bg-accent-tint text-accent-fill text-[11px] font-semibold tracking-wide">{roleChip(role)}</span>
+            <span className="px-2 py-0.5 rounded-full bg-accent-tint text-accent-fill text-[12px] font-semibold tracking-wide">{roleChip(role)}</span>
           </div>
         )}
       </header>
@@ -45,9 +45,9 @@ export default function TodayPage() {
           <div className="absolute -right-10 -bottom-10 w-36 h-36 rounded-full bg-white/10 blur-xl pointer-events-none" />
           <div className="relative">
             <div className="flex items-center justify-between gap-2 mb-3">
-              <span className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/20 backdrop-blur-md">
+              <span className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/20 backdrop-blur-md">
                 <Icon name="calendar_today" size={15} />
-                <span className="text-[11px] uppercase tracking-wider font-semibold">Today&apos;s schedule</span>
+                <span className="text-[12px] uppercase tracking-wider font-semibold">Today&apos;s schedule</span>
               </span>
               <span className="text-xs text-white/90 font-medium">8:00 AM - 4:30 PM</span>
             </div>

@@ -101,7 +101,7 @@ export default function ReportsPage() {
               icon="assignment_turned_in"
               value={monthCheckIns.length}
               foot={
-                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-medium bg-warning-tint text-warning">
+                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[12px] font-medium bg-warning-tint text-warning">
                   <span className="w-1.5 h-1.5 rounded-full bg-warning" />
                   {overdue} overdue
                 </span>

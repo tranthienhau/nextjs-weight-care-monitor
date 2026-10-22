@@ -44,7 +44,7 @@ export function HbA1cCard({ results }: { results: LabResult[] }) {
                 <span className={`block font-semibold text-[12px] ${i === asc.length - 1 ? "text-accent-fill" : ""}`}>
                   {l.value} {l.unit}
                 </span>
-                <span className="text-[11px] text-text-tertiary">{fmtDay(l.collectedOn)}</span>
+                <span className="text-[12px] text-text-tertiary">{fmtDay(l.collectedOn)}</span>
               </div>
             ))}
           </div>
@@ -59,7 +59,7 @@ function FlagChip({ flag }: { flag: "H" | "L" }) {
     <span
       aria-label={`Lab flag ${flag}`}
       title="Flag as printed on the lab report"
-      className="inline-flex items-center justify-center min-w-6 h-6 px-1.5 rounded-full bg-warning-tint text-[#92400E] text-[11px] font-bold"
+      className="inline-flex items-center justify-center min-w-6 h-6 px-1.5 rounded-full bg-warning-tint text-[#92400E] text-[12px] font-bold"
     >
       {flag}
     </span>
@@ -106,7 +106,7 @@ function ReviewBlock({ items }: { items: LabResult[] }) {
       {!pending && note && (
         <blockquote className="p-3 rounded-xl bg-surface-alt border-l-2 border-accent-fill text-caption-sm leading-relaxed">&ldquo;{note}&rdquo;</blockquote>
       )}
-      <p className="text-[11px] text-text-tertiary">Entered by {enteredBy}</p>
+      <p className="text-[12px] text-text-tertiary">Entered by {enteredBy}</p>
     </div>
   );
 }

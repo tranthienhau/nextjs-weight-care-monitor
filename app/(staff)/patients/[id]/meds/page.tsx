@@ -17,7 +17,7 @@ function PlanCard({ med }: { med: Medication }) {
     <Card className="relative overflow-hidden p-5">
       <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-primary-container via-accent-fill to-support" />
       <div className="flex flex-wrap items-center justify-between gap-2 pb-3">
-        <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-surface-alt px-2.5 py-1 text-[11px] font-medium text-text-secondary">
+        <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-surface-alt px-2.5 py-1 text-[12px] font-medium text-text-secondary">
           <Icon name="verified_user" size={13} className="text-accent-fill" />
           Clinician authorized
         </span>
@@ -41,18 +41,18 @@ function PlanCard({ med }: { med: Medication }) {
 function MedRow({ med }: { med: Medication }) {
   const stopped = med.status === "discontinued";
   return (
-    <li className={`py-3.5 flex items-start justify-between gap-3 ${stopped ? "opacity-75" : ""}`}>
+    <li className={`py-3.5 flex items-start justify-between gap-3 `}>
       <div className="min-w-0">
-        <h4 className={`text-[15px] font-semibold ${stopped ? "text-text-tertiary line-through" : ""}`}>
+        <h3 className={`text-[15px] font-semibold ${stopped ? "text-text-tertiary line-through" : ""}`}>
           {med.name} {med.dose}
-        </h4>
+        </h3>
         <p className="mt-0.5 text-caption-sm text-text-secondary">
           {med.route} - {med.frequency} - Started {fmtDate(med.start)}
         </p>
-        <p className="mt-1 text-[11px] text-text-tertiary">Prescriber: {getStaff(med.prescriberId)?.name ?? "Not recorded"}</p>
+        <p className="mt-1 text-[12px] text-text-tertiary">Prescriber: {getStaff(med.prescriberId)?.name ?? "Not recorded"}</p>
       </div>
       {stopped ? (
-        <span className="rounded-full bg-surface-alt px-2.5 py-0.5 text-[11px] font-medium text-text-tertiary shrink-0 border border-border">
+        <span className="rounded-full bg-surface-alt px-2.5 py-0.5 text-[12px] font-medium text-text-tertiary shrink-0 border border-border">
           Discontinued {med.stop ? fmtDate(med.stop) : ""}
         </span>
       ) : (
@@ -88,7 +88,7 @@ function MedsTab({ patient }: { patient: Patient }) {
           <Panel
             title={adh ? monthName(adh.month) : "Adherence"}
             right={
-              <span className="inline-flex items-center gap-1 rounded-md border border-dashed border-text-tertiary px-2 py-0.5 text-[11px] font-medium text-text-secondary">
+              <span className="inline-flex items-center gap-1 rounded-md border border-dashed border-text-tertiary px-2 py-0.5 text-[12px] font-medium text-text-secondary">
                 <Icon name="home" size={12} />
                 Patient-reported
               </span>
@@ -104,7 +104,7 @@ function MedsTab({ patient }: { patient: Patient }) {
                   <span className="text-[12px] font-semibold text-text-secondary">Reported side effects: </span>
                   <span className="text-[13px]">{adh.sideEffects || "None reported"}</span>
                 </div>
-                <p className="mt-2 text-[11px] text-text-tertiary">Reported by the patient {fmtDayTime(adh.reportedAt)}</p>
+                <p className="mt-2 text-[12px] text-text-tertiary">Reported by the patient {fmtDayTime(adh.reportedAt)}</p>
               </>
             ) : (
               <None>No adherence reported by the patient yet.</None>
@@ -116,7 +116,7 @@ function MedsTab({ patient }: { patient: Patient }) {
           <h2 id="list-h" className="text-caption-sm text-text-secondary uppercase tracking-wide px-1">
             Medication list
           </h2>
-          <Panel title="Other medications" right={<span className="text-[11px] text-text-tertiary">{list.length} recorded</span>}>
+          <Panel title="Other medications" right={<span className="text-[12px] text-text-tertiary">{list.length} recorded</span>}>
             {list.length ? <ul className="divide-y divide-border">{list.map((m) => <MedRow key={m.id} med={m} />)}</ul> : <None>No other medications recorded.</None>}
           </Panel>
         </section>
@@ -134,7 +134,7 @@ function MedsTab({ patient }: { patient: Patient }) {
                 <blockquote className="rounded-r-xl border-l-4 border-primary-container bg-surface-alt p-3.5 text-[13px] leading-relaxed text-text-secondary italic">
                   &ldquo;{review.note}&rdquo;
                 </blockquote>
-                <p className="mt-3 text-[11px] text-text-tertiary">Covered: {review.items.join(", ")}</p>
+                <p className="mt-3 text-[12px] text-text-tertiary">Covered: {review.items.join(", ")}</p>
               </>
             ) : (
               <None>No clinical review signed yet.</None>
